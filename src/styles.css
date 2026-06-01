@@ -416,7 +416,7 @@ p {
 }
 
 .hero-info-card {
-  padding: 42px;
+  padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -426,7 +426,7 @@ p {
 .scholar-stamp-card {
   background: #fcfbf8;
   justify-content: flex-start;
-  gap: 28px;
+  gap: 18px;
 }
 
 .stamp-mark {
