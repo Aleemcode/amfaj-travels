@@ -1016,9 +1016,9 @@ details p {
   overflow: hidden;
   background-color: var(--navy);
   background-image: 
-    linear-gradient(90deg, rgba(3, 12, 53, 0.94) 35%, rgba(3, 12, 53, 0.65) 100%),
-    url("/umrah-banner.png");
-  background-position: center;
+    linear-gradient(90deg, rgba(3, 12, 53, 0.95) 30%, rgba(3, 12, 53, 0.6) 100%),
+    url("/footer-cta-bg.png");
+  background-position: center 30%;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1163,9 +1163,13 @@ details p {
   display: grid;
   grid-template-columns: minmax(260px, 0.95fr) minmax(0, 1.4fr);
   gap: 42px;
-  background: var(--navy);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30 Z M0 0 L60 60 M60 0 L0 60 M30 0 L30 60 M0 30 L60 30' fill='none' stroke='rgba(255, 255, 255, 0.015)' stroke-width='0.6'/%3E%3C/svg%3E");
-  background-size: 60px 60px;
+  background-color: var(--navy);
+  background-image: 
+    linear-gradient(180deg, rgba(3, 12, 53, 0.96) 0%, rgba(3, 12, 53, 0.92) 100%),
+    url("/footer-cta-bg.png");
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
   color: var(--white);
 }
 
@@ -1504,11 +1508,11 @@ details p {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background-image: url("/kaaba-bg.png");
-  background-position: bottom -40px right -40px;
-  background-size: 340px auto; /* Slightly larger for wide footer */
+  background-image: url("/footer-cta-bg.png");
+  background-position: center bottom;
+  background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.025; /* Subtle watermark on footer */
+  opacity: 0.05; /* Faint overlay blend */
   mix-blend-mode: overlay; /* Blends beautifully on dark navy */
   pointer-events: none;
 }
