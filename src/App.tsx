@@ -284,17 +284,6 @@ function HeroCardsSequence({
   videoExpanded: boolean;
   onPlay: () => void;
 }) {
-  const [yOffset, setYOffset] = useState(100);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setYOffset(window.innerHeight / 2 - 325);
-    };
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   const sequenceRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: sequenceRef,
@@ -303,12 +292,8 @@ function HeroCardsSequence({
 
   const springConfig = { stiffness: 100, damping: 26, mass: 0.4 };
 
-  // First two cards fade out very early (completely out by 30% progress)
-  const rawCardsOpacity = useTransform(scrollYProgress, [0, 0.1, 0.3, 1], [1, 1, 0, 0]);
-  const cardsOpacity = useSpring(rawCardsOpacity, springConfig);
-
-  // The video card scales up symmetrically to center center (scale 1.8 for perfectly spaced content container cover)
-  // Maintains its expanded center stable watch state from 0.45 to 0.75 scroll progress
+  // The video card scales up symmetrically to a clean wide layout (scale 1.8 spans 90% container width)
+  // Maintains its expanded centered stable watch state from 0.45 to 0.75 scroll progress
   const rawScale = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], [1, 1, 1.8, 1.8, 1.8]);
   const scale = useSpring(rawScale, springConfig);
 
@@ -316,12 +301,12 @@ function HeroCardsSequence({
   const rawX = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], ["0%", "0%", "-50%", "-50%", "-50%"]);
   const x = useSpring(rawX, springConfig);
 
-  // Vertical translation math: perfectly centers cards vertically in viewport H/2 (translate dynamically calculated yOffset number)
-  const rawY = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], [0, 0, yOffset, yOffset, yOffset]);
+  // Vertical translation math: places top edge of Card 3 exactly below Card 1/Card 2 + gap (translate 624px)
+  const rawY = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], [0, 0, 624, 624, 624]);
   const y = useSpring(rawY, springConfig);
 
-  // Border radius goes from 30px to 24px (retains clean rounded corners, matching the screenshot)
-  const rawRadius = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], [30, 30, 24, 24, 24]);
+  // Border radius remains beautifully rounded (30px) throughout the transition
+  const rawRadius = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], [30, 30, 30, 30, 30]);
   const borderRadius = useSpring(rawRadius, springConfig);
 
   // Fade out the play button and text caption very early (by 25% progress)
@@ -340,7 +325,6 @@ function HeroCardsSequence({
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.28 }}
-          style={{ opacity: cardsOpacity }}
         >
           <div className="stamp-mark">
             <BadgeCheck size={34} />
@@ -360,7 +344,6 @@ function HeroCardsSequence({
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.36 }}
-          style={{ opacity: cardsOpacity }}
         >
           <div className="mini-seal">
             <HeartHandshake size={28} />
