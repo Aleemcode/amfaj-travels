@@ -47,6 +47,7 @@ const packages = [
       "Ziyarah",
       "5 litre Zam Zam water",
     ],
+    isFeatured: true,
   },
   {
     id: "diaspora",
@@ -62,6 +63,7 @@ const packages = [
       "Umrah guide",
       "5 litre Zam Zam water",
     ],
+    isFeatured: false,
   },
 ];
 
@@ -417,9 +419,10 @@ function PackageCard({
   audience,
   note,
   inclusions,
+  isFeatured,
 }: (typeof packages)[number]) {
   return (
-    <article className="package-card">
+    <article className={isFeatured ? "package-card is-featured" : "package-card"}>
       <div>
         <p className="card-kicker">{audience}</p>
         <h3>{title}</h3>
@@ -434,7 +437,10 @@ function PackageCard({
           </li>
         ))}
       </ul>
-      <a className="button button-primary full-width" href={whatsappHref}>
+      <a 
+        className={`button full-width ${isFeatured ? "button-primary" : "button-secondary"}`} 
+        href={whatsappHref}
+      >
         Ask About This Package
       </a>
     </article>
