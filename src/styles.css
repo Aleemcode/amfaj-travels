@@ -241,7 +241,8 @@ img {
 }
 
 .button-whatsapp svg {
-  color: var(--white);
+  color: var(--white) !important;
+  fill: var(--white) !important;
 }
 
 .button-whatsapp:hover {
