@@ -204,14 +204,6 @@ function HomePage() {
 function Hero() {
   const [videoExpanded, setVideoExpanded] = useState(false);
 
-  const playHeroPreview = () => {
-    setVideoExpanded(true);
-    window.setTimeout(() => {
-      document.getElementById("packages")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 850);
-    window.setTimeout(() => setVideoExpanded(false), 1700);
-  };
-
   return (
     <section className="hero">
       <div className="hero-copy hero-copy-centered">
@@ -253,24 +245,32 @@ function Hero() {
           </Link>
         </motion.div>
       </div>
-      <HeroCardsSequence videoExpanded={videoExpanded} onPlay={playHeroPreview} />
+      <HeroCardsSequence videoExpanded={videoExpanded} onPlay={() => setVideoExpanded(true)} />
       {videoExpanded && (
         <motion.div
           className="video-expander"
-          initial={{ opacity: 0, scale: 0.56, y: 120 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.65, ease: "easeOut" }}
-          aria-hidden="true"
+          transition={{ duration: 0.35, ease: "easeOut" }}
         >
-          <img
-            src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&w=1600&q=85"
-            alt=""
+          <button
+            className="video-close-btn"
+            onClick={() => setVideoExpanded(false)}
+            aria-label="Close video player"
+          >
+            <X size={24} />
+          </button>
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/YDcMsYV7K0A?autoplay=1"
+            title="September Umrah Guidance"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            style={{ width: "100%", height: "100%", border: 0 }}
           />
-          <div>
-            <span>AMFAJ Intro Preview</span>
-            <strong>Moving into the September Umrah package</strong>
-          </div>
         </motion.div>
       )}
     </section>
@@ -371,13 +371,13 @@ function HeroCardsSequence({
           }}
         >
           <img
-            src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&w=1600&q=85"
+            src="https://img.youtube.com/vi/YDcMsYV7K0A/maxresdefault.jpg"
             alt="Pilgrims around the Ka'bah placeholder"
           />
           <motion.div className="hero-video-overlay" style={{ y: overlayY }} />
           <motion.div className="video-caption" style={{ opacity: uiOpacity }}>
-            <span>Placeholder video</span>
-            <strong>CEO intro video will live here</strong>
+            <span>September Umrah Guidance</span>
+            <strong>Scholar-Led Prep Tutelage Standard</strong>
           </motion.div>
           <motion.button 
             className="play-button" 

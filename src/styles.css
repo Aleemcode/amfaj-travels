@@ -585,7 +585,30 @@ p {
   border-radius: 40px;
   background: var(--navy);
   box-shadow: 0 40px 120px rgba(3, 12, 53, 0.45);
-  pointer-events: none;
+  pointer-events: auto;
+}
+
+.video-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 70;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: var(--white);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.video-close-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.08);
 }
 
 .video-expander img {
