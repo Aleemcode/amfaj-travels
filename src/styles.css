@@ -1002,23 +1002,20 @@ details p {
 
 .final-cta {
   position: relative;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  margin-top: 54px;
-  margin-bottom: 0; /* Merges directly into the footer! */
-  padding: 92px max(28px, calc((100% - 1180px) / 2));
+  margin-top: 34px;
+  margin-bottom: 112px;
+  padding: 64px 48px; /* Slightly more premium padding */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 42px;
-  border-radius: 0;
+  gap: 24px;
+  border-radius: 38px;
   overflow: hidden;
   background-color: var(--navy);
   background-image: 
-    linear-gradient(90deg, rgba(3, 12, 53, 0.95) 30%, rgba(3, 12, 53, 0.6) 100%),
+    linear-gradient(90deg, rgba(3, 12, 53, 0.94) 30%, rgba(3, 12, 53, 0.65) 100%),
     url("/footer-cta-bg.png");
-  background-position: center 30%;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1043,7 +1040,7 @@ details p {
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
   margin-bottom: 54px;
-  padding: 82px max(28px, calc((100% - 1180px) / 2));
+  padding: 82px 0; /* Let inner content handle horizontal margins natively */
   background-color: var(--navy);
   background-position: center;
   background-size: cover;
@@ -1086,6 +1083,13 @@ details p {
 .page-hero-content {
   position: relative;
   z-index: 2;
+  width: min(1180px, calc(100% - 28px));
+  margin-inline: auto;
+}
+
+.page-hero h1,
+.page-hero p,
+.page-hero .breadcrumbs {
   max-width: 860px;
 }
 
@@ -1417,17 +1421,10 @@ details p {
   }
 
   .about-band,
-  .scholar-copy {
+  .scholar-copy,
+  .final-cta {
     padding: 28px;
     border-radius: 28px;
-  }
-
-  .final-cta {
-    width: 100vw;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    padding: 48px 18px;
-    border-radius: 0;
   }
 
   .fact-row {

@@ -863,7 +863,7 @@ function SectionIntro({
 
 function FinalCta() {
   return (
-    <section className="final-cta">
+    <section className="section final-cta">
       <div>
         <p className="eyebrow inverse">Next step</p>
         <h2>Ready to begin your sacred journey?</h2>
