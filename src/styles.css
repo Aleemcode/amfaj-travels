@@ -701,6 +701,8 @@ p {
 .contact-panel,
 .empty-state,
 .notice-card {
+  position: relative;
+  overflow: hidden;
   border: 1px solid rgba(3, 12, 53, 0.12);
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.94);
@@ -1023,16 +1025,101 @@ details p {
 }
 
 .page-frame {
-  padding: 74px 0 92px;
+  padding: 0 0 92px; /* remove top padding since banner has it */
 }
 
 .page-hero {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-bottom: 54px;
+  padding: 82px max(28px, calc((100% - 1180px) / 2));
+  background-color: var(--navy);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--white);
+  overflow: hidden;
+}
+
+/* Page-specific banner image backgrounds */
+.page-hero.bg-general {
+  background-image: 
+    linear-gradient(180deg, rgba(3, 12, 53, 0.45), rgba(3, 12, 53, 0.85)),
+    url("/umrah-banner.png");
+}
+
+.page-hero.bg-packages {
+  background-image: 
+    linear-gradient(180deg, rgba(3, 12, 53, 0.45), rgba(3, 12, 53, 0.85)),
+    url("/packages-banner.png");
+}
+
+.page-hero.bg-guidance {
+  background-image: 
+    linear-gradient(180deg, rgba(3, 12, 53, 0.45), rgba(3, 12, 53, 0.85)),
+    url("/guidance-banner.png");
+}
+
+.page-hero.bg-faq {
+  background-image: 
+    linear-gradient(180deg, rgba(3, 12, 53, 0.45), rgba(3, 12, 53, 0.85)),
+    url("/faq-banner.png");
+}
+
+.page-hero.bg-contact {
+  background-image: 
+    linear-gradient(180deg, rgba(3, 12, 53, 0.45), rgba(3, 12, 53, 0.85)),
+    url("/contact-banner.png");
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 860px;
-  margin-bottom: 38px;
 }
 
 .page-hero h1 {
   font-size: clamp(2.45rem, 6vw, 4.25rem);
+  color: var(--white);
+  margin-top: 14px;
+  margin-bottom: 12px;
+}
+
+.page-hero p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: var(--fs-medium);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Breadcrumbs styling matching modern design guidelines */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--heading);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.breadcrumbs a {
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.2s ease;
+}
+
+.breadcrumbs a:hover {
+  color: var(--orange);
+}
+
+.breadcrumbs .separator {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.breadcrumbs .current {
+  color: var(--white);
 }
 
 .contact-panel,
@@ -1061,6 +1148,8 @@ details p {
 }
 
 .footer {
+  position: relative;
+  overflow: hidden;
   padding: 54px max(28px, calc((100% - 1180px) / 2));
   display: grid;
   grid-template-columns: minmax(260px, 0.95fr) minmax(0, 1.4fr);
@@ -1357,4 +1446,53 @@ details p {
     font-weight: 800;
     box-shadow: none;
   }
+}
+
+/* Faint Watermarks using the custom Kaaba image asset */
+.package-card::before,
+.category-card::before,
+.topic-card::before,
+.legal-card::before,
+.contact-panel::before,
+.empty-state::before,
+.notice-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("/kaaba-bg.png");
+  background-position: bottom -20px right -20px;
+  background-size: 200px auto;
+  background-repeat: no-repeat;
+  opacity: 0.045; /* Faint watermark */
+  mix-blend-mode: multiply; /* Blends the beige perfectly into white */
+  pointer-events: none;
+}
+
+.package-card.is-featured::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("/kaaba-bg.png");
+  background-position: bottom -20px right -20px;
+  background-size: 200px auto;
+  background-repeat: no-repeat;
+  opacity: 0.035; /* Faint watermark */
+  mix-blend-mode: overlay; /* Blends beautifully on dark navy */
+  pointer-events: none;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url("/kaaba-bg.png");
+  background-position: bottom -40px right -40px;
+  background-size: 340px auto; /* Slightly larger for wide footer */
+  background-repeat: no-repeat;
+  opacity: 0.025; /* Subtle watermark on footer */
+  mix-blend-mode: overlay; /* Blends beautifully on dark navy */
+  pointer-events: none;
 }

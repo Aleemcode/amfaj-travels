@@ -28,22 +28,22 @@ import { Link, NavLink, Route, Routes } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 
 const whatsappMessage =
-  "Assalamu alaykum, I want to start registration for AMFAJ September Umrah.";
+  "Assalamu alaykum, I want to start registration for AMFAJ September ’Umrah.";
 const whatsappHref = `https://wa.me/2348069243134?text=${encodeURIComponent(whatsappMessage)}`;
 
 const packages = [
   {
     id: "nigeria",
-    title: "Nigeria Umrah Package",
+    title: "Nigeria ’Umrah Package",
     price: "3.5m NGN",
     audience: "For Nigeria-based pilgrims",
     note: "Departure from Lagos and Abuja",
     inclusions: [
       "Return ticket",
-      "Umrah visa",
+      "’Umrah visa",
       "2 meals",
       "Accommodation in Madeenah and Makkah",
-      "Umrah guide",
+      "’Umrah guide",
       "Ziyarah",
       "5 litre Zam Zam water",
     ],
@@ -51,16 +51,16 @@ const packages = [
   },
   {
     id: "diaspora",
-    title: "Diaspora Umrah Package",
+    title: "Diaspora ’Umrah Package",
     price: "$1,750",
     audience: "For diaspora pilgrims and sponsors",
     note: "Designed for pilgrims joining the group journey",
     inclusions: [
-      "Umrah visa",
+      "’Umrah visa",
       "2 meals",
       "Accommodation in Madeenah and Makkah",
       "Ziyarah",
-      "Umrah guide",
+      "’Umrah guide",
       "5 litre Zam Zam water",
     ],
     isFeatured: false,
@@ -69,9 +69,9 @@ const packages = [
 
 const faqs = [
   {
-    question: "When is the September Umrah journey?",
+    question: "When is the September ’Umrah journey?",
     answer:
-      "Departure is planned for September 29 or 30, 2026, with arrival back on October 10 or 11, 2026, In Sha Allah.",
+      "Departure is planned for September 29 or 30, 2026, with arrival back on October 10 or 11, 2026, In Shā’ Allāh.",
   },
   {
     question: "Where will pilgrims depart from?",
@@ -81,12 +81,12 @@ const faqs = [
   {
     question: "Is the scholar-led guidance only for one package?",
     answer:
-      "No. AMFAJ treats scholar-led guidance as a universal standard across its packages. For the coming Umrah, Dr. Sharafuddeen Gbadebo Raaji is planned to join as a scholar, with pilgrims under his tutelage, In Sha Allah.",
+      "No. AMFAJ treats scholar-led guidance as a universal standard across its packages. For the coming ’Umrah, Dr. Sharafuddeen Gbadebo Raaji is planned to join as a scholar, with pilgrims under his tutelage, In Shā’ Allāh.",
   },
   {
     question: "Does AMFAJ guarantee visa approval or worship acceptance?",
     answer:
-      "AMFAJ lists Umrah visa as an inclusion, but does not make misleading visa outcome claims. Worship acceptance belongs to Allah. AMFAJ focuses on sincere preparation, guidance, and organized support.",
+      "AMFAJ lists ’Umrah visa as an inclusion, but does not make misleading visa outcome claims. Worship acceptance belongs to Allāh. AMFAJ focuses on sincere preparation, guidance, and organized support.",
   },
   {
     question: "How do I start registration?",
@@ -97,19 +97,19 @@ const faqs = [
 
 const guidanceItems = [
   {
-    title: "Umrah readiness",
+    title: "’Umrah readiness",
     body: "Prepare documents, intention, travel expectations, and personal essentials before payment conversations become urgent.",
     icon: CheckCircle2,
     to: "/guidance/umrah",
   },
   {
     title: "Ritual clarity",
-    body: "Understand the flow of Umrah with calm explanations and reminders that keep the journey grounded in worship.",
+    body: "Understand the flow of ’Umrah with calm explanations and reminders that keep the journey grounded in worship.",
     icon: BookOpen,
     to: "/guidance/umrah",
   },
   {
-    title: "Group travel adab",
+    title: "Group travel ādāb",
     body: "Travel with patience, order, and respect for the group, the guides, and the sacred places.",
     icon: Users,
     to: "/guidance/umrah",
@@ -166,10 +166,10 @@ function Header() {
           </NavLink>
           <div className="nav-menu">
             <Link to="/packages/umrah" onClick={() => setOpen(false)}>
-              Umrah Package
+              ’Umrah Package
             </Link>
             <Link to="/packages/hajj" onClick={() => setOpen(false)}>
-              Hajj Package <span>Coming soon</span>
+              Ḥajj Package <span>Coming soon</span>
             </Link>
           </div>
         </div>
@@ -215,14 +215,14 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
         >
           <span />
-          September 2026 Umrah registration path
+          September 2026 ’Umrah registration path
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.08 }}
         >
-          Journey to the House of Allah with <em>clarity and care.</em>
+          Journey to the House of Allāh with <em>clarity and care.</em>
         </motion.h1>
         <motion.p
           className="hero-subcopy"
@@ -230,7 +230,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.16 }}
         >
-          AMFAJ Travels and Tours supports intending pilgrims with organized Umrah and Hajj travel,
+          AMFAJ Travels and Tours supports intending pilgrims with organized ’Umrah and Ḥajj travel,
           honest promises, personalized hospitality, and scholar-led guidance.
         </motion.p>
         <motion.div
@@ -334,7 +334,7 @@ function HeroCardsSequence() {
           <h3>Every journey under reputable scholarship.</h3>
           <p>
             Each AMFAJ journey is planned with guidance from a reputable scholar or a certified
-            student of knowledge, In Sha Allah.
+            student of knowledge, In Shā’ Allāh.
           </p>
           <Link className="outline-pill" to="/guidance">
             See Guidance
@@ -376,7 +376,7 @@ function HeroCardsSequence() {
             width="100%"
             height="100%"
             src="https://www.youtube.com/embed/YDcMsYV7K0A?autoplay=1&mute=1&controls=1&loop=1&playlist=YDcMsYV7K0A&rel=0&playsinline=1&enablejsapi=1"
-            title="September Umrah Guidance"
+            title="September ’Umrah Guidance"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -387,7 +387,7 @@ function HeroCardsSequence() {
             <span>{isMuted ? "Unmute" : "Mute"}</span>
           </button>
           <motion.div className="video-caption" style={{ opacity: uiOpacity }}>
-            <span>September Umrah Guidance</span>
+            <span>September ’Umrah Guidance</span>
             <strong>Scholar-Led Prep Tutelage Standard</strong>
           </motion.div>
         </motion.article>
@@ -401,7 +401,7 @@ function UmrahFeature() {
     <section className="section package-feature" id="packages">
       <SectionIntro
         eyebrow="Active package"
-        title="September Umrah is the priority now."
+        title="September ’Umrah is the priority now."
         body="Two clear package paths make it easier for Nigeria-based pilgrims, diaspora pilgrims, and sponsors to understand the offer before opening a WhatsApp conversation."
       />
       <div className="package-grid">
@@ -452,7 +452,7 @@ function PackageBreakdown() {
     ["Departure", "September 29 or 30, 2026"],
     ["Arrival", "October 10 or 11, 2026"],
     ["Departure cities", "Lagos and Abuja"],
-    ["Guidance", "Scholar-led tutelage, In Sha Allah"],
+    ["Guidance", "Scholar-led tutelage, In Shā’ Allāh"],
   ];
 
   return (
@@ -466,7 +466,7 @@ function PackageBreakdown() {
           same understanding.
         </p>
         <Link className="text-link" to="/packages/umrah">
-          View the Umrah package page <ArrowRight size={17} />
+          View the ’Umrah package page <ArrowRight size={17} />
         </Link>
       </div>
       <div className="fact-panel">
@@ -491,7 +491,7 @@ function AboutSection() {
         <p className="eyebrow inverse">About AMFAJ</p>
         <h2>Built for pilgrims who want organized travel without losing the spirit of worship.</h2>
         <p>
-          AMFAJ Travels and Tours serves Muslims seeking Hajj and Umrah support that is sincere,
+          AMFAJ Travels and Tours serves Muslims seeking Ḥajj and ’Umrah support that is sincere,
           dignified, and guided by the Qur'an and Sunnah upon the understanding of the pious
           predecessors.
         </p>
@@ -531,14 +531,14 @@ function ScholarStandard() {
         <h2>Scholar-led guidance is not treated as an add-on.</h2>
         <p>
           AMFAJ is intentional about scholar-led guidance across its packages. For this coming
-          Umrah, Dr. Sharafuddeen Gbadebo Raaji is planned to join as a scholar, with pilgrims
-          under his tutelage, In Sha Allah.
+          ’Umrah, Dr. Sharafuddeen Gbadebo Raaji is planned to join as a scholar, with pilgrims
+          under his tutelage, In Shā’ Allāh.
         </p>
       </div>
       <div className="notice-card">
         <BookOpen size={24} />
         <p>
-          AMFAJ supports preparation and guidance. Worship acceptance belongs to Allah, and public
+          AMFAJ supports preparation and guidance. Worship acceptance belongs to Allāh, and public
           claims must remain truthful and verified.
         </p>
       </div>
@@ -552,7 +552,7 @@ function GuidancePreview() {
       <SectionIntro
         eyebrow="Guidance"
         title="Education that makes the registration conversation easier."
-        body="The Guidance section groups Umrah and Hajj preparation in one place, so visitors can learn before they commit and arrive with better questions."
+        body="The Guidance section groups ’Umrah and Ḥajj preparation in one place, so visitors can learn before they commit and arrive with better questions."
       />
       <div className="guidance-grid">
         {guidanceItems.map((item) => (
@@ -592,20 +592,20 @@ function PackagesPage() {
     <PageFrame
       eyebrow="Packages"
       title="Choose the journey you are preparing for."
-      body="Umrah is active now. Hajj will open closer to the Hajj campaign window, with details published only after AMFAJ confirms them."
+      body="’Umrah is active now. Ḥajj will open closer to the Ḥajj campaign window, with details published only after AMFAJ confirms them."
     >
       <div className="category-grid">
         <Link className="category-card is-active" to="/packages/umrah">
           <PackageCheck size={28} />
           <span>Active</span>
-          <h2>Umrah Packages</h2>
+          <h2>’Umrah Packages</h2>
           <p>View the September package, inclusions, travel window, and registration CTA.</p>
         </Link>
         <Link className="category-card" to="/packages/hajj">
           <Clock size={28} />
           <span>Coming later</span>
-          <h2>Hajj Packages</h2>
-          <p>AMFAJ will publish Hajj package information when the campaign is ready.</p>
+          <h2>Ḥajj Packages</h2>
+          <p>AMFAJ will publish Ḥajj package information when the campaign is ready.</p>
         </Link>
       </div>
     </PageFrame>
@@ -615,8 +615,8 @@ function PackagesPage() {
 function UmrahPage() {
   return (
     <PageFrame
-      eyebrow="Umrah package"
-      title="September Umrah package details."
+      eyebrow="’Umrah package"
+      title="September ’Umrah package details."
       body="Clear pricing, clear inclusions, and a direct WhatsApp path for intending pilgrims."
     >
       <UmrahFeature />
@@ -629,10 +629,10 @@ function UmrahPage() {
 function HajjPackagePage() {
   return (
     <ComingSoon
-      eyebrow="Hajj packages"
-      title="Hajj package details will open closer to the season."
-      body="For now, AMFAJ is keeping the website focused on the active September Umrah campaign. Hajj information will be added when the package details are confirmed."
-      cta="Browse Active Umrah Package"
+      eyebrow="Ḥajj packages"
+      title="Ḥajj package details will open closer to the season."
+      body="For now, AMFAJ is keeping the website focused on the active September ’Umrah campaign. Ḥajj information will be added when the package details are confirmed."
+      cta="Browse Active ’Umrah Package"
       to="/packages/umrah"
     />
   );
@@ -643,20 +643,20 @@ function GuidancePage() {
     <PageFrame
       eyebrow="Guidance"
       title="Learn before the journey becomes urgent."
-      body="AMFAJ groups Umrah and Hajj preparation into one guidance home, so pilgrims can understand worship flow, travel conduct, and practical readiness."
+      body="AMFAJ brings ’Umrah and Ḥajj preparation together under one guidance home, providing pilgrims with scholar-led guidance to understand the rites of worship, proper travel conduct, and the practical steps needed for a smooth and spiritually rewarding journey."
     >
       <div className="category-grid">
         <Link className="category-card is-active" to="/guidance/umrah">
           <BookOpen size={28} />
           <span>Available</span>
-          <h2>Umrah Guidance</h2>
-          <p>Readiness checklist, what to confirm before payment, packing, and group travel adab.</p>
+          <h2>’Umrah Guidance</h2>
+          <p>Readiness checklist, what to confirm before payment, packing, and group travel ādāb.</p>
         </Link>
         <Link className="category-card" to="/guidance/hajj">
           <Clock size={28} />
           <span>Early state</span>
-          <h2>Hajj Guidance</h2>
-          <p>A quiet placeholder for future Hajj education as the campaign matures.</p>
+          <h2>Ḥajj Guidance</h2>
+          <p>A quiet placeholder for future Ḥajj education as the campaign matures.</p>
         </Link>
       </div>
     </PageFrame>
@@ -668,12 +668,12 @@ function UmrahGuidancePage() {
     ["Readiness checklist", "Passport validity, package review, health preparation, and personal essentials."],
     ["Before you pay", "Confirm inclusions, dates, departure city, payment expectations, and communication channel."],
     ["What to pack", "Keep worship, comfort, medication, documents, and modest travel needs organized."],
-    ["Group travel adab", "Patience, punctuality, respectful speech, and cooperation with guides protect the journey."],
+    ["Group travel ādāb", "Patience, punctuality, respectful speech, and cooperation with guides protect the journey."],
   ];
 
   return (
     <PageFrame
-      eyebrow="Umrah guidance"
+      eyebrow="’Umrah guidance"
       title="Prepare with knowledge, order, and calm."
       body="This first guidance page gives AMFAJ a clean foundation for future articles and downloadable checklists."
     >
@@ -694,10 +694,10 @@ function UmrahGuidancePage() {
 function HajjGuidancePage() {
   return (
     <ComingSoon
-      eyebrow="Hajj guidance"
-      title="Hajj guidance will grow when AMFAJ begins the Hajj campaign."
-      body="This section is reserved for structured Hajj education. For now, visitors can explore Umrah guidance or contact AMFAJ for general travel questions."
-      cta="Open Umrah Guidance"
+      eyebrow="Ḥajj guidance"
+      title="Ḥajj guidance will grow when AMFAJ begins the Ḥajj campaign."
+      body="This section is reserved for structured Ḥajj education. For now, visitors can explore ’Umrah guidance or contact AMFAJ for general travel questions."
+      cta="Open ’Umrah Guidance"
       to="/guidance/umrah"
     />
   );
@@ -726,7 +726,7 @@ function ContactPage() {
   return (
     <PageFrame
       eyebrow="Contact"
-      title="Speak with AMFAJ about September Umrah."
+      title="Speak with AMFAJ about September ’Umrah."
       body="WhatsApp is the fastest path for registration readiness, package questions, sponsorship discussions, and next-step confirmation."
     >
       <div className="contact-panel">
@@ -812,14 +812,36 @@ function PageFrame({
   body: string;
   children: React.ReactNode;
 }) {
+  // Map page names to the correct CSS banner background classes
+  let bgClass = "bg-general";
+  const rawKey = eyebrow.toLowerCase();
+
+  if (rawKey.includes("package")) {
+    bgClass = "bg-packages";
+  } else if (rawKey.includes("guidance")) {
+    bgClass = "bg-guidance";
+  } else if (rawKey.includes("faq")) {
+    bgClass = "bg-faq";
+  } else if (rawKey.includes("contact")) {
+    bgClass = "bg-contact";
+  }
+
   return (
     <section className="page-frame">
-      <div className="page-hero">
-        <p className="eyebrow">{eyebrow}</p>
-        <h1>{title}</h1>
-        <p>{body}</p>
+      <div className={`page-hero ${bgClass}`}>
+        <div className="page-hero-content">
+          <nav className="breadcrumbs" aria-label="Breadcrumb">
+            <Link to="/">Home</Link>
+            <span className="separator">&gt;</span>
+            <span className="current">{eyebrow}</span>
+          </nav>
+          <h1>{title}</h1>
+          <p>{body}</p>
+        </div>
       </div>
-      {children}
+      <div className="page-content-wrapper">
+        {children}
+      </div>
     </section>
   );
 }
@@ -847,7 +869,7 @@ function FinalCta() {
     <section className="section final-cta">
       <div>
         <p className="eyebrow inverse">Next step</p>
-        <h2>Ready to ask about the September Umrah package?</h2>
+        <h2>Ready to ask about the September ’Umrah package?</h2>
         <p>
           Open WhatsApp with the right message and let AMFAJ guide you through the confirmed next
           step.
@@ -866,13 +888,13 @@ function Footer() {
       <div className="footer-brand">
         <img src="/amfaj-logo-inverted.svg" alt="AMFAJ Travels and Tours" />
         <p>
-          Hajj and Umrah travel support with honesty, personalized hospitality, financial
+          Ḥajj and ’Umrah travel support with honesty, personalized hospitality, financial
           integrity, and scholar-led guidance.
         </p>
       </div>
       <div className="footer-grid">
-        <FooterColumn title="Packages" links={[["Umrah", "/packages/umrah"], ["Hajj", "/packages/hajj"]]} />
-        <FooterColumn title="Guidance" links={[["Hub", "/guidance"], ["Umrah", "/guidance/umrah"], ["Hajj", "/guidance/hajj"]]} />
+        <FooterColumn title="Packages" links={[["’Umrah", "/packages/umrah"], ["Ḥajj", "/packages/hajj"]]} />
+        <FooterColumn title="Guidance" links={[["Hub", "/guidance"], ["’Umrah", "/guidance/umrah"], ["Ḥajj", "/guidance/hajj"]]} />
         <FooterColumn title="Company" links={[["FAQ", "/faq"], ["Contact", "/contact"]]} />
         <FooterColumn title="Legal" links={[["Privacy", "/privacy"], ["Terms", "/terms"]]} />
       </div>
