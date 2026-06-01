@@ -27,7 +27,7 @@ import { useRef, useState, useEffect } from "react";
 
 const whatsappMessage =
   "Assalamu alaykum, I want to start registration for AMFAJ September Umrah.";
-const whatsappHref = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+const whatsappHref = `https://wa.me/2348069243134?text=${encodeURIComponent(whatsappMessage)}`;
 
 const packages = [
   {
