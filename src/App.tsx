@@ -401,8 +401,8 @@ function UmrahFeature() {
     <section className="section package-feature" id="packages">
       <SectionIntro
         eyebrow="Active package"
-        title="September ’Umrah is the priority now."
-        body="Two clear package paths make it easier for Nigeria-based pilgrims, diaspora pilgrims, and sponsors to understand the offer before opening a WhatsApp conversation."
+        title="Our September ’Umrah registration is now open."
+        body="Our active September ’Umrah is our primary focus right now. We have outlined two clear package options to help you—whether you are traveling from Nigeria or joining us from the diaspora—understand exactly what is included before we begin your registration on WhatsApp."
       />
       <div className="package-grid">
         {packages.map((pkg) => (
@@ -459,11 +459,9 @@ function PackageBreakdown() {
     <section className="section split-section" id="package-breakdown">
       <div>
         <p className="eyebrow">Full breakdown</p>
-        <h2>What intending pilgrims should see before they ask questions.</h2>
+        <h2>Everything you need to know before we begin your journey.</h2>
         <p>
-          AMFAJ keeps the package conversation plain: dates, locations, inclusions, and the next
-          step. Pricing and inclusions are shown clearly so every serious inquiry begins from the
-          same understanding.
+          We believe in total honesty and financial integrity: no hidden fees, no unverified promises. We show your pricing, travel windows, and inclusions clearly so you can start your journey from a place of complete clarity.
         </p>
         <Link className="text-link" to="/packages/umrah">
           View the ’Umrah package page <ArrowRight size={17} />
@@ -552,7 +550,7 @@ function GuidancePreview() {
       <SectionIntro
         eyebrow="Guidance"
         title="Education that makes the registration conversation easier."
-        body="The Guidance section groups ’Umrah and Ḥajj preparation in one place, so visitors can learn before they commit and arrive with better questions."
+        body="We bring our ’Umrah and Ḥajj preparation resources together in one place, helping you prepare your heart and knowledge before you commit, so you can embark on your journey with complete peace of mind."
       />
       <div className="guidance-grid">
         {guidanceItems.map((item) => (
@@ -591,8 +589,8 @@ function PackagesPage() {
   return (
     <PageFrame
       eyebrow="Packages"
-      title="Choose the journey you are preparing for."
-      body="’Umrah is active now. Ḥajj will open closer to the Ḥajj campaign window, with details published only after AMFAJ confirms them."
+      title="Choose the sacred journey you are preparing for."
+      body="Select the sacred journey you are preparing for. Our active September ’Umrah package is ready for registration, while our Ḥajj package details will be shared here the moment every operational detail is verified and confirmed, In Shā’ Allāh."
     >
       <div className="category-grid">
         <Link className="category-card is-active" to="/packages/umrah">
@@ -642,7 +640,7 @@ function GuidancePage() {
   return (
     <PageFrame
       eyebrow="Guidance"
-      title="Learn before the journey becomes urgent."
+      title="Prepare your heart and mind with authentic knowledge before your journey."
       body="AMFAJ brings ’Umrah and Ḥajj preparation together under one guidance home, providing pilgrims with scholar-led guidance to understand the rites of worship, proper travel conduct, and the practical steps needed for a smooth and spiritually rewarding journey."
     >
       <div className="category-grid">
@@ -707,8 +705,8 @@ function FaqPage() {
   return (
     <PageFrame
       eyebrow="FAQ"
-      title="Straight answers before WhatsApp."
-      body="These answers protect trust by keeping AMFAJ's claims specific, truthful, and easy to verify."
+      title="Clear, honest answers to help you prepare before you register."
+      body="We believe in complete transparency and have answered your primary questions here so you can verify details easily and proceed with trust."
     >
       <div className="faq-list standalone">
         {faqs.map((item) => (
@@ -726,8 +724,8 @@ function ContactPage() {
   return (
     <PageFrame
       eyebrow="Contact"
-      title="Speak with AMFAJ about September ’Umrah."
-      body="WhatsApp is the fastest path for registration readiness, package questions, sponsorship discussions, and next-step confirmation."
+      title="We are here to support your sacred journey."
+      body="Connect with us on WhatsApp for absolute clarity on your September ’Umrah registration, package details, or sponsorship discussions. Let us take the next step together."
     >
       <div className="contact-panel">
         <div>
@@ -754,8 +752,8 @@ function LegalPage({ type }: { type: "privacy" | "terms" }) {
       title={isPrivacy ? "Privacy Policy" : "Terms and Conditions"}
       body={
         isPrivacy
-          ? "A simple launch-ready privacy page for AMFAJ's inquiry-led website."
-          : "A simple launch-ready terms page for package inquiry and public information."
+          ? "Your privacy and trust are a sacred trust to us. Read how we handle and protect your inquiry details."
+          : "Clear terms to protect your journey. Read our package inquiries and public information guidelines."
       }
     >
       <article className="legal-card">
@@ -788,10 +786,9 @@ function ComingSoon({
     <PageFrame eyebrow={eyebrow} title={title} body={body}>
       <div className="empty-state">
         <Sparkles size={32} />
-        <h2>Not inactive. Just intentionally quiet.</h2>
+        <h2>We are preparing details with absolute care.</h2>
         <p>
-          AMFAJ will publish details only when the facts are ready. That keeps the brand's public
-          promises clean and protects intending pilgrims from confusion.
+          We only publish package information when every date, price, and accommodation is 100% verified, protecting you from confusion and keeping our promises completely honest.
         </p>
         <Link className="button button-primary" to={to}>
           {cta} <ArrowRight size={18} />
