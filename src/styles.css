@@ -237,7 +237,15 @@ img {
 
 .button-whatsapp {
   background: var(--whatsapp);
-  color: #052b1a;
+  color: var(--white);
+}
+
+.button-whatsapp svg {
+  color: var(--white);
+}
+
+.button-whatsapp:hover {
+  background: var(--whatsapp-dark);
 }
 
 .full-width {
