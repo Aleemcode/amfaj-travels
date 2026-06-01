@@ -98,19 +98,19 @@ const faqs = [
 const guidanceItems = [
   {
     title: "’Umrah readiness",
-    body: "Prepare documents, intention, travel expectations, and personal essentials before payment conversations become urgent.",
+    body: "Prepare your documents, intention, and essentials so you can start your journey with absolute clarity and peace of mind.",
     icon: CheckCircle2,
     to: "/guidance/umrah",
   },
   {
     title: "Ritual clarity",
-    body: "Understand the flow of ’Umrah with calm explanations and reminders that keep the journey grounded in worship.",
+    body: "Learn the step-by-step rites of ’Umrah with clear, calm explanations that keep your heart focused on sincere worship.",
     icon: BookOpen,
     to: "/guidance/umrah",
   },
   {
     title: "Group travel ādāb",
-    body: "Travel with patience, order, and respect for the group, the guides, and the sacred places.",
+    body: "Nurture your character with patience and respect for fellow pilgrims and the sacred boundaries as you travel together.",
     icon: Users,
     to: "/guidance/umrah",
   },
@@ -230,8 +230,8 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.16 }}
         >
-          AMFAJ Travels and Tours supports intending pilgrims with organized ’Umrah and Ḥajj travel,
-          honest promises, personalized hospitality, and scholar-led guidance.
+          We support you with organized ’Umrah and Ḥajj travel, completely honest promises,
+          bespoke personalized hospitality, and scholar-led guidance every step of the way.
         </motion.p>
         <motion.div
           className="hero-actions"
@@ -331,10 +331,10 @@ function HeroCardsSequence() {
             <BadgeCheck size={34} />
             <span>Verified guidance</span>
           </div>
-          <h3>Every journey under reputable scholarship.</h3>
+          <h3>Your journey is guided by reputable scholars.</h3>
           <p>
-            Each AMFAJ journey is planned with guidance from a reputable scholar or a certified
-            student of knowledge, In Shā’ Allāh.
+            We plan every step of your pilgrimage under the guidance of respected scholars and certified
+            students of knowledge, In Shā’ Allāh.
           </p>
           <Link className="outline-pill" to="/guidance">
             See Guidance
@@ -349,9 +349,9 @@ function HeroCardsSequence() {
           <div className="mini-seal">
             <HeartHandshake size={28} />
           </div>
-          <h3>AMFAJ keeps sacred travel organized and sincere.</h3>
+          <h3>Keeping your sacred travel organized and sincere.</h3>
           <p>
-            We serve pilgrims with honesty, personalized hospitality, financial integrity, and zero
+            We serve you with total honesty, personalized hospitality, financial integrity, and zero
             hidden fees.
           </p>
           <a className="text-link text-link-dark" href="#package-breakdown">
@@ -487,16 +487,15 @@ function AboutSection() {
       </div>
       <div>
         <p className="eyebrow inverse">About AMFAJ</p>
-        <h2>Built for pilgrims who want organized travel without losing the spirit of worship.</h2>
+        <h2>Built for you: organized travel designed so you never lose the spirit of worship.</h2>
         <p>
-          AMFAJ Travels and Tours serves Muslims seeking Ḥajj and ’Umrah support that is sincere,
-          dignified, and guided by the Qur'an and Sunnah upon the understanding of the pious
-          predecessors.
+          We serve you with ’Umrah and Ḥajj travel support that is sincere, dignified, and guided by
+          the Qur'an and Sunnah upon the understanding of the pious predecessors.
         </p>
         <div className="promise-grid">
           <Promise icon={ShieldCheck} title="Financial integrity" body="Clear promises and zero hidden fees." />
-          <Promise icon={HeartHandshake} title="Personal hospitality" body="Care that treats every pilgrim as a trust." />
-          <Promise icon={Compass} title="Guided journey" body="Preparation and tutelage shaped around worship." />
+          <Promise icon={HeartHandshake} title="Personal hospitality" body="Care that treats you as a sacred trust." />
+          <Promise icon={Compass} title="Guided journey" body="Your preparation and tutelage shaped around pure worship." />
         </div>
       </div>
     </section>
@@ -526,18 +525,19 @@ function ScholarStandard() {
     <section className="section scholar-section">
       <div className="scholar-copy">
         <p className="eyebrow">Universal AMFAJ standard</p>
-        <h2>Scholar-led guidance is not treated as an add-on.</h2>
+        <h2>We believe authentic guidance is a necessity, never an afterthought.</h2>
         <p>
-          AMFAJ is intentional about scholar-led guidance across its packages. For this coming
-          ’Umrah, Dr. Sharafuddeen Gbadebo Raaji is planned to join as a scholar, with pilgrims
-          under his tutelage, In Shā’ Allāh.
+          We are intentional about providing you with scholar-led guidance across all our packages.
+          For this coming ’Umrah, Dr. Sharafuddeen Gbadebo Raaji is planned to join as a scholar,
+          giving you direct access to authentic knowledge and tutelage throughout your journey, In Shā’ Allāh.
         </p>
       </div>
       <div className="notice-card">
         <BookOpen size={24} />
         <p>
-          AMFAJ supports preparation and guidance. Worship acceptance belongs to Allāh, and public
-          claims must remain truthful and verified.
+          We are committed to helping you prepare with sincerity and clear knowledge. While we guide
+          your steps, the acceptance of our worship belongs to Allāh alone, and we pledge to remain
+          completely honest and truthful in everything we promise.
         </p>
       </div>
     </section>
@@ -570,8 +570,8 @@ function FaqSection() {
     <section className="section faq-preview">
       <SectionIntro
         eyebrow="FAQ"
-        title="Questions serious pilgrims ask before they register."
-        body="Short answers keep the path clear and prevent unsupported claims from slipping into sales conversations."
+        title="Clear answers to help you prepare before you register."
+        body="We believe in absolute honesty and clarity. We have gathered answers to your primary questions here so you can understand every aspect of your journey with peace of mind."
       />
       <div className="faq-list">
         {faqs.slice(0, 4).map((item) => (
@@ -614,8 +614,8 @@ function UmrahPage() {
   return (
     <PageFrame
       eyebrow="’Umrah package"
-      title="September ’Umrah package details."
-      body="Clear pricing, clear inclusions, and a direct WhatsApp path for intending pilgrims."
+      title="Everything you need for your September ’Umrah."
+      body="We believe in absolute clarity: honest pricing, complete inclusions, and a direct WhatsApp path to start your registration today."
     >
       <UmrahFeature />
       <PackageBreakdown />
@@ -628,8 +628,8 @@ function HajjPackagePage() {
   return (
     <ComingSoon
       eyebrow="Ḥajj packages"
-      title="Ḥajj package details will open closer to the season."
-      body="For now, AMFAJ is keeping the website focused on the active September ’Umrah campaign. Ḥajj information will be added when the package details are confirmed."
+      title="Our Ḥajj packages will be announced as the sacred season approaches."
+      body="To maintain absolute honesty and clarity, we will publish Ḥajj packages only when every date, price, and flight schedule is completely confirmed. For now, you are welcome to explore our active September ’Umrah package."
       cta="Browse Active ’Umrah Package"
       to="/packages/umrah"
     />
@@ -641,7 +641,7 @@ function GuidancePage() {
     <PageFrame
       eyebrow="Guidance"
       title="Prepare your heart and mind with authentic knowledge before your journey."
-      body="AMFAJ brings ’Umrah and Ḥajj preparation together under one guidance home, providing pilgrims with scholar-led guidance to understand the rites of worship, proper travel conduct, and the practical steps needed for a smooth and spiritually rewarding journey."
+      body="We bring our ’Umrah and Ḥajj preparation resources together under one guidance home, providing you with scholar-led guidance to understand the rites of worship, proper travel conduct, and the practical steps needed for a smooth and spiritually rewarding journey."
     >
       <div className="category-grid">
         <Link className="category-card is-active" to="/guidance/umrah">
@@ -663,17 +663,17 @@ function GuidancePage() {
 
 function UmrahGuidancePage() {
   const topics = [
-    ["Readiness checklist", "Passport validity, package review, health preparation, and personal essentials."],
-    ["Before you pay", "Confirm inclusions, dates, departure city, payment expectations, and communication channel."],
-    ["What to pack", "Keep worship, comfort, medication, documents, and modest travel needs organized."],
-    ["Group travel ādāb", "Patience, punctuality, respectful speech, and cooperation with guides protect the journey."],
+    ["Readiness checklist", "Verify your passport validity, review your package choices, prepare your health, and organize your personal essentials."],
+    ["Before you register", "Confirm your package inclusions, travel dates, departure city, and next steps with us directly."],
+    ["What to pack", "Keep your worship essentials, comfortable clothing, medication, travel documents, and modest attire carefully organized."],
+    ["Group travel ādāb", "Nurture patience, punctuality, respectful speech, and loving cooperation with your guides and fellow pilgrims to preserve the blessings of the journey."],
   ];
 
   return (
     <PageFrame
       eyebrow="’Umrah guidance"
       title="Prepare with knowledge, order, and calm."
-      body="This first guidance page gives AMFAJ a clean foundation for future articles and downloadable checklists."
+      body="We have designed this guidance to help you prepare your document check, packing lists, and group travel character so you can embark on your spiritual journey with complete clarity and peace of mind."
     >
       <div className="topic-grid">
         {topics.map(([title, body]) => (
@@ -693,8 +693,8 @@ function HajjGuidancePage() {
   return (
     <ComingSoon
       eyebrow="Ḥajj guidance"
-      title="Ḥajj guidance will grow when AMFAJ begins the Ḥajj campaign."
-      body="This section is reserved for structured Ḥajj education. For now, visitors can explore ’Umrah guidance or contact AMFAJ for general travel questions."
+      title="Ḥajj preparation resources will be shared as the season approaches."
+      body="We are preparing comprehensive Ḥajj guidance materials to support your journey. For now, you are welcome to explore our ’Umrah guidance or contact us directly on WhatsApp for any questions about Hajj planning."
       cta="Open ’Umrah Guidance"
       to="/guidance/umrah"
     />
@@ -730,10 +730,10 @@ function ContactPage() {
       <div className="contact-panel">
         <div>
           <MessageCircle size={34} />
-          <h2>Start with a clear message.</h2>
+          <h2>Let's talk on WhatsApp.</h2>
           <p>
-            The button opens WhatsApp with a prepared inquiry so the conversation begins with the
-            right context.
+            Clicking the button will open WhatsApp with a helpful, pre-written message, letting us
+            assist you and answer your questions right away.
           </p>
         </div>
         <a className="button button-whatsapp" href={whatsappHref}>
@@ -863,13 +863,13 @@ function SectionIntro({
 
 function FinalCta() {
   return (
-    <section className="section final-cta">
+    <section className="final-cta">
       <div>
         <p className="eyebrow inverse">Next step</p>
-        <h2>Ready to ask about the September ’Umrah package?</h2>
+        <h2>Ready to begin your sacred journey?</h2>
         <p>
-          Open WhatsApp with the right message and let AMFAJ guide you through the confirmed next
-          step.
+          Start your registration on WhatsApp today. Let us guide you through every step of this
+          blessed preparation with complete honesty and care.
         </p>
       </div>
       <a className="button button-light button-arrow" href={whatsappHref}>

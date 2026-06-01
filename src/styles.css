@@ -1002,18 +1002,21 @@ details p {
 
 .final-cta {
   position: relative;
-  margin-top: 34px;
-  margin-bottom: 112px;
-  padding: 64px 48px; /* Slightly more premium padding */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-top: 54px;
+  margin-bottom: 0; /* Merges directly into the footer! */
+  padding: 92px max(28px, calc((100% - 1180px) / 2));
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
-  border-radius: 38px;
+  gap: 42px;
+  border-radius: 0;
   overflow: hidden;
   background-color: var(--navy);
   background-image: 
-    linear-gradient(90deg, rgba(3, 12, 53, 0.92) 30%, rgba(3, 12, 53, 0.65) 100%),
+    linear-gradient(90deg, rgba(3, 12, 53, 0.94) 35%, rgba(3, 12, 53, 0.65) 100%),
     url("/umrah-banner.png");
   background-position: center;
   background-size: cover;
@@ -1410,10 +1413,17 @@ details p {
   }
 
   .about-band,
-  .scholar-copy,
-  .final-cta {
+  .scholar-copy {
     padding: 28px;
     border-radius: 28px;
+  }
+
+  .final-cta {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding: 48px 18px;
+    border-radius: 0;
   }
 
   .fact-row {
