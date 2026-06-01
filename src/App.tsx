@@ -19,6 +19,8 @@ import {
   ShieldCheck,
   Sparkles,
   Users,
+  Volume2,
+  VolumeX,
   X,
 } from "lucide-react";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
@@ -202,8 +204,6 @@ function HomePage() {
 }
 
 function Hero() {
-  const [videoExpanded, setVideoExpanded] = useState(false);
-
   return (
     <section className="hero">
       <div className="hero-copy hero-copy-centered">
@@ -245,46 +245,16 @@ function Hero() {
           </Link>
         </motion.div>
       </div>
-      <HeroCardsSequence videoExpanded={videoExpanded} onPlay={() => setVideoExpanded(true)} />
-      {videoExpanded && (
-        <motion.div
-          className="video-expander"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.35, ease: "easeOut" }}
-        >
-          <button
-            className="video-close-btn"
-            onClick={() => setVideoExpanded(false)}
-            aria-label="Close video player"
-          >
-            <X size={24} />
-          </button>
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/YDcMsYV7K0A?autoplay=1"
-            title="September Umrah Guidance"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-            style={{ width: "100%", height: "100%", border: 0 }}
-          />
-        </motion.div>
-      )}
+      <HeroCardsSequence />
     </section>
   );
 }
 
-function HeroCardsSequence({
-  videoExpanded,
-  onPlay,
-}: {
-  videoExpanded: boolean;
-  onPlay: () => void;
-}) {
+function HeroCardsSequence() {
   const sequenceRef = useRef<HTMLDivElement>(null);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+  const [isMuted, setIsMuted] = useState(true);
+
   const { scrollYProgress } = useScroll({
     target: sequenceRef,
     offset: ["start start", "end end"],
@@ -313,9 +283,38 @@ function HeroCardsSequence({
   const rawUiOpacity = useTransform(scrollYProgress, [0, 0.1, 0.25, 1], [1, 1, 0, 0]);
   const uiOpacity = useSpring(rawUiOpacity, springConfig);
 
-  // Sliding overlay z-index and translate (completely slid away by 35% progress)
-  const rawOverlayY = useTransform(scrollYProgress, [0, 0.1, 0.35, 1], ["0%", "0%", "-100%", "-100%"]);
-  const overlayY = useSpring(rawOverlayY, springConfig);
+  const toggleMute = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    e.preventDefault();
+    if (!iframeRef.current) return;
+
+    const newMuteState = !isMuted;
+    setIsMuted(newMuteState);
+
+    const command = newMuteState ? "mute" : "unMute";
+
+    // Send command via postMessage
+    iframeRef.current.contentWindow?.postMessage(
+      JSON.stringify({
+        event: "command",
+        func: command,
+        args: "",
+      }),
+      "*"
+    );
+
+    // Explicitly maximize volume when unmuting to guarantee sound output
+    if (!newMuteState) {
+      iframeRef.current.contentWindow?.postMessage(
+        JSON.stringify({
+          event: "command",
+          func: "setVolume",
+          args: [100],
+        }),
+        "*"
+      );
+    }
+  };
 
   return (
     <div className="hero-sequence" ref={sequenceRef}>
@@ -358,7 +357,7 @@ function HeroCardsSequence({
           </a>
         </motion.article>
         <motion.article
-          className={videoExpanded ? "hero-video-card is-expanding" : "hero-video-card"}
+          className="hero-video-card"
           initial={{ opacity: 0, y: 26 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.44 }}
@@ -370,24 +369,25 @@ function HeroCardsSequence({
             transformOrigin: "center center" 
           }}
         >
-          <img
-            src="https://img.youtube.com/vi/YDcMsYV7K0A/maxresdefault.jpg"
-            alt="Pilgrims around the Ka'bah placeholder"
+          <iframe
+            ref={iframeRef}
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/YDcMsYV7K0A?autoplay=1&mute=1&controls=1&loop=1&playlist=YDcMsYV7K0A&rel=0&playsinline=1&enablejsapi=1"
+            title="September Umrah Guidance"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            style={{ width: "100%", height: "100%", border: 0, position: "absolute", inset: 0, zIndex: 0 }}
           />
-          <motion.div className="hero-video-overlay" style={{ y: overlayY }} />
+          <button className="video-audio-toggle" onClick={toggleMute} aria-label={isMuted ? "Unmute video" : "Mute video"}>
+            {isMuted ? <VolumeX size={16} /> : <Volume2 size={16} />}
+            <span>{isMuted ? "Unmute" : "Mute"}</span>
+          </button>
           <motion.div className="video-caption" style={{ opacity: uiOpacity }}>
             <span>September Umrah Guidance</span>
             <strong>Scholar-Led Prep Tutelage Standard</strong>
           </motion.div>
-          <motion.button 
-            className="play-button" 
-            type="button" 
-            onClick={onPlay} 
-            aria-label="Play AMFAJ intro preview"
-            style={{ opacity: uiOpacity }}
-          >
-            <Play size={28} fill="currentColor" />
-          </motion.button>
         </motion.article>
       </div>
     </div>

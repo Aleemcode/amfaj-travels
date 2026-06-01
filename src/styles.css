@@ -499,14 +499,6 @@ p {
   transform-style: preserve-3d;
 }
 
-.hero-video-overlay {
-  position: absolute;
-  inset: 0;
-  background: var(--navy);
-  z-index: 1;
-  pointer-events: none;
-}
-
 .hero-video-card img {
   width: 100%;
   height: 100%;
@@ -529,6 +521,39 @@ p {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(3, 12, 53, 0.04), rgba(3, 12, 53, 0.5));
+  pointer-events: none; /* Let clicks pass through to the iframe controls */
+}
+
+.video-audio-toggle {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  background: rgba(3, 12, 53, 0.6);
+  backdrop-filter: blur(10px);
+  color: var(--white);
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(3, 12, 53, 0.15);
+}
+
+.video-audio-toggle:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  transform: scale(1.05);
+}
+
+.video-audio-toggle svg {
+  flex-shrink: 0;
 }
 
 .video-caption {
@@ -538,6 +563,7 @@ p {
   bottom: 26px;
   max-width: 320px;
   color: var(--white);
+  pointer-events: none; /* Let clicks pass through to the iframe controls */
 }
 
 .video-caption span {
