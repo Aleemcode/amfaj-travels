@@ -705,6 +705,7 @@ p {
 }
 
 .package-card,
+.guidance-card,
 .category-card,
 .topic-card,
 .legal-card,
@@ -930,6 +931,17 @@ p {
 
 .notice-card svg {
   color: var(--orange);
+}
+
+.guidance-preview-section {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  padding: 82px max(28px, calc((100% - 1180px) / 2));
+  background-color: var(--mist);
+  border-top: 1px solid rgba(3, 12, 53, 0.05);
+  border-bottom: 1px solid rgba(3, 12, 53, 0.05);
 }
 
 .guidance-grid,
@@ -1310,6 +1322,10 @@ details p {
     align-items: stretch;
     flex-direction: column;
   }
+
+  .guidance-preview-section {
+    padding: 82px 14px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1474,10 +1490,15 @@ details p {
     font-weight: 800;
     box-shadow: none;
   }
+
+  .guidance-preview-section {
+    padding: 58px 11px;
+  }
 }
 
 /* Faint Watermarks using the custom Kaaba image asset */
 .package-card::before,
+.guidance-card::before,
 .category-card::before,
 .topic-card::before,
 .legal-card::before,

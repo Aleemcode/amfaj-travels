@@ -589,7 +589,7 @@ function ScholarStandard() {
 
 function GuidancePreview() {
   return (
-    <section className="section">
+    <section className="guidance-preview-section">
       <SectionIntro
         eyebrow="Guidance"
         title="Education that makes the registration conversation easier."
