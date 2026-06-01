@@ -441,7 +441,14 @@ function HeroCardsSequence() {
 
 function UmrahFeature() {
   return (
-    <section className="section package-feature" id="packages">
+    <motion.section
+      className="section package-feature"
+      id="packages"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-12% 0px" }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    >
       <SectionIntro
         eyebrow="Active package"
         title="Our September ’Umrah registration is now open."
@@ -452,7 +459,7 @@ function UmrahFeature() {
           <PackageCard key={pkg.id} {...pkg} />
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 
@@ -499,7 +506,14 @@ function PackageBreakdown() {
   ];
 
   return (
-    <section className="section split-section" id="package-breakdown">
+    <motion.section
+      className="section split-section"
+      id="package-breakdown"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-12% 0px" }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    >
       <div>
         <p className="eyebrow">Full breakdown</p>
         <h2>Everything you need to know before we begin your journey.</h2>
@@ -518,13 +532,19 @@ function PackageBreakdown() {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 
 function AboutSection() {
   return (
-    <section className="section about-band">
+    <motion.section
+      className="section about-band"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-12% 0px" }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    >
       <div className="about-mark">
         <img src="/amfaj-logo-inverted.svg" alt="AMFAJ Travels and Tours" />
       </div>
@@ -541,7 +561,7 @@ function AboutSection() {
           <Promise icon={Compass} title="Guided journey" body="Your preparation and tutelage shaped around pure worship." />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
@@ -565,7 +585,13 @@ function Promise({
 
 function ScholarStandard() {
   return (
-    <section className="section scholar-section">
+    <motion.section
+      className="section scholar-section"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-12% 0px" }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    >
       <div className="scholar-copy">
         <p className="eyebrow">Universal AMFAJ standard</p>
         <h2>We believe authentic guidance is a necessity, never an afterthought.</h2>
@@ -583,13 +609,19 @@ function ScholarStandard() {
           completely honest and truthful in everything we promise.
         </p>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
 function GuidancePreview() {
   return (
-    <section className="guidance-preview-section">
+    <motion.section
+      className="guidance-preview-section"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-12% 0px" }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    >
       <SectionIntro
         eyebrow="Guidance"
         title="Education that makes the registration conversation easier."
@@ -604,13 +636,19 @@ function GuidancePreview() {
           </Link>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 
 function FaqSection() {
   return (
-    <section className="section faq-preview">
+    <motion.section
+      className="section faq-preview"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-12% 0px" }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    >
       <SectionIntro
         eyebrow="FAQ"
         title="Clear answers to help you prepare before you register."
@@ -624,7 +662,7 @@ function FaqSection() {
           </details>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }
 
@@ -880,7 +918,12 @@ function PageFrame({
   return (
     <section className="page-frame">
       <div className={`page-hero ${bgClass}`}>
-        <div className="page-hero-content">
+        <motion.div
+          className="page-hero-content"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        >
           <nav className="breadcrumbs" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <span className="separator">&gt;</span>
@@ -888,11 +931,16 @@ function PageFrame({
           </nav>
           <h1>{title}</h1>
           <p>{body}</p>
-        </div>
+        </motion.div>
       </div>
-      <div className="page-content-wrapper">
+      <motion.div
+        className="page-content-wrapper"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+      >
         {children}
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -917,7 +965,13 @@ function SectionIntro({
 
 function FinalCta() {
   return (
-    <section className="section final-cta">
+    <motion.section
+      className="section final-cta"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-12% 0px" }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+    >
       <div>
         <p className="eyebrow inverse">Next step</p>
         <h2>Ready to begin your sacred journey?</h2>
@@ -929,7 +983,7 @@ function FinalCta() {
       <ArrowButton variant="light" href={whatsappHref}>
         Start Registration
       </ArrowButton>
-    </section>
+    </motion.section>
   );
 }
 
