@@ -116,6 +116,49 @@ const guidanceItems = [
   },
 ];
 
+interface ArrowButtonProps {
+  href?: string;
+  to?: string;
+  variant: "primary" | "light" | "secondary";
+  children: React.ReactNode;
+}
+
+function ArrowButton({ href, to, variant, children }: ArrowButtonProps) {
+  const orbClass = variant === "light" ? "cta-orb cta-orb-navy" : "cta-orb";
+  const buttonClass = `button button-${variant} button-arrow`;
+
+  const content = (
+    <>
+      {children}
+      <span className={orbClass}>
+        <ArrowRight size={18} />
+      </span>
+    </>
+  );
+
+  if (href) {
+    return (
+      <a className={buttonClass} href={href}>
+        {content}
+      </a>
+    );
+  }
+
+  if (to) {
+    return (
+      <Link className={buttonClass} to={to}>
+        {content}
+      </Link>
+    );
+  }
+
+  return (
+    <button className={buttonClass}>
+      {content}
+    </button>
+  );
+}
+
 function App() {
   return (
     <div className="site-shell">
@@ -239,9 +282,9 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.24 }}
         >
-          <a className="button button-primary button-arrow" href={whatsappHref}>
-            Start Registration <span className="cta-orb"><ArrowRight size={18} /></span>
-          </a>
+          <ArrowButton variant="primary" href={whatsappHref}>
+            Start Registration
+          </ArrowButton>
           <Link className="button button-secondary" to="/packages">
             Browse Packages <ArrowRight size={18} />
           </Link>
@@ -801,9 +844,9 @@ function ComingSoon({
         <p>
           We only publish package information when every date, price, and accommodation is 100% verified, protecting you from confusion and keeping our promises completely honest.
         </p>
-        <Link className="button button-primary" to={to}>
-          {cta} <ArrowRight size={18} />
-        </Link>
+        <ArrowButton variant="primary" to={to}>
+          {cta}
+        </ArrowButton>
       </div>
     </PageFrame>
   );
@@ -883,9 +926,9 @@ function FinalCta() {
           blessed preparation with complete honesty and care.
         </p>
       </div>
-      <a className="button button-light button-arrow" href={whatsappHref}>
-        Start Registration <span className="cta-orb cta-orb-navy"><ArrowRight size={18} /></span>
-      </a>
+      <ArrowButton variant="light" href={whatsappHref}>
+        Start Registration
+      </ArrowButton>
     </section>
   );
 }
