@@ -743,28 +743,193 @@ function GuidancePage() {
 }
 
 function UmrahGuidancePage() {
-  const topics = [
-    ["Readiness checklist", "Verify your passport validity, review your package choices, prepare your health, and organize your personal essentials."],
-    ["Before you register", "Confirm your package inclusions, travel dates, departure city, and next steps with us directly."],
-    ["What to pack", "Keep your worship essentials, comfortable clothing, medication, travel documents, and modest attire carefully organized."],
-    ["Group travel ādāb", "Nurture patience, punctuality, respectful speech, and loving cooperation with your guides and fellow pilgrims to preserve the blessings of the journey."],
+  const steps = [
+    {
+      step: "01",
+      title: "Iḥrām",
+      description: "Begin your ’Umrah by making a sincere intention to enter the state of Iḥrām and perform its rites for the Sake of Allāh. Then wear the Iḥrām garments and commence your pilgrimage by reciting the Talbiyah.",
+      image: "/ihram_step.png",
+      details: [
+        "Make a sincere intention in your heart to enter the state of Iḥrām and perform its rites for the Sake of Allāh.",
+        "Wear the defined Iḥrām garments (two white unstitched sheets for men, modest loose clothing for women).",
+        "Commence your pilgrimage state by reciting the Talbiyah: \"Labbayk Allāhumma Labbayk, Labbayka Lā Sharīka Laka Labbayk...\""
+      ]
+    },
+    {
+      step: "02",
+      title: "Ṭawāf",
+      description: "Ṭawāf is the act of worship of circling the Ka‘bah in devotion to Allāh and seeking closeness to Him.",
+      image: "/tawaf_step.png",
+      details: [
+        "Enter the Maṭāf area and begin at the Black Stone, keeping the Ka‘bah on your left.",
+        "When aligned with the Black Stone, raise your hand and say, “Allāhu Akbar.”",
+        "Walk around the Ka‘bah in a counterclockwise direction while making Du‘ā‘ and remembering Allāh.",
+        "Each time you return to the Black Stone, you have completed one round. Again, raise your hand and say, “Allāhu Akbar.”",
+        "Continue in the same manner until you complete seven rounds."
+      ]
+    },
+    {
+      step: "03",
+      title: "Sa‘ī Between Ṣafā and Marwah",
+      description: "After completing Ṭawāf, proceed to Ṣafā to begin Sa‘ī, walking between the hills of Ṣafā and Marwah in remembrance of Hajar's struggle and devotion to Allāh.",
+      image: "/say_step.png",
+      details: [
+        "Start at Ṣafā, where signs indicate its location inside the Grand Mosque.",
+        "Walk from Ṣafā towards Marwah. Men should jog between the two green markers along the route (women continue walking normally).",
+        "Upon reaching Marwah, one lap is completed.",
+        "Turn back and walk from Marwah to Ṣafā. Continue until you complete seven laps, ending at Marwah. Men should jog between the green markers during each lap."
+      ]
+    },
+    {
+      step: "04",
+      title: "Shaving or Trimming the Hair",
+      description: "After completing Ṭawāf and Sa‘ī, the pilgrim ends the state of Iḥrām by cutting or shaving the hair. This marks the completion of ’Umrah, and all restrictions of Iḥrām are lifted.",
+      image: "/halq_step.png",
+      details: [
+        "For men: It is better to shave the entire head (Ḥalq), but shortening the hair (Taqsīr) is also allowed.",
+        "For women: They should cut a small portion of their hair (Taqsīr), about 1–2 cm (the size of a finger-joint) from the ends.",
+        "With this final step, your state of Iḥrām is lifted and the ’Umrah is complete."
+      ]
+    }
   ];
 
   return (
     <PageFrame
       eyebrow="’Umrah guidance"
       title="Prepare with knowledge, order, and calm."
-      body="We have designed this guidance to help you prepare your document check, packing lists, and group travel character so you can embark on your spiritual journey with complete clarity and peace of mind."
+      body="We have designed this journey map and checklist based on the Qur'an and Sunnah to help you understand the rites of ’Umrah before you begin your pilgrimage."
     >
-      <div className="topic-grid">
-        {topics.map(([title, body]) => (
-          <article className="topic-card" key={title}>
-            <CheckCircle2 size={22} />
-            <h2>{title}</h2>
-            <p>{body}</p>
-          </article>
-        ))}
+      <div className="guidance-journey-page">
+        {/* Intro Section */}
+        <section className="guidance-intro-section">
+          <div className="guidance-intro-grid">
+            <div className="guidance-intro-main">
+              <h2>A Sacred Journey of Devotion</h2>
+              <p>
+                ’Umrah is a sacred act of worship in Islām that involves visiting the Ka‘bah in Makkah and performing specific rites in devotion to Allāh. Unlike Ḥajj, which is obligatory upon those who are able and is performed during specific days of the Islāmic calendar, ’Umrah is a voluntary pilgrimage that can be performed at any time of the year.
+              </p>
+              <p>
+                It is often referred to as the “lesser pilgrimage,” yet it remains a tremendous opportunity for a Muslim to draw closer to Allāh, seek His Forgiveness, and renew their faith. Among the notable features of ’Umrah are its simplicity, flexibility of timing, and its ability to bring together Muslims from different parts of the world in a shared act of worship and submission to their Lord.
+              </p>
+              <p>
+                The benefits of ’Umrah are numerous. It serves as a means of expiation for sins, strengthens one's relationship with Allāh, increases spiritual awareness, and brings peace and tranquillity to the heart.
+              </p>
+            </div>
+            
+            <div className="guidance-intro-side">
+              {/* Hadith Card */}
+              <div className="hadith-card">
+                <Volume2 size={24} className="hadith-icon" />
+                <blockquote>
+                  “One ’Umrah to another is an expiation for the sins committed between them.”
+                </blockquote>
+                <cite>— Sahih al-Bukhari 1773, Sahih Muslim 1349</cite>
+              </div>
+
+              {/* Arkan Summary Card */}
+              <div className="arkan-card">
+                <ShieldCheck size={24} className="arkan-icon" />
+                <h3>The Four Pillars (Arkān)</h3>
+                <ul>
+                  <li><span>1</span> Entering Iḥrām with intention</li>
+                  <li><span>2</span> Ṭawāf around the Ka‘bah</li>
+                  <li><span>3</span> Sa‘ī between Ṣafā and Marwah</li>
+                  <li><span>4</span> Shaving or trimming the hair</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Journey Map Stepper Title */}
+        <div className="journey-title-block">
+          <p className="eyebrow">Interactive Path</p>
+          <h2>The Rites of ’Umrah Step-by-Step</h2>
+          <p>Follow the chronological timeline to learn how each rite is performed in accordance with the Sunnah.</p>
+        </div>
+
+        {/* Winding Timeline Journey Map */}
+        <div className="journey-roadmap">
+          <div className="journey-timeline-line" />
+          
+          {steps.map((node, index) => {
+            const isEven = index % 2 === 0;
+            return (
+              <motion.div
+                key={node.step}
+                className={`journey-node ${isEven ? "journey-node-left" : "journey-node-right"}`}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-10% 0px" }}
+                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+              >
+                {/* Timeline Dot Indicator */}
+                <div className="journey-dot">
+                  <span>{node.step}</span>
+                </div>
+
+                {/* Step Content Card */}
+                <div className="journey-card">
+                  <div className="journey-card-image-box">
+                    <img src={node.image} alt={node.title} />
+                  </div>
+                  <div className="journey-card-info">
+                    <span className="step-tag">Step {node.step}</span>
+                    <h3>{node.title}</h3>
+                    <p className="step-desc">{node.description}</p>
+                    
+                    <div className="step-actions-list">
+                      <h4>Ritual Guidelines:</h4>
+                      <ul>
+                        {node.details.map((detail, idx) => (
+                          <li key={idx}>
+                            <CheckCircle2 size={16} />
+                            <span>{detail}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* Recommended Sunnah Actions Section */}
+        <motion.section
+          className="sunnah-actions-section"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10% 0px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="sunnah-intro">
+            <Sparkles size={28} />
+            <h2>Recommended Sunnah Actions</h2>
+            <p>Enhance the reward of your pilgrimage by practicing these recommended acts of the Prophet (ﷺ):</p>
+          </div>
+          <div className="sunnah-grid">
+            <div className="sunnah-action-card">
+              <h3>Uncover Right Shoulder (Men)</h3>
+              <p>Uncover the right shoulder (Iḍṭibā‘) during Ṭawāf. After finishing Ṭawāf, cover it again before praying.</p>
+            </div>
+            <div className="sunnah-action-card">
+              <h3>Brisk Walking (Men)</h3>
+              <p>Walk briskly (Raml) with short steps during the first three rounds of Ṭawāf, and walk normally for the remaining four.</p>
+            </div>
+            <div className="sunnah-action-card">
+              <h3>Two Rak‘ahs of Ṭawāf</h3>
+              <p>After finishing Ṭawāf, pray two rak‘ahs behind Maqām Ibrāhīm if possible. If not, pray anywhere in Masjid al-Ḥarām.</p>
+            </div>
+            <div className="sunnah-action-card">
+              <h3>Jogging between markers (Men)</h3>
+              <p>Jog lightly during Sa‘ī between the two green-lit markers along the path between Ṣafā and Marwah.</p>
+            </div>
+          </div>
+        </motion.section>
       </div>
+
       <FinalCta />
     </PageFrame>
   );
