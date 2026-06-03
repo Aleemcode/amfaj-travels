@@ -65,7 +65,7 @@ img {
 }
 
 .site-shell {
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .header {
@@ -403,6 +403,7 @@ p {
 .hero-sequence {
   height: 1200px;
   margin-top: 54px;
+  margin-bottom: 580px; /* Space for the translated expanded video card */
   position: relative;
 }
 
@@ -1599,6 +1600,7 @@ details p {
   .hero-sequence {
     height: auto;
     margin-top: 48px;
+    margin-bottom: 0;
   }
 
   .hero-card-grid {
