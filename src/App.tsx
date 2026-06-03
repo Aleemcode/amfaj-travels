@@ -166,6 +166,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/packages" element={<PackagesPage />} />
           <Route path="/packages/umrah" element={<UmrahPage />} />
           <Route path="/packages/hajj" element={<HajjPackagePage />} />
@@ -203,6 +204,9 @@ function Header() {
       <nav className={open ? "nav is-open" : "nav"} aria-label="Main">
         <NavLink to="/" onClick={() => setOpen(false)}>
           Home
+        </NavLink>
+        <NavLink to="/about" onClick={() => setOpen(false)}>
+          About Us
         </NavLink>
         <div className="nav-group">
           <NavLink to="/packages" onClick={() => setOpen(false)}>
@@ -397,9 +401,9 @@ function HeroCardsSequence() {
             We serve you with total honesty, personalized hospitality, financial integrity, and zero
             hidden fees.
           </p>
-          <a className="text-link text-link-dark" href="#package-breakdown">
+          <Link className="text-link text-link-dark" to="/about">
             More About AMFAJ
-          </a>
+          </Link>
         </motion.article>
         <motion.article
           className="hero-video-card"
@@ -740,6 +744,7 @@ function GuidancePage() {
 }
 
 function UmrahGuidancePage() {
+  const [isTawafModalOpen, setIsTawafModalOpen] = useState(false);
   const steps = [
     {
       step: "01",
@@ -887,7 +892,16 @@ function UmrahGuidancePage() {
                       </ul>
                     </div>
                     {node.step === "01" && <InlineTalbiyahPlayer />}
-                    {node.step === "02" && <InteractiveTawafGuide />}
+                    {node.step === "02" && (
+                      <div className="timeline-action-block">
+                        <button
+                          className="button button-primary walkthrough-trigger-btn"
+                          onClick={() => setIsTawafModalOpen(true)}
+                        >
+                          <Compass size={18} /> See Visual Walkthrough
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -930,6 +944,11 @@ function UmrahGuidancePage() {
       </div>
 
       <FinalCta />
+      <AnimatePresence>
+        {isTawafModalOpen && (
+          <TawafWalkthroughModal onClose={() => setIsTawafModalOpen(false)} />
+        )}
+      </AnimatePresence>
     </PageFrame>
   );
 }
@@ -1162,7 +1181,7 @@ function Footer() {
       <div className="footer-grid">
         <FooterColumn title="Packages" links={[["’Umrah", "/packages/umrah"], ["Ḥajj", "/packages/hajj"]]} />
         <FooterColumn title="Guidance" links={[["Hub", "/guidance"], ["’Umrah", "/guidance/umrah"], ["Ḥajj", "/guidance/hajj"]]} />
-        <FooterColumn title="Company" links={[["FAQ", "/faq"], ["Contact", "/contact"]]} />
+        <FooterColumn title="Company" links={[["About Us", "/about"], ["FAQ", "/faq"], ["Contact", "/contact"]]} />
         <FooterColumn title="Legal" links={[["Privacy", "/privacy"], ["Terms", "/terms"]]} />
       </div>
     </footer>
@@ -1537,6 +1556,258 @@ function InteractiveTawafGuide() {
         )}
       </div>
     </div>
+  );
+}
+
+function TawafWalkthroughModal({ onClose }: { onClose: () => void }) {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, []);
+
+  return (
+    <motion.div
+      className="tawaf-modal-overlay"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      onClick={onClose}
+    >
+      <motion.div
+        className="tawaf-modal-container"
+        initial={{ opacity: 0, scale: 0.96, y: 15 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.96, y: 15 }}
+        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="tawaf-modal-top-bar">
+          <div className="modal-header-info">
+            <span className="modal-eyebrow">Interactive Guide & Visual</span>
+            <h2>Step 02: Ṭawāf Walkthrough</h2>
+          </div>
+          <button className="tawaf-modal-close" onClick={onClose} aria-label="Close modal">
+            <X size={20} />
+          </button>
+        </div>
+        <div className="tawaf-modal-grid">
+          <div className="tawaf-modal-left">
+            <div className="tawaf-image-scroll-wrapper">
+              <img src="/tawaf-guide-infographic.png" alt="Ka'bah Tawaf Guide Infographic" />
+            </div>
+            <div className="tawaf-image-caption">
+              <Compass size={14} className="spin-icon" />
+              <span>Scroll inside the image to view the details</span>
+            </div>
+          </div>
+          <div className="tawaf-modal-right">
+            <InteractiveTawafGuide />
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
+
+function AboutPage() {
+  const services = [
+    {
+      title: "Air Tickets",
+      icon: Plane,
+      description: "Seamless booking and arrangement of return tickets with premium airlines.",
+    },
+    {
+      title: "Visas",
+      icon: FileText,
+      description: "Hassle-free procurement of official ’Umrah and Hajj visas with absolute compliance.",
+    },
+    {
+      title: "Group Tours",
+      icon: Users,
+      description: "Well-coordinated, scholar-led group journeys for collective worship and support.",
+    },
+    {
+      title: "Chartered Flights",
+      icon: Plane,
+      description: "Specialized flight arrangements for peak periods (such as Hajj) to ensure timely departures.",
+    },
+    {
+      title: "Hotel Reservations",
+      icon: MapPin,
+      description: "Vetted accommodations in Makkah and Madīnah situated close to the Harams.",
+    },
+    {
+      title: "Holiday Packages",
+      icon: Sparkles,
+      description: "Specially curated spiritual and educational journeys for families and groups.",
+    },
+    {
+      title: "Family Tours",
+      icon: HeartHandshake,
+      description: "Tailored, slower-paced private packages designed for the specific needs of families.",
+    },
+    {
+      title: "’Umrah Bookings",
+      icon: PackageCheck,
+      description: "Comprehensive packages with flights, visas, hotels, guides, and Zamzam water.",
+    },
+    {
+      title: "Ḥajj Bookings",
+      icon: BadgeCheck,
+      description: "Dedicated and highly organized Hajj pilgrimage support, structured around the Sunnah.",
+    },
+  ];
+
+  return (
+    <PageFrame
+      eyebrow="About Us"
+      title="Sincere service, uncompromised integrity."
+      body="AMFAJ Travels and Tours serves Muslims seeking Hajj and ’Umrah travel support that is honest, dignified, and fully aligned with the Sunnah."
+    >
+      <div className="about-page-container">
+        {/* CEO Message Section */}
+        <section className="about-ceo-section">
+          <div className="about-ceo-grid">
+            <div className="about-ceo-speech-card">
+              <span className="speech-quote-icon">“</span>
+              <h2>A Message from Our Leadership</h2>
+              <p className="ceo-intro-greeting">Assalamu alaykum wa rahmatullahi wa barakatuh.</p>
+              <p>
+                At AMFAJ Travels and Tours, we believe that Hajj and ’Umrah are not merely journeys or travel bookings; they are sacred trusts. Our mission is to facilitate your pilgrimage with absolute honesty and the highest level of care.
+              </p>
+              <p>
+                We understand the deep anxiety pilgrims feel regarding hidden charges, unfulfilled promises, and incorrect guidance during worship. This is why we built AMFAJ on four pillars of integrity: absolute financial honesty, clear promises with zero hidden fees, scholar-led tutelage, and bespoke personalized hospitality.
+              </p>
+              <p>
+                When you choose AMFAJ, you are not just booking a ticket. You are embarking on a journey structured around the pure worship of Allah, guided by the Qur'an and the Sunnah as understood by the pious predecessors. Our team is committed to standing by your side at every step, ensuring your safety, comfort, and focus remain entirely on your devotion.
+              </p>
+              <p className="ceo-signoff">
+                We look forward to serving you on your next sacred journey. May Allah accept our intentions and acts of worship.
+              </p>
+              <div className="ceo-profile">
+                <strong>Alhaji Jamiu Akinyoola</strong>
+                <span>CEO, AMFAJ Travels and Tours</span>
+              </div>
+            </div>
+            
+            <div className="about-ceo-visual">
+              <div className="ceo-visual-card">
+                <div className="ceo-visual-accent" />
+                <div className="ceo-visual-content">
+                  <HeartHandshake className="ceo-visual-icon" size={48} />
+                  <h3>Honest Promises</h3>
+                  <p>“We serve you with total honesty, personalized hospitality, financial integrity, and zero hidden fees.”</p>
+                  <span className="ceo-visual-seal">Verified Sunni Standard</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Vision, Mission, Objectives Section */}
+        <section className="about-vmo-section">
+          <div className="about-vmo-grid">
+            <div className="vmo-card">
+              <div className="vmo-icon-box">
+                <Compass size={24} />
+              </div>
+              <h3>Our Vision</h3>
+              <p>
+                To be recognized as the premier Sunnah-guided travel service provider in Nigeria and for diaspora pilgrims, delivering transparent, high-integrity, and spiritually enriching pilgrimage solutions that set the industry standard for authenticity and care.
+              </p>
+            </div>
+            
+            <div className="vmo-card">
+              <div className="vmo-icon-box">
+                <ShieldCheck size={24} />
+              </div>
+              <h3>Our Mission</h3>
+              <p>
+                To facilitate sincere, stress-free, and religiously correct Hajj and ’Umrah journeys by providing bespoke hospitality, total financial integrity, and scholarly guidance, allowing every pilgrim to focus entirely on their devotion.
+              </p>
+            </div>
+            
+            <div className="vmo-card">
+              <div className="vmo-icon-box">
+                <CheckCircle2 size={24} />
+              </div>
+              <h3>Our Objectives</h3>
+              <ul>
+                <li>Make the sacred rites of Hajj and ’Umrah easy, accessible, and correctly aligned with the Sunnah.</li>
+                <li>Eliminate the anxiety of hidden charges and misleading travel promises through total transparency.</li>
+                <li>Provide continuous scholar-led education and support before, during, and after the pilgrimage.</li>
+                <li>Maintain a personalized, high-touch hospitality model that treats every pilgrim as an honored guest of Allah.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Services Section */}
+        <section className="about-services-section">
+          <div className="section-header-centered">
+            <h2>Our Core Services</h2>
+            <p>We handle every travel detail with professionalism and integrity, enabling you to focus completely on your devotion.</p>
+          </div>
+          <div className="about-services-grid">
+            {services.map((service, idx) => {
+              const IconComp = service.icon;
+              return (
+                <div key={idx} className="about-service-card">
+                  <div className="service-icon-circle">
+                    <IconComp size={24} />
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Trust Pillars / Value Proposition */}
+        <section className="about-pillars-section">
+          <div className="section-header-centered">
+            <h2>The AMFAJ Standard</h2>
+            <p>Four foundational promises that set our service apart and safeguard your journey.</p>
+          </div>
+          <div className="about-pillars-grid">
+            <div className="pillar-card">
+              <CheckCircle2 className="pillar-icon" />
+              <h3>Honesty with Promises</h3>
+              <p>We only promise what we can deliver. Every accommodation distance, meal option, and transport detail is verified before departure.</p>
+            </div>
+            <div className="pillar-card">
+              <Users className="pillar-icon" />
+              <h3>Bespoke Hospitality</h3>
+              <p>We treat our pilgrims as the honored guests of Allah. Our staff provides personalized care to accommodate individual health and comfort needs.</p>
+            </div>
+            <div className="pillar-card">
+              <ShieldCheck className="pillar-icon" />
+              <h3>Total Financial Integrity</h3>
+              <p>We maintain strict financial transparency. Your funds are secured, and all services are pre-booked to guarantee stability.</p>
+            </div>
+            <div className="pillar-card">
+              <BadgeCheck className="pillar-icon" />
+              <h3>Zero Hidden Fees</h3>
+              <p>The price you see is the price you pay. We do not charge surprise surcharges for visas, local guides, or ground transport.</p>
+            </div>
+          </div>
+        </section>
+
+        {/* About CTA Card */}
+        <div className="about-cta-card-wrapper">
+          <div className="about-cta-card">
+            <h2>Join Our Next Journey</h2>
+            <p>Experience a stress-free, scholar-led pilgrimage to Makkah and Madīnah structured around the Qur’ān and Sunnah.</p>
+            <a className="button button-white" href={whatsappHref}>
+              <MessageCircle size={18} /> Start Registration on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </PageFrame>
   );
 }
 
