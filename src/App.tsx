@@ -42,10 +42,10 @@ const packages = [
       "Return ticket",
       "’Umrah visa",
       "2 meals",
-      "Accommodation in Madeenah and Makkah",
+      "Accommodation in Makkah and Madīnah.",
       "’Umrah guide",
-      "Ziyarah",
-      "5 litre Zam Zam water",
+      "Ziyārah",
+      "5 litres of Zamzam water",
     ],
     isFeatured: true,
   },
@@ -58,10 +58,10 @@ const packages = [
     inclusions: [
       "’Umrah visa",
       "2 meals",
-      "Accommodation in Madeenah and Makkah",
-      "Ziyarah",
+      "Accommodation in Makkah and Madīnah.",
+      "Ziyārah",
       "’Umrah guide",
-      "5 litre Zam Zam water",
+      "5 litres of Zamzam water",
     ],
     isFeatured: false,
   },
@@ -376,8 +376,7 @@ function HeroCardsSequence() {
           </div>
           <h3>Your journey is guided by reputable scholars.</h3>
           <p>
-            We plan every step of your pilgrimage under the guidance of respected scholars and certified
-            students of knowledge, In Shā’ Allāh.
+            Each of our journeys is planned with guidance from a reputable scholar or a certified student of knowledge, In Shā’ Allāh.
           </p>
           <Link className="outline-pill" to="/guidance">
             See Guidance
@@ -452,7 +451,7 @@ function UmrahFeature() {
       <SectionIntro
         eyebrow="Active package"
         title="Our September ’Umrah registration is now open."
-        body="Our active September ’Umrah is our primary focus right now. We have outlined two clear package options to help you—whether you are traveling from Nigeria or joining us from the diaspora—understand exactly what is included before we begin your registration on WhatsApp."
+        body="Two clear package paths make it easier for Nigeria-based pilgrims, Diaspora pilgrims, and sponsors to understand the offer before opening a WhatsApp conversation."
       />
       <div className="package-grid">
         {packages.map((pkg) => (
@@ -502,7 +501,7 @@ function PackageBreakdown() {
     ["Departure", "September 29/30, 2026"],
     ["Arrival", "October 10/11, 2026"],
     ["Departure cities", "Lagos and Abuja"],
-    ["Guidance", "Scholar-led tutelage, In Shā’ Allāh"],
+    ["Guidance", "Scholar-led, In Shā‘ Allāh"],
   ];
 
   return (
@@ -552,8 +551,7 @@ function AboutSection() {
         <p className="eyebrow inverse">About AMFAJ</p>
         <h2>Built for you: organized travel designed so you never lose the spirit of worship.</h2>
         <p>
-          We serve you with ’Umrah and Ḥajj travel support that is sincere, dignified, and guided by
-          the Qur'an and Sunnah upon the understanding of the pious predecessors.
+          AMFAJ Travels and Tours serves Muslims seeking Ḥajj and ‘Umrah support that is sincere, dignified, and guided by the Qur'ān and Sunnah upon the understanding of the pious predecessors.
         </p>
         <div className="promise-grid">
           <Promise icon={ShieldCheck} title="Financial integrity" body="Clear promises and zero hidden fees." />
@@ -596,9 +594,7 @@ function ScholarStandard() {
         <p className="eyebrow">Universal AMFAJ standard</p>
         <h2>We believe authentic guidance is a necessity, never an afterthought.</h2>
         <p>
-          We are intentional about providing you with scholar-led guidance across all our packages.
-          For this coming ’Umrah, Dr. Sharafuddeen Gbadebo Raaji is planned to join as a scholar,
-          giving you direct access to authentic knowledge and tutelage throughout your journey, In Shā’ Allāh.
+          We are intentional about Scholar-led guidance across our packages. For this coming ‘Umrah, Dr. Sharafuddeen Gbadebo Raaji is the scholar leading the pilgrims, In Shā‘ Allāh.
         </p>
       </div>
       <div className="notice-card">
@@ -709,8 +705,8 @@ function HajjPackagePage() {
   return (
     <ComingSoon
       eyebrow="Ḥajj packages"
-      title="Our Ḥajj packages will be announced as the sacred season approaches."
-      body="To maintain absolute honesty and clarity, we will publish Ḥajj packages only when every date, price, and flight schedule is completely confirmed. For now, you are welcome to explore our active September ’Umrah package."
+      title="Ḥajj package details will open closer to the season."
+      body="For now, we are keeping the website focused on the active September ‘Umrah campaign. Ḥajj information will be added when the package details are confirmed."
       cta="Browse Active ’Umrah Package"
       to="/packages/umrah"
     />
@@ -1043,10 +1039,8 @@ function ComingSoon({
     <PageFrame eyebrow={eyebrow} title={title} body={body}>
       <div className="empty-state">
         <Sparkles size={32} />
-        <h2>We are preparing details with absolute care.</h2>
-        <p>
-          We only publish package information when every date, price, and accommodation is 100% verified, protecting you from confusion and keeping our promises completely honest.
-        </p>
+        <h2>{title}</h2>
+        <p>{body}</p>
         <ArrowButton variant="primary" to={to}>
           {cta}
         </ArrowButton>
