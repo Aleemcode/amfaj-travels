@@ -306,28 +306,21 @@ function HeroCardsSequence() {
     offset: ["start start", "end end"],
   });
 
-  const springConfig = { stiffness: 100, damping: 26, mass: 0.4 };
-
   // The video card scales up symmetrically to a clean wide layout (scale 1.8 spans 90% container width)
   // Maintains its expanded centered stable watch state from 0.45 to 0.75 scroll progress
-  const rawScale = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], [1, 1, 1.8, 1.8, 1.8]);
-  const scale = useSpring(rawScale, springConfig);
-
+  const scale = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], [1, 1, 1.8, 1.8, 1.8]);
+ 
   // Horizontal translation math: centers column 3 symmetrically onto the grid center (translate -50%)
-  const rawX = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], ["0%", "0%", "-50%", "-50%", "-50%"]);
-  const x = useSpring(rawX, springConfig);
-
+  const x = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], ["0%", "0%", "-50%", "-50%", "-50%"]);
+ 
   // Vertical translation math: places top edge of Card 3 exactly below Card 1/Card 2 + gap (translate 624px)
-  const rawY = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], [0, 0, 624, 624, 624]);
-  const y = useSpring(rawY, springConfig);
-
+  const y = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], [0, 0, 624, 624, 624]);
+ 
   // Border radius remains beautifully rounded (30px) throughout the transition
-  const rawRadius = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], [30, 30, 30, 30, 30]);
-  const borderRadius = useSpring(rawRadius, springConfig);
-
+  const borderRadius = useTransform(scrollYProgress, [0, 0.1, 0.45, 0.75, 1], [30, 30, 30, 30, 30]);
+ 
   // Fade out the play button and text caption very early (by 25% progress)
-  const rawUiOpacity = useTransform(scrollYProgress, [0, 0.1, 0.25, 1], [1, 1, 0, 0]);
-  const uiOpacity = useSpring(rawUiOpacity, springConfig);
+  const uiOpacity = useTransform(scrollYProgress, [0, 0.1, 0.25, 1], [1, 1, 0, 0]);
 
   const toggleMute = (e: React.MouseEvent) => {
     e.stopPropagation();

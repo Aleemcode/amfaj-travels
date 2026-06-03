@@ -64,9 +64,7 @@ img {
   display: block;
 }
 
-.site-shell {
-  overflow-x: clip;
-}
+/* site-shell has no overflow restrictions to ensure native smooth window scrolling */
 
 .header {
   position: sticky;
@@ -403,7 +401,7 @@ p {
 .hero-sequence {
   height: 1200px;
   margin-top: 54px;
-  margin-bottom: 580px; /* Space for the translated expanded video card */
+  margin-bottom: 800px; /* Space for the translated expanded video card */
   position: relative;
 }
 
