@@ -23,7 +23,7 @@ import {
   VolumeX,
   X,
 } from "lucide-react";
-import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform, AnimatePresence } from "framer-motion";
 import { Link, NavLink, Route, Routes } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 
@@ -180,6 +180,7 @@ function App() {
       </main>
       <Footer />
       <MobileStickyCta />
+      <TalbiyahPlayer />
     </div>
   );
 }
@@ -1187,6 +1188,142 @@ function MobileStickyCta() {
         Start Registration
       </a>
     </div>
+  );
+}
+
+function TalbiyahPlayer() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const [isBlocked, setIsBlocked] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    const played = sessionStorage.getItem("talbiyah_played");
+    if (!played) {
+      setIsVisible(true);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (isVisible && audioRef.current) {
+      audioRef.current.play()
+        .then(() => {
+          setIsPlaying(true);
+          setIsBlocked(false);
+        })
+        .catch((error) => {
+          console.log("Autoplay was blocked by browser:", error);
+          setIsBlocked(true);
+        });
+    }
+  }, [isVisible]);
+
+  const togglePlay = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play()
+        .then(() => {
+          setIsPlaying(true);
+          setIsBlocked(false);
+        })
+        .catch((err) => {
+          console.error("Play failed:", err);
+        });
+    }
+  };
+
+  const toggleMute = () => {
+    if (!audioRef.current) return;
+    audioRef.current.muted = !isMuted;
+    setIsMuted(!isMuted);
+  };
+
+  const handleEnded = () => {
+    setIsPlaying(false);
+    sessionStorage.setItem("talbiyah_played", "true");
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 2000);
+  };
+
+  const handleClose = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+    setIsPlaying(false);
+    sessionStorage.setItem("talbiyah_played", "true");
+    setIsVisible(false);
+  };
+
+  return (
+    <AnimatePresence>
+      {isVisible && (
+        <motion.div
+          className="talbiyah-widget"
+          initial={{ opacity: 0, y: 50, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 30, scale: 0.95 }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <audio
+            ref={audioRef}
+            src="https://archive.org/download/labaika_lahoma_labaik_haj/labaika.mp3"
+            preload="auto"
+            onEnded={handleEnded}
+          />
+          
+          <button className="talbiyah-close" onClick={handleClose} aria-label="Dismiss welcome sound">
+            <X size={16} />
+          </button>
+
+          <div className="talbiyah-header">
+            <div className="talbiyah-badge">
+              <span className="talbiyah-pulse-dot" />
+              Welcome Supplication
+            </div>
+            {isPlaying && (
+              <div className="talbiyah-visualizer">
+                <span className="bar" />
+                <span className="bar" />
+                <span className="bar" />
+                <span className="bar" />
+              </div>
+            )}
+          </div>
+
+          <div className="talbiyah-body">
+            <p className="talbiyah-arabic" lang="ar" dir="rtl">
+              لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ
+            </p>
+            <p className="talbiyah-transliteration">
+              “Labbayka Allāhumma Labbayk, Labbayka Lā Sharīka Laka Labbayk, Inna al-Ḥamda wan-Ni‘mata Laka wal-Mulk, Lā Sharīka Lak.”
+            </p>
+          </div>
+
+          <div className="talbiyah-controls">
+            <button
+              className={`button-talbiyah-action ${isBlocked ? "is-pulsing" : ""}`}
+              onClick={togglePlay}
+              aria-label={isPlaying ? "Pause Talbiyah" : "Play Talbiyah"}
+            >
+              {isPlaying ? <Volume2 size={18} /> : <Play size={18} />}
+              <span>{isPlaying ? "Pause" : isBlocked ? "Play Welcome Sound" : "Play"}</span>
+            </button>
+            <button
+              className="button-talbiyah-mute"
+              onClick={toggleMute}
+              aria-label={isMuted ? "Unmute Talbiyah" : "Mute Talbiyah"}
+            >
+              {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+            </button>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 
