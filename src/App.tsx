@@ -71,7 +71,7 @@ const faqs = [
   {
     question: "When is the September ’Umrah journey?",
     answer:
-      "Departure is planned for September 29 or 30, 2026, with arrival back on October 10 or 11, 2026, In Shā’ Allāh.",
+      "Departure is planned for September 29/30, 2026, with arrival back on October 10/11, 2026, In Shā’ Allāh.",
   },
   {
     question: "Where will pilgrims depart from?",
@@ -499,8 +499,8 @@ function PackageCard({
 
 function PackageBreakdown() {
   const facts = [
-    ["Departure", "September 29 or 30, 2026"],
-    ["Arrival", "October 10 or 11, 2026"],
+    ["Departure", "September 29/30, 2026"],
+    ["Arrival", "October 10/11, 2026"],
     ["Departure cities", "Lagos and Abuja"],
     ["Guidance", "Scholar-led tutelage, In Shā’ Allāh"],
   ];
