@@ -180,7 +180,7 @@ function App() {
       </main>
       <Footer />
       <MobileStickyCta />
-      <TalbiyahPlayer />
+      <WelcomeVoicePlayer />
     </div>
   );
 }
@@ -886,6 +886,7 @@ function UmrahGuidancePage() {
                         ))}
                       </ul>
                     </div>
+                    {node.step === "01" && <InlineTalbiyahPlayer />}
                   </div>
                 </div>
               </motion.div>
@@ -1191,7 +1192,7 @@ function MobileStickyCta() {
   );
 }
 
-function TalbiyahPlayer() {
+function WelcomeVoicePlayer() {
   const [isVisible, setIsVisible] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -1199,7 +1200,7 @@ function TalbiyahPlayer() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    const played = sessionStorage.getItem("talbiyah_played");
+    const played = sessionStorage.getItem("welcome_played");
     if (!played) {
       setIsVisible(true);
     }
@@ -1213,7 +1214,7 @@ function TalbiyahPlayer() {
           setIsBlocked(false);
         })
         .catch((error) => {
-          console.log("Autoplay was blocked by browser:", error);
+          console.log("Welcome voice autoplay blocked:", error);
           setIsBlocked(true);
         });
     }
@@ -1231,7 +1232,7 @@ function TalbiyahPlayer() {
           setIsBlocked(false);
         })
         .catch((err) => {
-          console.error("Play failed:", err);
+          console.error("Welcome play failed:", err);
         });
     }
   };
@@ -1244,7 +1245,7 @@ function TalbiyahPlayer() {
 
   const handleEnded = () => {
     setIsPlaying(false);
-    sessionStorage.setItem("talbiyah_played", "true");
+    sessionStorage.setItem("welcome_played", "true");
     setTimeout(() => {
       setIsVisible(false);
     }, 2000);
@@ -1255,7 +1256,7 @@ function TalbiyahPlayer() {
       audioRef.current.pause();
     }
     setIsPlaying(false);
-    sessionStorage.setItem("talbiyah_played", "true");
+    sessionStorage.setItem("welcome_played", "true");
     setIsVisible(false);
   };
 
@@ -1263,7 +1264,7 @@ function TalbiyahPlayer() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          className="talbiyah-widget"
+          className="welcome-voice-widget"
           initial={{ opacity: 0, y: 50, scale: 0.95 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 30, scale: 0.95 }}
@@ -1271,22 +1272,22 @@ function TalbiyahPlayer() {
         >
           <audio
             ref={audioRef}
-            src="https://archive.org/download/labaika_lahoma_labaik_haj/labaika.mp3"
+            src="/welcome.m4a"
             preload="auto"
             onEnded={handleEnded}
           />
           
-          <button className="talbiyah-close" onClick={handleClose} aria-label="Dismiss welcome sound">
+          <button className="welcome-voice-close" onClick={handleClose} aria-label="Dismiss welcome greeting">
             <X size={16} />
           </button>
 
-          <div className="talbiyah-header">
-            <div className="talbiyah-badge">
-              <span className="talbiyah-pulse-dot" />
-              Welcome Supplication
+          <div className="welcome-voice-header">
+            <div className="welcome-voice-badge">
+              <span className="welcome-voice-pulse-dot" />
+              Audio Welcome
             </div>
             {isPlaying && (
-              <div className="talbiyah-visualizer">
+              <div className="welcome-voice-visualizer">
                 <span className="bar" />
                 <span className="bar" />
                 <span className="bar" />
@@ -1295,28 +1296,25 @@ function TalbiyahPlayer() {
             )}
           </div>
 
-          <div className="talbiyah-body">
-            <p className="talbiyah-arabic" lang="ar" dir="rtl">
-              لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ
-            </p>
-            <p className="talbiyah-transliteration">
-              “Labbayka Allāhumma Labbayk, Labbayka Lā Sharīka Laka Labbayk, Inna al-Ḥamda wan-Ni‘mata Laka wal-Mulk, Lā Sharīka Lak.”
+          <div className="welcome-voice-body">
+            <p className="welcome-voice-text">
+              “Welcome to AMFAJ Travels and Tours. We are happy to serve you with sincere trust and integrity. How may we help you prepare for the coming ’Umrah?”
             </p>
           </div>
 
-          <div className="talbiyah-controls">
+          <div className="welcome-voice-controls">
             <button
-              className={`button-talbiyah-action ${isBlocked ? "is-pulsing" : ""}`}
+              className={`button-welcome-voice-action ${isBlocked ? "is-pulsing" : ""}`}
               onClick={togglePlay}
-              aria-label={isPlaying ? "Pause Talbiyah" : "Play Talbiyah"}
+              aria-label={isPlaying ? "Pause Welcome Greeting" : "Play Welcome Greeting"}
             >
               {isPlaying ? <Volume2 size={18} /> : <Play size={18} />}
-              <span>{isPlaying ? "Pause" : isBlocked ? "Play Welcome Sound" : "Play"}</span>
+              <span>{isPlaying ? "Pause Greeting" : isBlocked ? "Play Welcome Greeting" : "Play"}</span>
             </button>
             <button
-              className="button-talbiyah-mute"
+              className="button-welcome-voice-mute"
               onClick={toggleMute}
-              aria-label={isMuted ? "Unmute Talbiyah" : "Mute Talbiyah"}
+              aria-label={isMuted ? "Unmute Greeting" : "Mute Greeting"}
             >
               {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
             </button>
@@ -1324,6 +1322,78 @@ function TalbiyahPlayer() {
         </motion.div>
       )}
     </AnimatePresence>
+  );
+}
+
+function InlineTalbiyahPlayer() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+
+  const togglePlay = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play()
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch((err) => {
+          console.error("Play failed:", err);
+        });
+    }
+  };
+
+  const toggleMute = () => {
+    if (!audioRef.current) return;
+    audioRef.current.muted = !isMuted;
+    setIsMuted(!isMuted);
+  };
+
+  return (
+    <div className="inline-talbiyah-player">
+      <audio
+        ref={audioRef}
+        src="https://archive.org/download/labaika_lahoma_labaik_haj/labaika.mp3"
+        preload="auto"
+        onEnded={() => setIsPlaying(false)}
+      />
+      <div className="inline-talbiyah-header">
+        <span className="inline-talbiyah-title">Listen to the Talbiyah Supplication</span>
+        {isPlaying && (
+          <div className="talbiyah-visualizer">
+            <span className="bar" />
+            <span className="bar" />
+            <span className="bar" />
+            <span className="bar" />
+          </div>
+        )}
+      </div>
+      
+      <p className="inline-talbiyah-arabic" lang="ar" dir="rtl">
+        لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ
+      </p>
+
+      <div className="inline-talbiyah-controls">
+        <button
+          className="button button-primary button-talbiyah-play"
+          onClick={togglePlay}
+          aria-label={isPlaying ? "Pause Talbiyah" : "Play Talbiyah"}
+        >
+          {isPlaying ? <Volume2 size={16} /> : <Play size={16} />}
+          <span>{isPlaying ? "Pause Recitation" : "Listen to Recitation"}</span>
+        </button>
+        <button
+          className="button-talbiyah-mute"
+          onClick={toggleMute}
+          aria-label={isMuted ? "Unmute Talbiyah" : "Mute Talbiyah"}
+        >
+          {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
+        </button>
+      </div>
+    </div>
   );
 }
 
