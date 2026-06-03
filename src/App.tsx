@@ -887,6 +887,7 @@ function UmrahGuidancePage() {
                       </ul>
                     </div>
                     {node.step === "01" && <InlineTalbiyahPlayer />}
+                    {node.step === "02" && <InteractiveTawafGuide />}
                   </div>
                 </div>
               </motion.div>
@@ -1392,6 +1393,148 @@ function InlineTalbiyahPlayer() {
         >
           {isMuted ? <VolumeX size={18} /> : <Volume2 size={18} />}
         </button>
+      </div>
+    </div>
+  );
+}
+
+function InteractiveTawafGuide() {
+  const [activeTab, setActiveTab] = useState<'anatomy' | 'sequence' | 'post_tawaf'>('anatomy');
+  const [selectedLandmark, setSelectedLandmark] = useState<'black_stone' | 'yemeni' | 'hijr' | 'maqam'>('black_stone');
+
+  const landmarks = {
+    black_stone: {
+      name: "The Black Stone (Al-Ḥajar al-Aswad)",
+      significance: "The absolute starting and ending line of each of the 7 rounds of Ṭawāf. Aligned with a green light on the Haram wall.",
+      ruling: "When aligning with the Black Stone, point your right hand toward it and say 'Bismillāhi, Allāhu Akbar' (In the Name of Allāh, Allāh is the Greatest) and start the round. Repeat this at the end of each round."
+    },
+    yemeni: {
+      name: "The Yemeni Corner (Rukn al-Yamānī)",
+      significance: "The corner of the Ka‘bah right before the Black Stone corner.",
+      ruling: "Touch it with your right hand if possible, without kissing it or saying Takbīr. If too crowded, simply pass it without pointing. Recite the Sunnah Du‘ā‘ between this corner and the Black Stone: 'Rabbanā ātinā fid-dunyā ḥasanatan wa fil-ākhirati ḥasanatan wa qinā ‘adhāban-nār' (Our Lord, give us in this world that which is good and in the Hereafter that which is good and protect us from the punishment of the Fire)."
+    },
+    hijr: {
+      name: "Al-Hijr (Hijr Isma‘īl / Al-Ḥaṭīm)",
+      significance: "The semi-circular low wall on the north side of the Ka‘bah. It is legally part of the Ka‘bah.",
+      ruling: "Crucial Rule: You must walk outside the Hijr Isma‘īl during Ṭawāf. Walking through the gap between this wall and the Ka‘bah invalidates the round, as you would be walking inside the Ka‘bah itself."
+    },
+    maqam: {
+      name: "Maqām Ibrāhīm (The Station of Abraham)",
+      significance: "The stone containing the footprints of Prophet Ibrāhīm (as) where he stood to build the Ka‘bah.",
+      ruling: "After completing your 7 rounds of Ṭawāf, pray 2 short Rak‘ahs behind Maqām Ibrāhīm (if possible, or anywhere in the Haram if crowded). Recite Surah Al-Kāfirūn in the first Rak‘ah and Surah Al-Ikhlāṣ in the second."
+    }
+  };
+
+  const steps = [
+    { num: 1, text: "Align with the Black Stone (start line), make intention, point right hand and say: 'Bismillāhi, Allāhu Akbar'." },
+    { num: 2, text: "Begin walking counter-clockwise, keeping the Ka‘bah on your left." },
+    { num: 3, text: "Walk briskly (Raml) with chest out for the first 3 rounds (men only), and walk normally for the remaining 4 rounds." },
+    { num: 4, text: "Ensure you walk completely outside the semi-circular Hijr Isma‘īl wall." },
+    { num: 5, text: "Perform Dhikr, recite Qur'ān, and make personal supplications (there are no fixed words for rounds 1-6)." },
+    { num: 6, text: "Upon reaching the Yemeni Corner, recite: 'Rabbanā ātinā fid-dunyā ḥasanatan wa fil-ākhirati ḥasanatan wa qinā ‘adhāban-nār' until you reach the Black Stone." },
+    { num: 7, text: "Reaching the Black Stone completes one round. Align, point, say 'Allāhu Akbar', and repeat the sequence for 7 total rounds." }
+  ];
+
+  return (
+    <div className="tawaf-interactive-guide">
+      <div className="tawaf-tabs">
+        <button 
+          className={activeTab === 'anatomy' ? 'tab-btn active' : 'tab-btn'} 
+          onClick={() => setActiveTab('anatomy')}
+        >
+          Ka‘bah Anatomy
+        </button>
+        <button 
+          className={activeTab === 'sequence' ? 'tab-btn active' : 'tab-btn'} 
+          onClick={() => setActiveTab('sequence')}
+        >
+          Path of a Round
+        </button>
+        <button 
+          className={activeTab === 'post_tawaf' ? 'tab-btn active' : 'tab-btn'} 
+          onClick={() => setActiveTab('post_tawaf')}
+        >
+          Post-Ṭawāf Prayer
+        </button>
+      </div>
+
+      <div className="tawaf-tab-content">
+        {activeTab === 'anatomy' && (
+          <div className="anatomy-tab">
+            <p className="tab-instruction">Select a landmark to view its specific Sunnah guidelines:</p>
+            <div className="landmark-grid">
+              {Object.keys(landmarks).map((key) => {
+                const item = landmarks[key as keyof typeof landmarks];
+                const isSelected = selectedLandmark === key;
+                return (
+                  <button 
+                    key={key}
+                    className={`landmark-btn ${isSelected ? 'selected' : ''}`}
+                    onClick={() => setSelectedLandmark(key as any)}
+                  >
+                    {item.name.split(' (')[0]}
+                  </button>
+                );
+              })}
+            </div>
+            <div className="landmark-details-card">
+              <h4>{landmarks[selectedLandmark].name}</h4>
+              <div className="landmark-info-row">
+                <span className="info-badge significance">Significance</span>
+                <p>{landmarks[selectedLandmark].significance}</p>
+              </div>
+              <div className="landmark-info-row">
+                <span className="info-badge ruling">Sunnah Action</span>
+                <p>{landmarks[selectedLandmark].ruling}</p>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'sequence' && (
+          <div className="sequence-tab">
+            <div className="sequence-steps-list">
+              {steps.map((step) => (
+                <div key={step.num} className="sequence-step-item">
+                  <div className="step-number">{step.num}</div>
+                  <p>{step.text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="tab-quote-box">
+              <blockquote>“Ṭawāf begins at the Black Stone and ends there.”</blockquote>
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'post_tawaf' && (
+          <div className="post-tawaf-tab">
+            <div className="post-tawaf-grid">
+              <div className="post-tawaf-card">
+                <div className="card-header">
+                  <MapPin size={20} />
+                  <h4>2-Rak‘ahs at Maqām Ibrāhīm</h4>
+                </div>
+                <p>
+                  Upon completing your 7th round, move towards Maqām Ibrāhīm, reciting: 
+                  <strong className="block-arabic">“Wattakhidhū min maqāmi Ibrāhīma muṣallā”</strong>
+                  (And take, [O believers], from the standing place of Abraham a place of prayer).
+                </p>
+                <p>Perform two short Rak'ahs: recite <strong>Surah Al-Kāfirūn</strong> in the first Rak'ah, and <strong>Surah Al-Ikhlāṣ</strong> in the second.</p>
+              </div>
+              <div className="post-tawaf-card">
+                <div className="card-header">
+                  <CheckCircle2 size={20} />
+                  <h4>Drink Zamzam Water</h4>
+                </div>
+                <p>
+                  After the prayer, proceed to the Zamzam wells or water coolers located in the Haram. Drink your fill while standing and facing the Ka‘bah, supplicating for what you wish.
+                </p>
+                <p>Pour some water over your head (as the Prophet ﷺ did) before proceeding to the hills of Ṣafā and Marwah for Sa‘ī.</p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

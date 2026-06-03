@@ -2215,3 +2215,254 @@ details p {
   background: #e66500 !important;
   transform: translateY(-1px) !important;
 }
+
+/* Interactive Tawaf Guide (Timeline Step 2) */
+.tawaf-interactive-guide {
+  margin-top: 24px;
+  border: 1px solid rgba(3, 12, 53, 0.1);
+  border-radius: 20px;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.tawaf-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(3, 12, 53, 0.1);
+  background: var(--mist);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 16px 12px;
+  border: 0;
+  border-right: 1px solid rgba(3, 12, 53, 0.1);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.tab-btn:last-child {
+  border-right: 0;
+}
+
+.tab-btn:hover {
+  background: rgba(3, 12, 53, 0.02);
+  color: var(--navy);
+}
+
+.tab-btn.active {
+  background: var(--white);
+  color: var(--orange);
+}
+
+.tawaf-tab-content {
+  padding: 24px;
+}
+
+/* Anatomy Tab styling */
+.tab-instruction {
+  margin: 0 0 16px;
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.landmark-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.landmark-btn {
+  padding: 12px;
+  border: 1px solid rgba(3, 12, 53, 0.1);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--navy);
+  font-family: var(--body-font);
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.landmark-btn:hover {
+  border-color: var(--orange);
+  background: var(--off-white);
+}
+
+.landmark-btn.selected {
+  border-color: var(--orange);
+  background: var(--orange);
+  color: var(--white);
+}
+
+.landmark-details-card {
+  padding: 18px;
+  border: 1px solid rgba(254, 114, 2, 0.12);
+  border-radius: 16px;
+  background: var(--off-white);
+}
+
+.landmark-details-card h4 {
+  margin: 0 0 14px;
+  color: var(--navy);
+  font-family: var(--heading);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.landmark-info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.landmark-info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-badge {
+  width: fit-content;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-family: var(--heading);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-badge.significance {
+  background: rgba(3, 12, 53, 0.08);
+  color: var(--navy);
+}
+
+.info-badge.ruling {
+  background: rgba(254, 114, 2, 0.12);
+  color: var(--orange);
+}
+
+.landmark-info-row p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--body);
+}
+
+/* Sequence Tab styling */
+.sequence-steps-list {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.sequence-step-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.step-number {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(254, 114, 2, 0.12);
+  color: var(--orange);
+  font-family: var(--heading);
+  font-size: 0.82rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.sequence-step-item p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--body);
+}
+
+.tab-quote-box {
+  padding: 12px 18px;
+  border-left: 3px solid var(--orange);
+  background: var(--mist);
+  border-radius: 0 12px 12px 0;
+}
+
+.tab-quote-box blockquote {
+  margin: 0;
+  color: var(--navy);
+  font-family: var(--heading);
+  font-weight: 800;
+  font-size: 0.88rem;
+  font-style: italic;
+}
+
+/* Post-Tawaf Tab styling */
+.post-tawaf-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.post-tawaf-card {
+  padding: 18px;
+  border: 1px solid rgba(3, 12, 53, 0.08);
+  border-radius: 16px;
+  background: var(--mist);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.post-tawaf-card .card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--orange);
+}
+
+.post-tawaf-card h4 {
+  margin: 0;
+  color: var(--navy);
+  font-family: var(--heading);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.post-tawaf-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--body);
+}
+
+.block-arabic {
+  display: block;
+  margin: 8px 0;
+  font-size: 1rem;
+  color: var(--navy);
+  font-family: var(--heading);
+  font-weight: 700;
+}
+
+/* Responsive Overrides */
+@media (max-width: 640px) {
+  .post-tawaf-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .landmark-grid {
+    grid-template-columns: 1fr;
+  }
+}
