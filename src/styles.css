@@ -934,14 +934,15 @@ p {
 }
 
 .guidance-preview-section {
-  position: relative;
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
-  padding: 82px max(28px, calc((100% - 1180px) / 2));
+  width: min(1180px, calc(100% - 28px));
+  margin-inline: auto;
+  margin-top: 34px;
+  margin-bottom: 34px;
+  padding: 64px 48px;
   background-color: var(--mist);
-  border-top: 1px solid rgba(3, 12, 53, 0.05);
-  border-bottom: 1px solid rgba(3, 12, 53, 0.05);
+  border: 1px solid rgba(3, 12, 53, 0.08);
+  border-radius: 38px;
+  box-shadow: none;
 }
 
 .guidance-grid,
@@ -1323,9 +1324,7 @@ details p {
     flex-direction: column;
   }
 
-  .guidance-preview-section {
-    padding: 82px 14px;
-  }
+
 
   /* Guidance Journey Page Stepper overrides */
   .guidance-intro-grid {
@@ -1490,7 +1489,8 @@ details p {
 
   .about-band,
   .scholar-copy,
-  .final-cta {
+  .final-cta,
+  .guidance-preview-section {
     padding: 28px;
     border-radius: 28px;
   }
@@ -1532,9 +1532,7 @@ details p {
     box-shadow: none;
   }
 
-  .guidance-preview-section {
-    padding: 58px 11px;
-  }
+
 
   /* Guidance Journey Page Stepper mobile overrides */
   .journey-node {
