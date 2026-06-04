@@ -699,6 +699,7 @@ function UmrahPage() {
       eyebrow="’Umrah package"
       title="Everything you need for your September ’Umrah."
       body="We believe in absolute clarity: honest pricing, complete inclusions, and a direct WhatsApp path to start your registration today."
+      parent={{ name: "Packages", to: "/packages" }}
     >
       <UmrahFeature />
       <PackageBreakdown />
@@ -715,6 +716,7 @@ function HajjPackagePage() {
       body="For now, we are keeping the website focused on the active September ‘Umrah campaign. Ḥajj information will be added when the package details are confirmed."
       cta="Browse Active ’Umrah Package"
       to="/packages/umrah"
+      parent={{ name: "Packages", to: "/packages" }}
     />
   );
 }
@@ -807,6 +809,7 @@ function UmrahGuidancePage() {
       eyebrow="’Umrah guidance"
       title="Prepare with knowledge, order, and calm."
       body="We have designed this journey map and checklist based on the Qur'an and Sunnah to help you understand the rites of ’Umrah before you begin your pilgrimage."
+      parent={{ name: "Guidance", to: "/guidance" }}
     >
       <div className="guidance-journey-page">
         {/* Intro Section */}
@@ -948,6 +951,12 @@ function UmrahGuidancePage() {
             </div>
           </div>
         </motion.section>
+
+        <div className="guidance-back-btn-wrap" style={{ display: 'flex', justifyContent: 'center', marginTop: '40px', marginBottom: '20px' }}>
+          <ArrowButton variant="secondary" to="/guidance">
+            Back to Guidance Hub
+          </ArrowButton>
+        </div>
       </div>
 
       <FinalCta />
@@ -968,6 +977,7 @@ function HajjGuidancePage() {
       body="We are preparing comprehensive Ḥajj guidance materials to support your journey. For now, you are welcome to explore our ’Umrah guidance or contact us directly on WhatsApp for any questions about Hajj planning."
       cta="Open ’Umrah Guidance"
       to="/guidance/umrah"
+      parent={{ name: "Guidance", to: "/guidance" }}
     />
   );
 }
@@ -1008,6 +1018,7 @@ function AdabGuidancePage() {
       eyebrow="Travel Conduct"
       title="Travel Ādāb & Ethics"
       body="Perform your journey with the highest standards of Islamic character, respecting the sacred boundaries and supporting your fellow pilgrims."
+      parent={{ name: "Guidance", to: "/guidance" }}
     >
       <div className="adab-container">
         <div className="adab-intro-card">
@@ -1134,15 +1145,17 @@ function ComingSoon({
   body,
   cta,
   to,
+  parent,
 }: {
   eyebrow: string;
   title: string;
   body: string;
   cta: string;
   to: string;
+  parent?: { name: string; to: string };
 }) {
   return (
-    <PageFrame eyebrow={eyebrow} title={title} body={body}>
+    <PageFrame eyebrow={eyebrow} title={title} body={body} parent={parent}>
       <div className="empty-state">
         <Sparkles size={32} />
         <h2>{title}</h2>
@@ -1159,11 +1172,13 @@ function PageFrame({
   eyebrow,
   title,
   body,
+  parent,
   children,
 }: {
   eyebrow: string;
   title: string;
   body: string;
+  parent?: { name: string; to: string };
   children: React.ReactNode;
 }) {
   // Map page names to the correct CSS banner background classes
@@ -1192,6 +1207,12 @@ function PageFrame({
           <nav className="breadcrumbs" aria-label="Breadcrumb">
             <Link to="/">Home</Link>
             <span className="separator">&gt;</span>
+            {parent && (
+              <>
+                <Link to={parent.to}>{parent.name}</Link>
+                <span className="separator">&gt;</span>
+              </>
+            )}
             <span className="current">{eyebrow}</span>
           </nav>
           <h1>{title}</h1>
