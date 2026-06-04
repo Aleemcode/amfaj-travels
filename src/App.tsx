@@ -97,22 +97,22 @@ const faqs = [
 
 const guidanceItems = [
   {
-    title: "’Umrah readiness",
-    body: "Prepare your documents, intention, and essentials so you can start your journey with absolute clarity and peace of mind.",
-    icon: CheckCircle2,
-    to: "/guidance/umrah",
-  },
-  {
-    title: "Ritual clarity",
-    body: "Learn the step-by-step rites of ’Umrah with clear, calm explanations that keep your heart focused on sincere worship.",
+    title: "’Umrah Guidance",
+    body: "Prepare your heart and mind with step-by-step guides for the rites of ’Umrah: Iḥrām, Ṭawāf, Sa‘y, and Ḥalq.",
     icon: BookOpen,
     to: "/guidance/umrah",
   },
   {
-    title: "Group travel ādāb",
-    body: "Nurture your character with patience and respect for fellow pilgrims and the sacred boundaries as you travel together.",
+    title: "Ḥajj Guidance",
+    body: "Explore the rites and timing of the greater pilgrimage. Information is updated as campaigns approach.",
+    icon: CalendarDays,
+    to: "/guidance/hajj",
+  },
+  {
+    title: "Travel Ādāb & Ethics",
+    body: "Nurture patience, respect, and proper conduct for group journeys within the sacred boundaries of the Holy Lands.",
     icon: Users,
-    to: "/guidance/umrah",
+    to: "/guidance",
   },
 ];
 
