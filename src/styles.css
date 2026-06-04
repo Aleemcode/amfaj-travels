@@ -3330,6 +3330,80 @@ details p {
   font-size: 0.85rem;
 }
 
+/* About Testimonials section */
+.about-testimonials-section {
+  padding: 20px 0 0 0;
+}
+
+.about-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid rgba(3, 12, 53, 0.08);
+  border-radius: 24px;
+  padding: 35px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0l10 30h30L55 50l10 30-25-20-25 20 10-30L0 30h30z' fill='%23fe7202' fill-opacity='0.006'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(254, 114, 2, 0.25);
+}
+
+.testimonial-stars {
+  color: var(--orange);
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.testimonial-quote {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--body);
+  margin: 0 0 24px 0;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 1px solid rgba(3, 12, 53, 0.06);
+  padding-top: 18px;
+}
+
+.testimonial-author strong {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.testimonial-author span {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 /* Responsiveness overrides for new components */
 @media (max-width: 991px) {
   .about-services-section {
@@ -3358,6 +3432,11 @@ details p {
   
   .about-services-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
   
   .tawaf-modal-grid {
@@ -3395,6 +3474,10 @@ details p {
   .about-services-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .testimonial-card {
+    padding: 25px 20px;
   }
   
   .about-ceo-speech-card {
