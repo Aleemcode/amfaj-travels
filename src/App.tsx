@@ -502,7 +502,7 @@ function PackageCard({
   );
 }
 
-function PackageBreakdown() {
+function PackageBreakdown({ showLink = true }: { showLink?: boolean } = {}) {
   const facts = [
     ["Departure", "September 29/30, 2026"],
     ["Arrival", "October 10/11, 2026"],
@@ -525,9 +525,11 @@ function PackageBreakdown() {
         <p>
           We believe in total honesty and financial integrity: no hidden fees, no unverified promises. We show your pricing, travel windows, and inclusions clearly so you can start your journey from a place of complete clarity.
         </p>
-        <Link className="text-link" to="/packages/umrah">
-          View the ’Umrah package page <ArrowRight size={17} />
-        </Link>
+        {showLink && (
+          <Link className="text-link" to="/packages/umrah">
+            View the ’Umrah package page <ArrowRight size={17} />
+          </Link>
+        )}
       </div>
       <div className="fact-panel">
         {facts.map(([label, value]) => (
@@ -702,7 +704,7 @@ function UmrahPage() {
       parent={{ name: "Packages", to: "/packages" }}
     >
       <UmrahFeature />
-      <PackageBreakdown />
+      <PackageBreakdown showLink={false} />
       <FinalCta />
     </PageFrame>
   );
