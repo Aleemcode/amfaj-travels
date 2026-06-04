@@ -2010,52 +2010,6 @@ function AboutPage() {
           </div>
         </section>
 
-        {/* Section 6: Pilgrim Testimonials (Social Proof) */}
-        <motion.section 
-          className="about-testimonials-section"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-12% 0px" }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <div className="section-header-centered">
-            <span className="section-eyebrow-mini">Social Proof</span>
-            <h2>What Intending Pilgrims Say</h2>
-            <p>Read about the experiences of pilgrims who have entrusted their sacred journeys to our care.</p>
-          </div>
-          <div className="about-testimonials-grid">
-            <div className="testimonial-card">
-              <div className="testimonial-stars">★★★★★</div>
-              <p className="testimonial-quote">
-                "Traveling for ’Umrah with AMFAJ was a blessing. Having Dr. Sharafuddeen Gbadebo Raaji join as a scholar meant we performed every rite strictly upon the Sunnah. The daily tutelage was priceless."
-              </p>
-              <div className="testimonial-author">
-                <strong>Abdur-Rahman A.</strong>
-                <span>Lagos, Nigeria</span>
-              </div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-stars">★★★★★</div>
-              <p className="testimonial-quote">
-                "I was skeptical about travel agencies due to hidden charges. AMFAJ was 100% transparent. The price we agreed on was the final price—no sudden currency adjustments or extra visa charges."
-              </p>
-              <div className="testimonial-author">
-                <strong>Sister Zainab O.</strong>
-                <span>Abuja, Nigeria</span>
-              </div>
-            </div>
-            <div className="testimonial-card">
-              <div className="testimonial-stars">★★★★★</div>
-              <p className="testimonial-quote">
-                "The Diaspora package made it so easy. From visa procurement to local transport and staying close to the Harams in Makkah and Madīnah, the attention to detail and care was exceptional."
-              </p>
-              <div className="testimonial-author">
-                <strong>Ismail Y.</strong>
-                <span>Houston, USA (Diaspora)</span>
-              </div>
-            </div>
-          </div>
-        </motion.section>
 
         {/* About CTA Card */}
         <div className="about-cta-card-wrapper">
