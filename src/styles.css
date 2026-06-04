@@ -3099,6 +3099,76 @@ details p {
   line-height: 1.6;
   margin: 0;
 }
+.about-services-section {
+  position: relative;
+  background: radial-gradient(circle at center, rgba(254, 114, 2, 0.04) 0%, transparent 100%), var(--off-white);
+  border: 1px solid rgba(254, 114, 2, 0.08);
+  padding: 60px 40px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px -10px rgba(3, 12, 53, 0.03);
+}
+
+.services-tabs-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.service-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-family: var(--heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--white);
+  border: 1px solid rgba(3, 12, 53, 0.08);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(3, 12, 53, 0.02);
+}
+
+.service-tab-btn svg {
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: var(--orange);
+}
+
+.service-tab-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(254, 114, 2, 0.2);
+  box-shadow: 0 4px 12px rgba(3, 12, 53, 0.05);
+}
+
+.service-tab-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.service-tab-btn.active {
+  color: var(--white);
+  background: var(--orange);
+  border-color: var(--orange);
+  box-shadow: 0 8px 20px rgba(254, 114, 2, 0.25);
+}
+
+.service-tab-btn.active svg {
+  color: var(--white);
+}
+
+.services-pane-container {
+  min-height: 250px;
+  position: relative;
+  width: 100%;
+}
 
 .about-services-grid {
   display: grid;
@@ -3262,6 +3332,16 @@ details p {
 
 /* Responsiveness overrides for new components */
 @media (max-width: 991px) {
+  .about-services-section {
+    padding: 40px 30px;
+    border-radius: 24px;
+  }
+  
+  .service-tab-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
   .about-ceo-grid {
     grid-template-columns: 1fr;
   }
@@ -3296,8 +3376,25 @@ details p {
 }
 
 @media (max-width: 640px) {
+  .about-services-section {
+    padding: 30px 16px;
+    border-radius: 20px;
+  }
+  
+  .services-tabs-menu {
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+  
+  .service-tab-btn {
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    gap: 6px;
+  }
+  
   .about-services-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
   
   .about-ceo-speech-card {

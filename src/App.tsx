@@ -1613,61 +1613,68 @@ function TawafWalkthroughModal({ onClose }: { onClose: () => void }) {
 
 function AboutPage() {
   const [activePillarTab, setActivePillarTab] = useState<'scholar' | 'finance' | 'hospitality'>('scholar');
+  const [activeServiceCategory, setActiveServiceCategory] = useState<'packages' | 'logistics' | 'bespoke'>('packages');
 
-  const services = [
-    {
-      title: "Air Tickets",
-      icon: Plane,
-      description: "Seamless booking and arrangement of return tickets with premium airlines.",
-    },
-    {
-      title: "Visas",
-      icon: FileText,
-      description: "Hassle-free procurement of official ’Umrah and Hajj visas with absolute compliance.",
-    },
-    {
-      title: "Group Tours",
-      icon: Users,
-      description: "Well-coordinated, scholar-led group journeys for collective worship and support.",
-    },
-    {
-      title: "Chartered Flights",
-      icon: Plane,
-      description: "Specialized flight arrangements for peak periods (such as Hajj) to ensure timely departures.",
-    },
-    {
-      title: "Hotel Reservations",
-      icon: MapPin,
-      description: "Vetted accommodations in Makkah and Madīnah situated close to the Harams.",
-    },
-    {
-      title: "Holiday Packages",
-      icon: Sparkles,
-      description: "Specially curated spiritual and educational journeys for families and groups.",
-    },
-    {
-      title: "Family Tours",
-      icon: HeartHandshake,
-      description: "Tailored, slower-paced private packages designed for the specific needs of families.",
-    },
-    {
-      title: "’Umrah Bookings",
-      icon: PackageCheck,
-      description: "Comprehensive packages with flights, visas, hotels, guides, and Zamzam water.",
-    },
-    {
-      title: "Ḥajj Bookings",
-      icon: BadgeCheck,
-      description: "Dedicated and highly organized Hajj pilgrimage support, structured around the Sunnah.",
-    },
-  ];
+  const services = {
+    packages: [
+      {
+        title: "’Umrah Bookings",
+        icon: PackageCheck,
+        description: "Comprehensive packages with flights, visas, hotels, guides, and Zamzam water.",
+      },
+      {
+        title: "Ḥajj Bookings",
+        icon: BadgeCheck,
+        description: "Dedicated and highly organized Hajj pilgrimage support, structured around the Sunnah.",
+      },
+      {
+        title: "Group Tours",
+        icon: Users,
+        description: "Well-coordinated, scholar-led group journeys for collective worship and support.",
+      },
+    ],
+    logistics: [
+      {
+        title: "Air Tickets",
+        icon: Plane,
+        description: "Seamless booking and arrangement of return tickets with premium airlines.",
+      },
+      {
+        title: "Visas",
+        icon: FileText,
+        description: "Hassle-free procurement of official ’Umrah and Hajj visas with absolute compliance.",
+      },
+      {
+        title: "Chartered Flights",
+        icon: Plane,
+        description: "Specialized flight arrangements for peak periods (such as Hajj) to ensure timely departures.",
+      },
+    ],
+    bespoke: [
+      {
+        title: "Hotel Reservations",
+        icon: MapPin,
+        description: "Vetted accommodations in Makkah and Madīnah situated close to the Harams.",
+      },
+      {
+        title: "Family Tours",
+        icon: HeartHandshake,
+        description: "Tailored, slower-paced private packages designed for the specific needs of families.",
+      },
+      {
+        title: "Holiday Packages",
+        icon: Sparkles,
+        description: "Specially curated spiritual and educational journeys for families and groups.",
+      },
+    ],
+  };
 
   const pillarTabs = {
     scholar: {
       num: "01",
       title: "Reputable Scholar-Led Tutelage",
       subtitle: "Guidance on the Qur'an and Sunnah",
-      description: "Our package designs are not simply logistics; they are centered around worship correctness. We secure reputable scholars to travel with you, delivering clear daily tutelage and verified guidance for every rite.",
+      description: "Our package designs are not simply logistics; they are centered around worship correctness. We secure reputable scholars to travel with you, delivering daily tutelage and verified guidance for every rite.",
       bulletPoints: [
         "Interactive pre-departure webinars to clarify the rites of Ihram, Tawaf, and Sa'i.",
         "On-site lectures and question-and-answer sessions in Makkah and Madīnah.",
@@ -1800,26 +1807,62 @@ function AboutPage() {
           </div>
         </section>
 
-        {/* Section 4: Our Core Services (Circle cut adaptive grid) */}
+        {/* Section 4: Our Core Services (Tabbed Category Monotony Break) */}
         <section className="about-services-section">
           <div className="section-header-centered">
             <span className="section-eyebrow-mini">Capabilities</span>
             <h2>Our Core Services</h2>
             <p>We handle every travel detail with professionalism and integrity, enabling you to focus completely on your devotion.</p>
           </div>
-          <div className="about-services-grid">
-            {services.map((service, idx) => {
-              const IconComp = service.icon;
-              return (
-                <div key={idx} className="about-service-card">
-                  <div className="service-icon-circle">
-                    <IconComp size={24} />
-                  </div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                </div>
-              );
-            })}
+
+          <div className="services-tabs-menu">
+            <button 
+              className={activeServiceCategory === 'packages' ? 'service-tab-btn active' : 'service-tab-btn'}
+              onClick={() => setActiveServiceCategory('packages')}
+            >
+              <BadgeCheck size={18} />
+              <span>Pilgrimage Packages</span>
+            </button>
+            <button 
+              className={activeServiceCategory === 'logistics' ? 'service-tab-btn active' : 'service-tab-btn'}
+              onClick={() => setActiveServiceCategory('logistics')}
+            >
+              <Plane size={18} />
+              <span>Travel & Logistics</span>
+            </button>
+            <button 
+              className={activeServiceCategory === 'bespoke' ? 'service-tab-btn active' : 'service-tab-btn'}
+              onClick={() => setActiveServiceCategory('bespoke')}
+            >
+              <Sparkles size={18} />
+              <span>Bespoke Accommodation</span>
+            </button>
+          </div>
+
+          <div className="services-pane-container">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeServiceCategory}
+                className="about-services-grid"
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.25 }}
+              >
+                {services[activeServiceCategory].map((service, idx) => {
+                  const IconComp = service.icon;
+                  return (
+                    <div key={idx} className="about-service-card">
+                      <div className="service-icon-circle">
+                        <IconComp size={24} />
+                      </div>
+                      <h3>{service.title}</h3>
+                      <p>{service.description}</p>
+                    </div>
+                  );
+                })}
+              </motion.div>
+            </AnimatePresence>
           </div>
         </section>
 
