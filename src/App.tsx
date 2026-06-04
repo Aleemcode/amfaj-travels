@@ -1612,6 +1612,8 @@ function TawafWalkthroughModal({ onClose }: { onClose: () => void }) {
 }
 
 function AboutPage() {
+  const [activePillarTab, setActivePillarTab] = useState<'scholar' | 'finance' | 'hospitality'>('scholar');
+
   const services = [
     {
       title: "Air Tickets",
@@ -1660,6 +1662,45 @@ function AboutPage() {
     },
   ];
 
+  const pillarTabs = {
+    scholar: {
+      num: "01",
+      title: "Reputable Scholar-Led Tutelage",
+      subtitle: "Guidance on the Qur'an and Sunnah",
+      description: "Our package designs are not simply logistics; they are centered around worship correctness. We secure reputable scholars to travel with you, delivering clear daily tutelage and verified guidance for every rite.",
+      bulletPoints: [
+        "Interactive pre-departure webinars to clarify the rites of Ihram, Tawaf, and Sa'i.",
+        "On-site lectures and question-and-answer sessions in Makkah and Madīnah.",
+        "Dr. Sharafuddeen Gbadebo Raaji planned to join the coming Umrah as scholar."
+      ],
+      quote: "“Prepare your journey before payment with verified knowledge.”"
+    },
+    finance: {
+      num: "02",
+      title: "Total Financial Integrity",
+      subtitle: "Honest Promises & Zero Hidden Fees",
+      description: "We believe in complete financial transparency. We disclose all inclusions and exclusions upfront, ensuring you never face unexpected surcharges for visas, hotels, or transport.",
+      bulletPoints: [
+        "Clear package outlines specifying what is included and what is excluded.",
+        "No sudden charges or adjustments due to exchange rate fluctuations once registered.",
+        "Secure payments tracked in structured records."
+      ],
+      quote: "“Absolute financial honesty is our sacred trust with every pilgrim.”"
+    },
+    hospitality: {
+      num: "03",
+      title: "Bespoke Sincere Hospitality",
+      subtitle: "Personalized Support Every Step",
+      description: "Every pilgrim is an honored guest of Allah. Our team provides close, personalized care to ensure your comfort, safety, and health needs are fully met.",
+      bulletPoints: [
+        "Dedicated group guides who stay with the pilgrims 24/7.",
+        "Accommodation pre-vetted to ensure close proximity to the Harams.",
+        "Special attention and assistance for elderly or first-time pilgrims."
+      ],
+      quote: "“Your safety and focus on worship are our highest operational priorities.”"
+    }
+  };
+
   return (
     <PageFrame
       eyebrow="About Us"
@@ -1667,7 +1708,122 @@ function AboutPage() {
       body="AMFAJ Travels and Tours serves Muslims seeking Hajj and ’Umrah travel support that is honest, dignified, and fully aligned with the Sunnah."
     >
       <div className="about-page-container">
-        {/* CEO Message Section */}
+        {/* Section 1: Why AMFAJ (Zemtura inspired Split Layout) */}
+        <section className="about-why-section">
+          <div className="about-why-grid">
+            <div className="why-stat-card">
+              <h3>100%</h3>
+              <p>Sunnah-Aligned Guidance</p>
+              <div className="why-stat-divider" />
+              <span className="why-stat-sub">Led by Verified Scholars</span>
+            </div>
+            <div className="why-text-col">
+              <span className="why-eyebrow-tag">Why AMFAJ</span>
+              <h2 className="why-split-content">
+                We exist for sincere pilgrims, devotion-focused families, and seekers of authentic worship. <span className="why-split-content-span">For those who want Hajj and ’Umrah travel supported with total financial integrity and guided by the pure Qur'an and Sunnah.</span>
+              </h2>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 2: Stats Strip (Zemtura inspired Monotony Break) */}
+        <section className="about-stats-strip">
+          <div className="about-stats-strip-container">
+            <div className="stat-strip-item">
+              <strong>100%</strong>
+              <span>Sunni Standard</span>
+            </div>
+            <div className="stat-strip-item">
+              <strong>0</strong>
+              <span>Hidden Surcharges</span>
+            </div>
+            <div className="stat-strip-item">
+              <strong>1:1</strong>
+              <span>Bespoke Care</span>
+            </div>
+            <div className="stat-strip-item">
+              <strong>24/7</strong>
+              <span>On-Field Support</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 3: Interactive Pillars Section (Zemtura inspired Vertical Tabs) */}
+        <section className="about-pillars-interactive">
+          <div className="section-header-centered">
+            <span className="section-eyebrow-mini">Core Framework</span>
+            <h2>Our Core Pillars of Service</h2>
+            <p>Select a pillar to explore how we protect and enrich your journey to the Holy Land.</p>
+          </div>
+          <div className="pillars-tabs-grid">
+            <div className="pillars-menu">
+              {(Object.keys(pillarTabs) as Array<keyof typeof pillarTabs>).map((key) => {
+                const item = pillarTabs[key];
+                const isActive = activePillarTab === key;
+                return (
+                  <button
+                    key={key}
+                    className={`pillar-menu-btn ${isActive ? 'active' : ''}`}
+                    onClick={() => setActivePillarTab(key)}
+                  >
+                    <span className="btn-num">{item.num}</span>
+                    <div className="btn-text-wrap">
+                      <strong>{item.title}</strong>
+                      <span>{item.subtitle}</span>
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+            <div className="pillars-pane-wrapper">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activePillarTab}
+                  className="pillar-pane-card"
+                  initial={{ opacity: 0, x: 15 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -15 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  <span className="pane-num-badge">{pillarTabs[activePillarTab].num}</span>
+                  <h3>{pillarTabs[activePillarTab].title}</h3>
+                  <p className="pane-lead-text">{pillarTabs[activePillarTab].description}</p>
+                  <ul>
+                    {pillarTabs[activePillarTab].bulletPoints.map((point, index) => (
+                      <li key={index}>{point}</li>
+                    ))}
+                  </ul>
+                  <blockquote>{pillarTabs[activePillarTab].quote}</blockquote>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 4: Our Core Services (Circle cut adaptive grid) */}
+        <section className="about-services-section">
+          <div className="section-header-centered">
+            <span className="section-eyebrow-mini">Capabilities</span>
+            <h2>Our Core Services</h2>
+            <p>We handle every travel detail with professionalism and integrity, enabling you to focus completely on your devotion.</p>
+          </div>
+          <div className="about-services-grid">
+            {services.map((service, idx) => {
+              const IconComp = service.icon;
+              return (
+                <div key={idx} className="about-service-card">
+                  <div className="service-icon-circle">
+                    <IconComp size={24} />
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* Section 5: CEO Message Section */}
         <section className="about-ceo-section">
           <div className="about-ceo-grid">
             <div className="about-ceo-speech-card">
@@ -1702,96 +1858,6 @@ function AboutPage() {
                   <span className="ceo-visual-seal">Verified Sunni Standard</span>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Vision, Mission, Objectives Section */}
-        <section className="about-vmo-section">
-          <div className="about-vmo-grid">
-            <div className="vmo-card">
-              <div className="vmo-icon-box">
-                <Compass size={24} />
-              </div>
-              <h3>Our Vision</h3>
-              <p>
-                To be recognized as the premier Sunnah-guided travel service provider in Nigeria and for diaspora pilgrims, delivering transparent, high-integrity, and spiritually enriching pilgrimage solutions that set the industry standard for authenticity and care.
-              </p>
-            </div>
-            
-            <div className="vmo-card">
-              <div className="vmo-icon-box">
-                <ShieldCheck size={24} />
-              </div>
-              <h3>Our Mission</h3>
-              <p>
-                To facilitate sincere, stress-free, and religiously correct Hajj and ’Umrah journeys by providing bespoke hospitality, total financial integrity, and scholarly guidance, allowing every pilgrim to focus entirely on their devotion.
-              </p>
-            </div>
-            
-            <div className="vmo-card">
-              <div className="vmo-icon-box">
-                <CheckCircle2 size={24} />
-              </div>
-              <h3>Our Objectives</h3>
-              <ul>
-                <li>Make the sacred rites of Hajj and ’Umrah easy, accessible, and correctly aligned with the Sunnah.</li>
-                <li>Eliminate the anxiety of hidden charges and misleading travel promises through total transparency.</li>
-                <li>Provide continuous scholar-led education and support before, during, and after the pilgrimage.</li>
-                <li>Maintain a personalized, high-touch hospitality model that treats every pilgrim as an honored guest of Allah.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Services Section */}
-        <section className="about-services-section">
-          <div className="section-header-centered">
-            <h2>Our Core Services</h2>
-            <p>We handle every travel detail with professionalism and integrity, enabling you to focus completely on your devotion.</p>
-          </div>
-          <div className="about-services-grid">
-            {services.map((service, idx) => {
-              const IconComp = service.icon;
-              return (
-                <div key={idx} className="about-service-card">
-                  <div className="service-icon-circle">
-                    <IconComp size={24} />
-                  </div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
-                </div>
-              );
-            })}
-          </div>
-        </section>
-
-        {/* Trust Pillars / Value Proposition */}
-        <section className="about-pillars-section">
-          <div className="section-header-centered">
-            <h2>The AMFAJ Standard</h2>
-            <p>Four foundational promises that set our service apart and safeguard your journey.</p>
-          </div>
-          <div className="about-pillars-grid">
-            <div className="pillar-card">
-              <CheckCircle2 className="pillar-icon" />
-              <h3>Honesty with Promises</h3>
-              <p>We only promise what we can deliver. Every accommodation distance, meal option, and transport detail is verified before departure.</p>
-            </div>
-            <div className="pillar-card">
-              <Users className="pillar-icon" />
-              <h3>Bespoke Hospitality</h3>
-              <p>We treat our pilgrims as the honored guests of Allah. Our staff provides personalized care to accommodate individual health and comfort needs.</p>
-            </div>
-            <div className="pillar-card">
-              <ShieldCheck className="pillar-icon" />
-              <h3>Total Financial Integrity</h3>
-              <p>We maintain strict financial transparency. Your funds are secured, and all services are pre-booked to guarantee stability.</p>
-            </div>
-            <div className="pillar-card">
-              <BadgeCheck className="pillar-icon" />
-              <h3>Zero Hidden Fees</h3>
-              <p>The price you see is the price you pay. We do not charge surprise surcharges for visas, local guides, or ground transport.</p>
             </div>
           </div>
         </section>

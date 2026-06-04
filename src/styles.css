@@ -2775,74 +2775,307 @@ details p {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-/* VMO Section */
-.about-vmo-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+/* Section 1: Why AMFAJ Section (Split layout) */
+.about-why-section {
+  padding-top: 20px;
 }
 
-.vmo-card {
-  background: var(--white);
-  border: 1px solid rgba(3, 12, 53, 0.08);
-  border-radius: 20px;
-  padding: 30px;
-  box-shadow: 0 10px 30px -10px rgba(3, 12, 53, 0.02);
+.about-why-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.why-stat-card {
+  background: var(--navy);
+  color: var(--white);
+  padding: 40px 30px;
+  border-radius: 24px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.why-stat-card h3 {
+  font-size: 3.6rem;
+  font-weight: 800;
+  color: var(--orange);
+  margin: 0 0 10px 0;
+  font-family: var(--heading);
+  line-height: 1;
+}
+
+.why-stat-card p {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--white);
+}
+
+.why-stat-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 20px auto;
+  width: 60px;
+}
+
+.why-stat-sub {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.why-text-col {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.vmo-icon-box {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(254, 114, 2, 0.08);
+.why-eyebrow-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   color: var(--orange);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-family: var(--heading);
+  display: block;
 }
 
-.vmo-card h3 {
-  font-size: 1.25rem;
+.why-split-content {
+  font-size: 1.6rem;
   font-weight: 800;
+  line-height: 1.5;
   color: var(--navy);
   margin: 0;
   font-family: var(--heading);
 }
 
-.vmo-card p {
-  color: var(--body);
-  font-size: 0.9rem;
-  line-height: 1.65;
-  margin: 0;
+.why-split-content-span {
+  color: var(--muted);
+  font-weight: 500;
 }
 
-.vmo-card ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Section 2: Stats Strip (Monotony break) */
+.about-stats-strip {
+  background: var(--mist);
+  border-top: 1px solid rgba(3, 12, 53, 0.08);
+  border-bottom: 1px solid rgba(3, 12, 53, 0.08);
+  padding: 30px 20px;
+  border-radius: 20px;
+}
+
+.about-stats-strip-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.stat-strip-item {
+  text-align: center;
+  flex: 1;
+  min-width: 150px;
+  border-right: 1px solid rgba(3, 12, 53, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-strip-item:last-child {
+  border-right: 0;
+}
+
+.stat-strip-item strong {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--navy);
+  font-family: var(--heading);
+  line-height: 1;
+}
+
+.stat-strip-item span {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Section 3: Interactive Pillars (Vertical Tabs) */
+.about-pillars-interactive {
+  padding-top: 20px;
+}
+
+.section-eyebrow-mini {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--orange);
+  font-family: var(--heading);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.pillars-tabs-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.pillars-menu {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.vmo-card ul li {
-  font-size: 0.9rem;
+.pillar-menu-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--white);
+  border: 1px solid rgba(3, 12, 53, 0.07);
+  color: var(--navy);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s ease;
+}
+
+.pillar-menu-btn:hover {
+  background: var(--mist);
+  border-color: rgba(3, 12, 53, 0.12);
+}
+
+.pillar-menu-btn.active {
+  background: var(--white);
+  border-color: var(--orange);
+  box-shadow: 0 10px 30px -10px rgba(254, 114, 2, 0.12);
+}
+
+.pillar-menu-btn .btn-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(3, 12, 53, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--navy);
+  font-family: var(--heading);
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.pillar-menu-btn.active .btn-num {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.btn-text-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.btn-text-wrap strong {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--navy);
+  font-family: var(--heading);
+}
+
+.btn-text-wrap span {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.pillars-pane-wrapper {
+  position: relative;
+}
+
+.pillar-pane-card {
+  background: var(--white);
+  border: 1px solid rgba(3, 12, 53, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.pane-num-badge {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: rgba(254, 114, 2, 0.08);
+  font-family: var(--heading);
+  line-height: 1;
+}
+
+.pillar-pane-card h3 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 16px 0;
+  font-family: var(--heading);
+  max-width: 80%;
+}
+
+.pane-lead-text {
+  color: var(--body);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.pillar-pane-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pillar-pane-card ul li {
+  font-size: 0.92rem;
   line-height: 1.5;
   color: var(--body);
   position: relative;
-  padding-left: 20px;
+  padding-left: 24px;
 }
 
-.vmo-card ul li::before {
-  content: "•";
+.pillar-pane-card ul li::before {
+  content: "✓";
   color: var(--orange);
   position: absolute;
-  left: 4px;
-  font-size: 1.2rem;
-  top: -2px;
+  left: 2px;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.pillar-pane-card blockquote {
+  margin: 24px 0 0 0;
+  padding: 16px 20px;
+  border-left: 3px solid var(--orange);
+  background: var(--mist);
+  border-radius: 0 12px 12px 0;
+  font-style: italic;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.5;
 }
 
 /* Services section in About us */
@@ -3033,15 +3266,17 @@ details p {
     grid-template-columns: 1fr;
   }
   
-  .about-vmo-grid {
+  .about-why-grid {
     grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .pillars-tabs-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
   
   .about-services-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .about-pillars-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   
@@ -3062,10 +3297,6 @@ details p {
 
 @media (max-width: 640px) {
   .about-services-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .about-pillars-grid {
     grid-template-columns: 1fr;
   }
   
