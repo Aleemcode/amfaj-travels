@@ -112,7 +112,7 @@ const guidanceItems = [
     title: "Travel Ādāb & Ethics",
     body: "Nurture patience, respect, and proper conduct for group journeys within the sacred boundaries of the Holy Lands.",
     icon: Users,
-    to: "/guidance",
+    to: "/guidance/adab",
   },
 ];
 
@@ -172,6 +172,7 @@ function App() {
           <Route path="/packages/hajj" element={<HajjPackagePage />} />
           <Route path="/guidance" element={<GuidancePage />} />
           <Route path="/guidance/umrah" element={<UmrahGuidancePage />} />
+          <Route path="/guidance/adab" element={<AdabGuidancePage />} />
           <Route path="/guidance/hajj" element={<HajjGuidancePage />} />
           <Route path="/faq" element={<FaqPage />} />
           <Route path="/contact" element={<ContactPage />} />
@@ -730,7 +731,13 @@ function GuidancePage() {
           <BookOpen size={28} />
           <span>Available</span>
           <h2>’Umrah Guidance</h2>
-          <p>Readiness checklist, what to confirm before payment, packing, and group travel ādāb.</p>
+          <p>Readiness checklist, what to confirm before payment, packing, and rites of worship.</p>
+        </Link>
+        <Link className="category-card is-active" to="/guidance/adab">
+          <HeartHandshake size={28} />
+          <span>Available</span>
+          <h2>Travel Ādāb & Ethics</h2>
+          <p>Patience, group cooperation, speaking kindly, and respecting the sanctity of the sanctuaries.</p>
         </Link>
         <Link className="category-card" to="/guidance/hajj">
           <Clock size={28} />
@@ -962,6 +969,83 @@ function HajjGuidancePage() {
       cta="Open ’Umrah Guidance"
       to="/guidance/umrah"
     />
+  );
+}
+
+function AdabGuidancePage() {
+  const principles = [
+    {
+      title: "Sanctity of the Holy Cities",
+      desc: "Makkah and Madīnah are protected sanctuaries. Refrain from arguments, raising your voice unnecessarily, or disturbing others around the Harams.",
+      points: [
+        "Be mindful of your speech and avoid any idle disputes (Jidāl).",
+        "Keep the focus on continuous Dhikr, Istighfār, and worship.",
+        "Respect the local guides, workers, and authority rules in the sanctuaries."
+      ]
+    },
+    {
+      title: "Patience & Compassion",
+      desc: "Travel brings unexpected delays, crowd pressures, and fatigue. Patience (Sabr) is key to protecting the reward of your pilgrimage.",
+      points: [
+        "Respond to delays or hotel/transport checks with calm and prayer.",
+        "Show gentleness (Rifq) to fellow pilgrims, especially the elderly or weak.",
+        "Forgive minor shortcomings from service staff or group members."
+      ]
+    },
+    {
+      title: "Group Cooperation",
+      desc: "Traveling as a group requires coordination, and coordination protects everyone's safety and comfort.",
+      points: [
+        "Strictly adhere to the group departure and gathering times set by guides.",
+        "Help members of your travel cohort who are struggling or need assistance.",
+        "Respect the privacy and resting times of roommates and fellow travelers."
+      ]
+    }
+  ];
+
+  return (
+    <PageFrame
+      eyebrow="Travel Conduct"
+      title="Travel Ādāb & Ethics"
+      body="Perform your journey with the highest standards of Islamic character, respecting the sacred boundaries and supporting your fellow pilgrims."
+    >
+      <div className="adab-container">
+        <div className="adab-intro-card">
+          <span className="adab-quote-badge">“</span>
+          <h2>Character is the weightiest scale</h2>
+          <p>
+            The Prophet ﷺ said: "Nothing is heavier on the Scale of Deeds than good character." During ’Umrah and Ḥajj, this standard is even more critical as you travel as a guest of Allāh (Wafd Allāh).
+          </p>
+        </div>
+
+        <div className="adab-principles-grid">
+          {principles.map((pr, idx) => (
+            <div key={idx} className="adab-principle-card">
+              <h3>{pr.title}</h3>
+              <p className="pr-desc">{pr.desc}</p>
+              <ul className="principle-list">
+                {pr.points.map((pt, pIdx) => (
+                  <li key={pIdx}>
+                    <CheckCircle2 size={16} className="bullet-icon-orange" />
+                    <span>{pt}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="adab-action-banner">
+          <h3>Need guidance on travel preparations?</h3>
+          <p>Our scholars and guides are available to discuss pre-departure ethics with you.</p>
+          <div className="adab-btn-wrap">
+            <ArrowButton variant="secondary" to="/guidance">
+              Back to Guidance Hub
+            </ArrowButton>
+          </div>
+        </div>
+      </div>
+    </PageFrame>
   );
 }
 

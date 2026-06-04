@@ -952,9 +952,7 @@ p {
   gap: 18px;
 }
 
-.category-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
+
 
 .guidance-card,
 .category-card,
@@ -3404,8 +3402,169 @@ details p {
   color: var(--muted);
 }
 
+/* Adab Guidance Page */
+.adab-container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-bottom: 40px;
+}
+
+.adab-intro-card {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 28px;
+  padding: 45px 40px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.adab-intro-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0l10 30h30L55 50l10 30-25-20-25 20 10-30L0 30h30z' fill='%23fe7202' fill-opacity='0.02'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.adab-quote-badge {
+  position: absolute;
+  top: -15px;
+  right: 40px;
+  font-size: 8rem;
+  font-family: var(--heading);
+  color: rgba(254, 114, 2, 0.08);
+  line-height: 1;
+}
+
+.adab-intro-card h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--orange);
+  margin: 0 0 12px 0;
+  font-family: var(--heading);
+  position: relative;
+  z-index: 2;
+}
+
+.adab-intro-card p {
+  color: var(--border);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+}
+
+.adab-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.adab-principle-card {
+  background: var(--white);
+  border: 1px solid rgba(3, 12, 53, 0.08);
+  border-radius: 24px;
+  padding: 35px 30px;
+  transition: all 0.3s ease;
+}
+
+.adab-principle-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(254, 114, 2, 0.25);
+}
+
+.adab-principle-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 12px 0;
+  font-family: var(--heading);
+}
+
+.pr-desc {
+  font-size: 0.92rem;
+  color: var(--body);
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+}
+
+.principle-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.principle-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.principle-list li span {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: var(--body);
+}
+
+.bullet-icon-orange {
+  color: var(--orange);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.adab-action-banner {
+  background: radial-gradient(circle at center, rgba(254, 114, 2, 0.03) 0%, transparent 100%), var(--off-white);
+  border: 1px solid rgba(254, 114, 2, 0.08);
+  border-radius: 28px;
+  padding: 40px;
+  text-align: center;
+}
+
+.adab-action-banner h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin: 0 0 10px 0;
+  font-family: var(--heading);
+}
+
+.adab-action-banner p {
+  color: var(--body);
+  font-size: 0.95rem;
+  margin: 0 0 24px 0;
+}
+
+.adab-btn-wrap {
+  display: flex;
+  justify-content: center;
+}
+
 /* Responsiveness overrides for new components */
 @media (max-width: 991px) {
+  .adab-principles-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .adab-intro-card {
+    padding: 30px;
+  }
+  
+  .adab-intro-card h2 {
+    font-size: 1.5rem;
+  }
+
   .about-services-section {
     padding: 40px 30px;
     border-radius: 24px;
@@ -3455,6 +3614,14 @@ details p {
 }
 
 @media (max-width: 640px) {
+  .adab-action-banner {
+    padding: 30px 20px;
+  }
+  
+  .adab-action-banner h3 {
+    font-size: 1.25rem;
+  }
+
   .about-services-section {
     padding: 30px 16px;
     border-radius: 20px;
