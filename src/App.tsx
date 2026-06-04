@@ -1687,7 +1687,7 @@ function AboutPage() {
                 We look forward to serving you on your next sacred journey. May Allah accept our intentions and acts of worship.
               </p>
               <div className="ceo-profile">
-                <strong>Alhaji Jamiu Akinyoola</strong>
+                <strong>Fajumobi Adekunle Ibrahim</strong>
                 <span>CEO, AMFAJ Travels and Tours</span>
               </div>
             </div>
