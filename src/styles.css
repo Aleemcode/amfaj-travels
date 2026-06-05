@@ -2617,6 +2617,39 @@ details p {
   padding: 14px 10px;
 }
 
+/* Mobile toggle inside Tawaf walkthrough modal */
+.modal-mobile-toggle {
+  display: flex;
+  background: var(--mist);
+  padding: 6px;
+  border-radius: 12px;
+  margin: 10px 24px 0 24px;
+  border: 1px solid rgba(3, 12, 53, 0.04);
+}
+
+.modal-mobile-toggle .toggle-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--navy);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-mobile-toggle .toggle-btn.active {
+  background: var(--white);
+  color: var(--orange);
+  box-shadow: 0 4px 12px rgba(3, 12, 53, 0.08);
+}
+
 /* About Us Page Styling */
 .about-page-container {
   display: flex;
@@ -3599,13 +3632,19 @@ details p {
   }
   
   .tawaf-modal-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
   }
   
   .tawaf-modal-left {
     border-right: 0;
-    border-bottom: 1px solid rgba(3, 12, 53, 0.06);
-    max-height: 300px;
+    border-bottom: 0;
+    max-height: none !important;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
   }
   
   .tawaf-modal-container {
@@ -3671,6 +3710,6 @@ details p {
   }
   
   .tawaf-modal-left {
-    max-height: 250px;
+    max-height: none !important;
   }
 }

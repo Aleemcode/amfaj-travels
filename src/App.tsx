@@ -1667,10 +1667,20 @@ function InteractiveTawafGuide() {
 }
 
 function TawafWalkthroughModal({ onClose }: { onClose: () => void }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 991);
+  const [mobileTab, setMobileTab] = useState<'map' | 'guide'>('map');
+
   useEffect(() => {
     document.body.style.overflow = "hidden";
+    
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 991);
+    };
+    window.addEventListener('resize', handleResize);
+    
     return () => {
       document.body.style.overflow = "unset";
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -1699,19 +1709,43 @@ function TawafWalkthroughModal({ onClose }: { onClose: () => void }) {
             <X size={20} />
           </button>
         </div>
+
+        {isMobile && (
+          <div className="modal-mobile-toggle">
+            <button 
+              className={mobileTab === 'map' ? 'toggle-btn active' : 'toggle-btn'} 
+              onClick={() => setMobileTab('map')}
+            >
+              <Compass size={16} />
+              <span>Visual Map</span>
+            </button>
+            <button 
+              className={mobileTab === 'guide' ? 'toggle-btn active' : 'toggle-btn'} 
+              onClick={() => setMobileTab('guide')}
+            >
+              <BookOpen size={16} />
+              <span>Guide Text</span>
+            </button>
+          </div>
+        )}
+
         <div className="tawaf-modal-grid">
-          <div className="tawaf-modal-left">
-            <div className="tawaf-image-scroll-wrapper">
-              <img src="/tawaf-guide-infographic.png" alt="Ka'bah Tawaf Guide Infographic" />
+          {(!isMobile || mobileTab === 'map') && (
+            <div className="tawaf-modal-left">
+              <div className="tawaf-image-scroll-wrapper">
+                <img src="/tawaf-guide-infographic.png" alt="Ka'bah Tawaf Guide Infographic" />
+              </div>
+              <div className="tawaf-image-caption">
+                <Compass size={14} className="spin-icon" />
+                <span>{isMobile ? "Scroll or pinch-zoom to view infographic details" : "Scroll inside the image to view the details"}</span>
+              </div>
             </div>
-            <div className="tawaf-image-caption">
-              <Compass size={14} className="spin-icon" />
-              <span>Scroll inside the image to view the details</span>
+          )}
+          {(!isMobile || mobileTab === 'guide') && (
+            <div className="tawaf-modal-right">
+              <InteractiveTawafGuide />
             </div>
-          </div>
-          <div className="tawaf-modal-right">
-            <InteractiveTawafGuide />
-          </div>
+          )}
         </div>
       </motion.div>
     </motion.div>
