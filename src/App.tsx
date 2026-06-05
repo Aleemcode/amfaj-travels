@@ -423,7 +423,7 @@ function HeroCardsSequence() {
             ref={iframeRef}
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/live_stream?channel=UCos52azQNBgW63_9uDJoPDA&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&enablejsapi=1"
+            src="https://www.youtube.com/embed/Atzg5U8CsfA?autoplay=1&mute=1&controls=1&loop=1&playlist=Atzg5U8CsfA&rel=0&playsinline=1&enablejsapi=1"
             title="Makkah Al-Mukarramah Live Stream"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
