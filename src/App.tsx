@@ -423,8 +423,8 @@ function HeroCardsSequence() {
             ref={iframeRef}
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/YDcMsYV7K0A?autoplay=1&mute=1&controls=1&loop=1&playlist=YDcMsYV7K0A&rel=0&playsinline=1&enablejsapi=1"
-            title="September ’Umrah Guidance"
+            src="https://www.youtube.com/embed/live_stream?channel=UCos52azQNBgW63_9uDJoPDA&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&enablejsapi=1"
+            title="Makkah Al-Mukarramah Live Stream"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
@@ -435,8 +435,8 @@ function HeroCardsSequence() {
             <span>{isMuted ? "Unmute" : "Mute"}</span>
           </button>
           <motion.div className="video-caption" style={{ opacity: uiOpacity }}>
-            <span>September ’Umrah Guidance</span>
-            <strong>Scholar-Led Prep Tutelage Standard</strong>
+            <span>Masjid Al-Ḥarām Live</span>
+            <strong>Makkah Al-Mukarramah 24/7</strong>
           </motion.div>
         </motion.article>
       </div>
