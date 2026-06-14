@@ -30,6 +30,8 @@ import { useRef, useState, useEffect } from "react";
 const whatsappMessage =
   "Assalamu alaykum, I want to start registration for AMFAJ September ’Umrah.";
 const whatsappHref = `https://wa.me/2348069243134?text=${encodeURIComponent(whatsappMessage)}`;
+const makkahLiveEmbedUrl =
+  "https://www.youtube.com/embed/live_stream?channel=UCos52azQNBgW63_9uDJoPDA&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&enablejsapi=1";
 
 const packages = [
   {
@@ -423,8 +425,8 @@ function HeroCardsSequence() {
             ref={iframeRef}
             width="100%"
             height="100%"
-            src="https://www.youtube.com/embed/Atzg5U8CsfA?autoplay=1&mute=1&controls=1&loop=1&playlist=Atzg5U8CsfA&rel=0&playsinline=1&enablejsapi=1"
-            title="Makkah Al-Mukarramah Live Stream"
+            src={makkahLiveEmbedUrl}
+            title="Makkah Live Stream"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen

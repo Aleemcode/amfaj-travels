@@ -134,6 +134,20 @@ No tests required yet because implementation has not started.
   - White: `#FFFFFF`
 - Updated `design.md` and `website_ux_research_direction.md` to replace generic green/gold assumptions with the logo-derived AMFAJ color system.
 - Added approved typography to `design.md`: Sora for headings and Host Grotesk for body copy.
+## 2026-06-14 05:58 WAT - Home Live Video Link Stabilized
+
+- Replaced the home hero live video iframe from a single YouTube video ID to a channel-level live embed.
+- New source: `https://www.youtube.com/embed/live_stream?channel=UCos52azQNBgW63_9uDJoPDA&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&enablejsapi=1`.
+- This is more stable because it follows the channel's current live stream instead of depending on a specific video ID.
+- Ran `npm run build`; production build passed.
+
+## 2026-06-09 10:08 WAT - Project Constitution Folder Reality Updated
+
+- Updated `claude.md` to reflect the current workspace structure.
+- Added the active React/Vite website folders: `src/`, `public/`, `dist/`, `node_modules/`, and config files.
+- Documented `scratch/` as experimental/local utility scripts, distinct from blocked production `tools/`.
+- Clarified that `src/` is the source of truth for website UI code and `public/` stores static frontend assets.
+
 ## 2026-06-01 00:24 WAT - Website Development Started
 
 - Used the frontend-design and copywriting skills to start the AMFAJ website MVP.
