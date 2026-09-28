@@ -134,6 +134,26 @@ No tests required yet because implementation has not started.
   - White: `#FFFFFF`
 - Updated `design.md` and `website_ux_research_direction.md` to replace generic green/gold assumptions with the logo-derived AMFAJ color system.
 - Added approved typography to `design.md`: Sora for headings and Host Grotesk for body copy.
+## 2026-09-28 17:40 WAT - Welcoming Audio Widget Removed
+
+- Removed the floating `WelcomeVoicePlayer` audio widget and its session-storage logic from `src/App.tsx`.
+- Removed all associated `.welcome-voice-*` CSS and mobile override rules from `src/styles.css`.
+- Verified production build successfully via `npm run build`.
+
+## 2026-06-21 17:53 WAT - Weekly Content Pack Exported To PDF
+
+- Converted `content_week_june_22_28_2026.md` into `AMFAJ_Weekly_Content_June_22_28_2026.pdf`.
+- Applied AMFAJ navy/orange branding, a dedicated cover, section hierarchy, headers, footers, and page numbers.
+- Verified the PDF contains 19 populated pages and valid document metadata.
+
+## 2026-06-21 17:10 WAT - June 22-28 Weekly Content Pack Completed
+
+- Created `content_week_june_22_28_2026.md` as a complete seven-day social media content pack.
+- Built the week around a verified 99/100-day countdown to the September 29/30 departure window.
+- Included Reel/TikTok scripts, carousel and flyer copy, captions, WhatsApp Status adaptations, engagement prompts, design directions, hashtags, posting tests, and conversion keywords.
+- Introduced fresh campaign angles: honest package receipt, Lagos-versus-Abuja poll, scholar question collection, family/sponsor story, pilgrim personality carousel, and Nigeria-versus-Diaspora comparison.
+- Checked package prices, dates, inclusions, scholar-led wording, and claim-safety rules against the approved project direction.
+
 ## 2026-06-14 05:58 WAT - Home Live Video Link Stabilized
 
 - Replaced the home hero live video iframe from a single YouTube video ID to a channel-level live embed.
