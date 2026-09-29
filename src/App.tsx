@@ -1,4 +1,5 @@
 import {
+  AlertTriangle,
   ArrowRight,
   BadgeCheck,
   BookOpen,
@@ -7,6 +8,7 @@ import {
   ChevronDown,
   Clock,
   Compass,
+  Download,
   FileText,
   HelpCircle,
   HeartHandshake,
@@ -16,6 +18,7 @@ import {
   PackageCheck,
   Play,
   Plane,
+  Printer,
   ShieldCheck,
   Sparkles,
   Users,
@@ -174,6 +177,7 @@ function App() {
           <Route path="/packages/hajj" element={<HajjPackagePage />} />
           <Route path="/guidance" element={<GuidancePage />} />
           <Route path="/guidance/umrah" element={<UmrahGuidancePage />} />
+          <Route path="/guidance/umrah/scholar-text" element={<UmrahScholarGuidePage />} />
           <Route path="/guidance/adab" element={<AdabGuidancePage />} />
           <Route path="/guidance/hajj" element={<HajjGuidancePage />} />
           <Route path="/faq" element={<FaqPage />} />
@@ -856,6 +860,26 @@ function UmrahGuidancePage() {
           </div>
         </section>
 
+        {/* Featured Scholar Guide Resource Banner */}
+        <section className="featured-scholar-banner">
+          <div className="featured-scholar-badge">
+            <Sparkles size={16} /> Official Scholar Lecture & Printable Reference
+          </div>
+          <div className="featured-scholar-content">
+            <div className="featured-scholar-info">
+              <h3>Authentic Step-by-Step ’Umrah Sunnah Guide</h3>
+              <p>
+                Study the complete, vocalized Arabic lecture transcript covering all five stages of ’Umrah upon the understanding of the pious predecessors — complete with highlighted Prophetic Adhkār, Sunnah vs. Pitfall verifications, and an official printable/downloadable PDF.
+              </p>
+            </div>
+            <div className="featured-scholar-action">
+              <Link to="/guidance/umrah/scholar-text" className="button button-primary featured-scholar-btn">
+                <BookOpen size={18} /> Open Scholar Guide &amp; PDF
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* Journey Map Stepper Title */}
         <div className="journey-title-block">
           <p className="eyebrow">Interactive Path</p>
@@ -968,6 +992,388 @@ function UmrahGuidancePage() {
           <TawafWalkthroughModal onClose={() => setIsTawafModalOpen(false)} />
         )}
       </AnimatePresence>
+    </PageFrame>
+  );
+}
+
+function UmrahScholarGuidePage() {
+  const [activeStage, setActiveStage] = useState("stage-1");
+
+  const scrollToSection = (id: string) => {
+    setActiveStage(id);
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -100;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
+  return (
+    <PageFrame
+      eyebrow="Authenticated Reference"
+      title="Step-by-Step ’Umrah Sunnah Guide"
+      body="The comprehensive scholar lecture transcript on the rites of ’Umrah upon the understanding of the pious predecessors — complete with vocalized Arabic text, authoritative Prophetic Adhkār, fiqh verifications, and an official printable/downloadable PDF."
+      parent={{ name: "’Umrah Guidance", to: "/guidance/umrah" }}
+    >
+      <div className="scholar-guide-page">
+        {/* Print-Only Header Stamp */}
+        <div className="print-only-stamp">
+          <div className="print-stamp-logo">AMFAJ TRAVELS &amp; TOURS</div>
+          <div className="print-stamp-title">دَلِيلُ صِفَةِ الْعُمْرَةِ عَلَى هَدْيِ السُّنَّةِ النَّبَوِيَّةِ — Official Scholar Reference</div>
+          <div className="print-stamp-meta">Guidance Department • WhatsApp: +234 806 924 3134 • amfajtravels.com</div>
+        </div>
+
+        {/* Interactive Top Actions Toolbar */}
+        <div className="scholar-toolbar-card">
+          <div className="scholar-toolbar-info">
+            <span className="scholar-toolbar-tag">
+              <Sparkles size={15} /> Practical Pilgrim Resource
+            </span>
+            <h3>Preserve or Print This Authentic Guide</h3>
+            <p>
+              Download the official pre-formatted PDF document or print directly with custom high-contrast formatting for your pilgrimage journey.
+            </p>
+          </div>
+          <div className="scholar-toolbar-actions">
+            <a
+              href="/AMFAJ_Umrah_Sunnah_Guide_Arabic.pdf"
+              download="AMFAJ_Umrah_Sunnah_Guide_Arabic.pdf"
+              className="button button-primary scholar-dl-btn"
+            >
+              <Download size={18} /> Download Official PDF
+            </a>
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="button button-secondary scholar-print-btn"
+            >
+              <Printer size={18} /> Print / Save as PDF
+            </button>
+          </div>
+        </div>
+
+        {/* Jump Navigation Pills */}
+        <div className="scholar-nav-pills">
+          <button
+            type="button"
+            className={`scholar-pill ${activeStage === "stage-1" ? "is-active" : ""}`}
+            onClick={() => scrollToSection("stage-1")}
+          >
+            ١. الإحرام والميقات
+          </button>
+          <button
+            type="button"
+            className={`scholar-pill ${activeStage === "stage-2" ? "is-active" : ""}`}
+            onClick={() => scrollToSection("stage-2")}
+          >
+            ٢. التلبية والمسير
+          </button>
+          <button
+            type="button"
+            className={`scholar-pill ${activeStage === "stage-3" ? "is-active" : ""}`}
+            onClick={() => scrollToSection("stage-3")}
+          >
+            ٣. طواف القدوم
+          </button>
+          <button
+            type="button"
+            className={`scholar-pill ${activeStage === "stage-4" ? "is-active" : ""}`}
+            onClick={() => scrollToSection("stage-4")}
+          >
+            ٤. خلف المقام وزمزم
+          </button>
+          <button
+            type="button"
+            className={`scholar-pill ${activeStage === "stage-5" ? "is-active" : ""}`}
+            onClick={() => scrollToSection("stage-5")}
+          >
+            ٥. السعي والتحلل
+          </button>
+        </div>
+
+        {/* Scholarly Overview Notice */}
+        <div className="scholar-overview-card">
+          <div className="scholar-overview-badge">
+            <ShieldCheck size={18} /> Standard of Tutelage &amp; Verification
+          </div>
+          <div className="scholar-overview-body">
+            <p>
+              In accordance with AMFAJ’s commitment to religious tutelage and authentic guidance upon the Qur’ān and the Sunnah according to the understanding of the pious predecessors, this guide documents the complete oral lecture explaining how the Prophet Muhammad ﷺ performed ’Umrah.
+            </p>
+            <blockquote className="scholar-prophetic-quote">
+              <span className="quote-ar">«خُذُوا عَنِّي مَنَاسِكَكُمْ»</span>
+              <span className="quote-en">“Take from me your pilgrimage rites.” (Ṣaḥīḥ Muslim 1297)</span>
+            </blockquote>
+          </div>
+        </div>
+
+        {/* ==================== STAGE 1 ==================== */}
+        <section id="stage-1" className="scholar-stage-container">
+          <div className="scholar-stage-header">
+            <div className="stage-num-badge">STAGE 01 / 05</div>
+            <h2 className="stage-ar-title">الْمَرْحَلَةُ الأُولَى: التَّهَيُّؤُ لِلإِحْرَامِ وَعَقْدُ النِّيَّةِ عِنْدَ الْمِيقَاتِ</h2>
+            <p className="stage-en-subtitle">Preparation, Personal Hygiene, Garments, &amp; The Intention at the Mīqāt</p>
+          </div>
+
+          <div className="scholar-arabic-card" dir="rtl">
+            <p className="scholar-arabic-text">
+              «فَاعْلَمُوا — وَفَّقَنِي اللهُ وَإِيَّاكُمْ — أَنَّهُ يُسْتَحَبُّ لِمُرِيدِ الْحَجِّ أَوِ الْعُمْرَةِ أَنْ يَتَهَيَّأَ لِلإِحْرَامِ بِالتَّنَظُّفِ، بِإِزَالَةِ الشُّعُورِ الزَّائِدَةِ؛ شَعْرِ الإِبْطَيْنِ، وَشَعْرِ الْعَانَةِ، وَحَفِّ الشَّارِبِ، وَقَلْمِ الأَظَافِرِ.<br />
+              وَيُسْتَحَبُّ أَنْ يَكُونَ ذَلِكَ قُبَيْلَ الإِحْرَامِ، إِلَّا إِذَا كَانَ يُرِيدُ أَنْ يُضَحِّيَ بِأَنْ يَذْبَحَ أُضْحِيَّةً فِي بَلَدِهِ فِي أَيَّامِ الْعِيدِ، فَإِنَّهُ يَجْعَلُ ذَلِكَ قَبْلَ اسْتِهْلَالِ ذِي الحِجَّةِ.<br />
+              وَيَجُوزُ لِلْمُسْلِمِ أَنْ يَفْعَلَ ذَلِكَ فِي بَيْتِهِ أَوْ فِي الْفُنْدُقِ أَوْ فِي الْمِيقَاتِ.<br /><br />
+              وَيُسْتَحَبُّ وَيُسَنُّ لَهُ أَنْ يَغْتَسِلَ لِلإِحْرَامِ، وَهَذَا الاغْتِسَالُ مُسْتَحَبٌّ فِي حَقِّ الرِّجَالِ وَالنِّسَاءِ حَتَّى الْحَائِضِ وَالنُّفَسَاءِ.<br /><br />
+              وَيَتَجَرَّدُ الرَّجُلُ مِنَ الثِّيَابِ الْمَخِيطَةِ، وَيَلْبَسُ إِزَارًا وَرِدَاءً أَبْيَضَيْنِ نَظِيفَيْنِ، وَيُسْتَحَبُّ أَنْ يَتَطَيَّبَ فِي بَدَنِهِ كَرَأْسِهِ وَلِحْيَتِهِ قَبْلَ الإِحْرَامِ بِمَا تَيَسَّرَ مِنْ طِيبٍ، وَلَا يُطَيِّبُ ثِيَابَ الإِحْرَامِ.<br /><br />
+              أَمَّا الْمَرْأَةُ فَتَلْبَسُ مَا شَاءَتْ مِنَ الثِّيَابِ الْمُبَاحَةِ الَّتِي لَيْسَ فِيهَا تَبَرُّجٌ وَلَا شُهْرَةٌ، وَلَا تَلْبَسُ النِّقَابَ وَلَا الْقُفَّازَيْنِ، وَلَكِنْ تَسْدُلُ خِمَارَهَا عَلَى وَجْهِهَا عِنْدَ مُرُورِ الرِّجَالِ الأَجَانِبِ بِهَا.<br /><br />
+              فَإِذَا وَصَلَ الْمُسْلِمُ إِلَى الْمِيقَاتِ — أَوْ حَاذَاهُ جَوًّا أَوْ بَحْرًا — أَحْرَمَ، وَيُهِلُّ بِالْعُمْرَةِ قَائِلًا:»
+            </p>
+          </div>
+
+          <div className="scholar-dhikr-box">
+            <span className="dhikr-category">Prophetic Invocation at the Mīqāt</span>
+            <p className="dhikr-arabic-phrase" dir="rtl">«لَبَّيْكَ عُمْرَةً» <span className="dhikr-or">أَوْ</span> «اللَّهُمَّ لَبَّيْكَ عُمْرَةً»</p>
+            <p className="dhikr-transliteration">“Labbayk ‘Umrah” or “Allāhumma Labbayka ‘Umrah”</p>
+            <p className="dhikr-meaning">“Here I am, O Allāh, answering Your call for ‘Umrah.”</p>
+          </div>
+
+          <div className="scholar-rulings-grid">
+            <div className="scholar-ruling-pane">
+              <h4><CheckCircle2 size={16} /> Essential Sunnah Guidelines</h4>
+              <ul>
+                <li><strong>Cleanliness:</strong> Clipping nails, trimming mustache, and removing unwanted body hair before entering Iḥrām.</li>
+                <li><strong>Bathing (Ghusl):</strong> Highly recommended for men and women, including menstruating or postpartum sisters.</li>
+                <li><strong>Perfume for Men:</strong> Permissible on hair and skin (beard/head) before intention; do not perfume the garments.</li>
+                <li><strong>Garments:</strong> Men wear two unstitched white towels (Izār and Ridā’). Women wear loose modest attire without Niqāb or gloves.</li>
+              </ul>
+            </div>
+            <div className="scholar-pitfall-pane">
+              <h4><AlertTriangle size={16} /> Critical Pitfalls to Avoid</h4>
+              <p>
+                <strong>No Iḍṭibā‘ at the Airport or Mīqāt:</strong> Many pilgrims uncover their right shoulder at the Mīqāt or wear it throughout transit. This is incorrect. Both shoulders must remain covered until reaching the Ka‘bah for Ṭawāf.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ==================== STAGE 2 ==================== */}
+        <section id="stage-2" className="scholar-stage-container">
+          <div className="scholar-stage-header">
+            <div className="stage-num-badge">STAGE 02 / 05</div>
+            <h2 className="stage-ar-title">الْمَرْحَلَةُ الثَّانِيَةُ: التَّلْبِيَةُ وَآدَابُ الْمَسِيرِ إِلَى مَكَّةَ الْمُكَرَّمَةِ</h2>
+            <p className="stage-en-subtitle">The Resounding Talbiyah, Transit Adhkār, &amp; Entry into the Sacred Sanctuary</p>
+          </div>
+
+          <div className="scholar-arabic-card" dir="rtl">
+            <p className="scholar-arabic-text">
+              «ثُمَّ يَشْرَعُ فِي التَّلْبِيَةِ الَّتِي كَانَ النَّبِيُّ ﷺ يُلَبِّي بِهَا، وَيَرْفَعُ الرِّجَالُ أَصْوَاتَهُمْ بِهَا، أَمَّا النِّسَاءُ فَيُسْمِعْنَ أَنْفُسَهُنَّ وَمَنْ يَلِيهِنَّ دُونَ رَفْعٍ مُلْفِتٍ لِلصَّوْتِ:»
+            </p>
+          </div>
+
+          <div className="scholar-dhikr-box">
+            <span className="dhikr-category">The Prophetic Talbiyah</span>
+            <p className="dhikr-arabic-phrase" dir="rtl">«لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ»</p>
+            <p className="dhikr-transliteration">“Labbayk Allāhumma Labbayk, Labbayka Lā Sharīka Laka Labbayk, Innal-Ḥamda Wan-Ni‘mata Laka Wal-Mulk, Lā Sharīka Lak.”</p>
+            <p className="dhikr-meaning">“Here I am, O Allāh, here I am. Here I am, You have no partner, here I am. Verily all praise, grace, and dominion belong to You, You have no partner.”</p>
+          </div>
+
+          <div className="scholar-arabic-card" dir="rtl">
+            <p className="scholar-arabic-text">
+              «وَيَسْتَمِرُّ الْمُحْرِمُ فِي التَّلْبِيَةِ وَالإِكْثَارِ مِنْ ذِكْرِ اللهِ وَالاسْتِغْفَارِ وَالدُّعَاءِ فِي طَرِيقِهِ إِلَى مَكَّةَ، حَتَّى يَبْدَأَ بِالطَّوَافِ؛ فَإِذَا شَرَعَ فِي الطَّوَافِ قَطَعَ التَّلْبِيَةَ.<br /><br />
+              وَيُسْتَحَبُّ لَهُ إِذَا دَخَلَ الْمَسْجِدَ الْحَرَامَ أَنْ يُقَدِّمَ رِجْلَهُ الْيُمْنَى وَيَقُولَ ذِكْرَ دُخُولِ الْمَسْجِدِ:»
+            </p>
+          </div>
+
+          <div className="scholar-dhikr-box">
+            <span className="dhikr-category">Supplication upon Entering Masjid al-Ḥarām</span>
+            <p className="dhikr-arabic-phrase" dir="rtl">«بِسْمِ اللهِ، وَالصَّلَاةُ وَالسَّلَامُ عَلَى رَسُولِ اللهِ، اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ»</p>
+            <p className="dhikr-transliteration">“Bismillāh, Waṣ-Ṣalātu Was-Salāmu ‘Alā Rasūlillāh, Allāhummaf-taḥ Lī Abwāba Raḥmatik.”</p>
+            <p className="dhikr-meaning">“In the Name of Allāh, and prayers and peace be upon the Messenger of Allāh. O Allāh, open for me the gates of Your Mercy.”</p>
+          </div>
+
+          <div className="scholar-rulings-grid">
+            <div className="scholar-ruling-pane">
+              <h4><CheckCircle2 size={16} /> Essential Sunnah Guidelines</h4>
+              <ul>
+                <li><strong>Voice Volume:</strong> Men loudly proclaim the Talbiyah with strength and reverence; women recite quietly without drawing unwanted attention.</li>
+                <li><strong>Duration:</strong> Continues uninterrupted during travel until reaching the Ka‘bah to begin Ṭawāf.</li>
+                <li><strong>Sanctuary Entry:</strong> Enter with the right foot reciting the authentic prophetic entrance supplication.</li>
+              </ul>
+            </div>
+            <div className="scholar-pitfall-pane">
+              <h4><AlertTriangle size={16} /> Critical Pitfalls to Avoid</h4>
+              <p>
+                <strong>No Choir Megaphones or Invented Sighting Du‘ās:</strong> Avoid synchronized collective chanting led by group megaphone leaders. Furthermore, there is no verified specific du‘ā required solely for first looking at the Ka‘bah. Supplicate freely.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ==================== STAGE 3 ==================== */}
+        <section id="stage-3" className="scholar-stage-container">
+          <div className="scholar-stage-header">
+            <div className="stage-num-badge">STAGE 03 / 05</div>
+            <h2 className="stage-ar-title">الْمَرْحَلَةُ الثَّالِثَةُ: الطَّوَافُ بِالْبَيْتِ الْعَتِيقِ وَسُنَنُهُ</h2>
+            <p className="stage-en-subtitle">Ṭawāf al-Qudūm (Circumambulation), Raml, Iḍṭibā‘, &amp; The Authentic Adhkār</p>
+          </div>
+
+          <div className="scholar-arabic-card" dir="rtl">
+            <p className="scholar-arabic-text">
+              «فَإِذَا وَصَلَ إِلَى الْكَعْبَةِ، قَطَعَ التَّلْبِيَةَ، وَيُسَنُّ لِلرَّجُلِ فِي طَوَافِ الْقُدُومِ شَيْئَانِ:<br />
+              ١. <strong>الاِضْطِبَاعُ:</strong> وَهُوَ أَنْ يَجْعَلَ وَسَطَ رِدَائِهِ تَحْتَ إِبْطِهِ الأَيْمَنِ وَطَرَفَيْهِ عَلَى عَاتِقِهِ الأَيْسَرِ؛ فَيَبْدُو كَتِفُهُ الأَيْمَنُ مَكْشُوفًا، وَهَذَا فِي جَمِيعِ أَشْوَاطِ الطَّوَافِ السَّبْعَةِ فَقَطْ.<br />
+              ٢. <strong>الرَّمَلُ:</strong> وَهُوَ إِسْرَاعُ الْمَشْيِ مَعَ مُقَارَبَةِ الْخُطَى فِي الأَشْوَاطِ الثَّلَاثَةِ الأُولَى، ثُمَّ يَمْشِي كَعَادَتِهِ فِي الأَرْبَعَةِ الْبَاقِيَةِ.<br /><br />
+              وَيَبْدَأُ الطَّوَافَ مِنَ الْحَجَرِ الأَسْوَدِ؛ فَيَسْتَلِمُهُ بِيَدِهِ وَيُقَبِّلُهُ إِنْ تَيَسَّرَ دُونَ مُزَاحَمَةٍ وَلَا إِيذَاءٍ، فَإِنْ لَمْ يَتَيَسَّرْ أَشَارَ إِلَيْهِ بِيَدِهِ الْيُمْنَى إِشَارَةً وَاحِدَةً قَائِلًا: <strong>«اللهُ أَكْبَرُ»</strong>، وَلَا يُقَبِّلُ يَدَهُ عِنْدَ الإِشَارَةِ.<br /><br />
+              وَيَجْعَلُ الْكَعْبَةَ عَنْ يَسَارِهِ وَيَطُوفُ سَبْعَةَ أَشْوَاطٍ كَامِلَةً مِنْ وَرَاءِ الحِجْرِ (حِجْرِ إِسْمَاعِيلَ). وَيَدْعُو فِيهَا بِمَا شَاءَ مِنْ خَيْرَيِ الدُّنْيَا وَالآخِرَةِ، وَيَقْرَأُ الْقُرْآنَ، وَيَذْكُرُ اللهَ تَعَالَى؛ وَلَيْسَ لِكُلِّ شَوْطٍ دُعَاءٌ مَخْصُوصٌ.<br /><br />
+              وَكُلَّمَا مَرَّ بِالرُّكْنِ الْيَمَانِي اسْتَلَمَهُ بِيَدِهِ إِنْ تَيَسَّرَ دُونَ تَقْبِيلٍ، فَإِنْ لَمْ يَتَيَسَّرْ مَضَى وَلَا يُشِيرُ إِلَيْهِ وَلَا يُكَبِّرُ.<br /><br />
+              وَيُسْتَحَبُّ أَنْ يَقُولَ بَيْنَ الرُّكْنِ الْيَمَانِي وَالْحَجَرِ الأَسْوَدِ:»
+            </p>
+          </div>
+
+          <div className="scholar-dhikr-box">
+            <span className="dhikr-category">Dhikr between the Yemeni Corner and the Black Stone</span>
+            <p className="dhikr-arabic-phrase" dir="rtl">«رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ»</p>
+            <p className="dhikr-transliteration">“Rabbanā Ātinā Fid-Dunyā Ḥasanatan Wa Fil-Ākhirati Ḥasanatan Wa Qinā ‘Adhāban-Nār.”</p>
+            <p className="dhikr-meaning">“Our Lord! Give us in this world that which is good and in the Hereafter that which is good, and save us from the torment of the Fire.”</p>
+          </div>
+
+          <div className="scholar-rulings-grid">
+            <div className="scholar-ruling-pane">
+              <h4><CheckCircle2 size={16} /> Essential Sunnah Guidelines</h4>
+              <ul>
+                <li><strong>7 Full Circuits:</strong> Keep the Ka‘bah on your left, beginning and concluding each circuit at the Black Stone alignment.</li>
+                <li><strong>Iḍṭibā‘ (Men):</strong> Uncover right shoulder for all 7 circuits of Ṭawāf al-Qudūm only.</li>
+                <li><strong>Raml (Men):</strong> Walk briskly with small rapid steps in circuits 1, 2, and 3 only. Normal walking in circuits 4 to 7.</li>
+                <li><strong>Ḥijr Ismā‘īl:</strong> You must circumambulate completely outside the semi-circular wall.</li>
+              </ul>
+            </div>
+            <div className="scholar-pitfall-pane">
+              <h4><AlertTriangle size={16} /> Critical Pitfalls to Avoid</h4>
+              <p>
+                <strong>Never Walk Inside the Ḥijr:</strong> Walking through the opening of the Ḥijr invalidates that circuit because the Ḥijr is part of the interior of the Ka‘bah. Do not kiss or wave at the Yemeni Corner; only touch it if reachable without jostling. Do not rub the cloth (Kiswah) for blessings.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ==================== STAGE 4 ==================== */}
+        <section id="stage-4" className="scholar-stage-container">
+          <div className="scholar-stage-header">
+            <div className="stage-num-badge">STAGE 04 / 05</div>
+            <h2 className="stage-ar-title">الْمَرْحَلَةُ الرَّابِعَةُ: صَلَاةُ رَكْعَتَيِ الطَّوَافِ وَالشُّرْبُ مِنْ زَمْزَمَ</h2>
+            <p className="stage-en-subtitle">Two Rak‘ahs Behind Maqām Ibrāhīm &amp; Hydration with Zamzam Water</p>
+          </div>
+
+          <div className="scholar-arabic-card" dir="rtl">
+            <p className="scholar-arabic-text">
+              «فَإِذَا فَرَغَ مِنَ الشَّوْطِ السَّابِعِ، غَطَّى كَتِفَهُ الأَيْمَنَ بِرِدَائِهِ (فَيَنْتَهِي الاِضْطِبَاعُ)، ثُمَّ يَتَوَجَّهُ إِلَى مَقَامِ إِبْرَاهِيمَ عَلَيْهِ السَّلَامُ وَهُوَ يَقْرَأُ قَوْلَ اللهِ تَعَالَى:<br />
+              <strong>﴿وَاتَّخِذُوا مِنْ مَقَامِ إِبْرَاهِيمَ مُصَلًّى﴾</strong><br /><br />
+              فَيُصَلِّي رَكْعَتَيْنِ خَفِيفَتَيْنِ خَلْفَ الْمَقَامِ إِنْ تَيَسَّرَ، وَإِلَّا فَفِي أَيِّ مَكَانٍ مِنَ الْمَسْجِدِ الْحَرَامِ.<br />
+              - يَقْرَأُ فِي الرَّكْعَةِ الأُولَى بَعْدَ الْفَاتِحَةِ: <strong>﴿قُلْ يَا أَيُّهَا الْكَافِرُونَ﴾</strong>.<br />
+              - وَفِي الرَّكْعَةِ الثَّانِيَةِ بَعْدَ الْفَاتِحَةِ: <strong>﴿قُلْ هُوَ اللَّهُ أَحَدٌ﴾</strong>.<br /><br />
+              ثُمَّ يَتَوَجَّهُ إِلَى زَمْزَمَ فَيَشْرَبُ مِنْ مَائِهَا حَتَّى يَتَضَلَّعَ (يَمْتَلِئَ شِبَعًا وَرِيًّا)، وَيَصُبُّ عَلَى رَأْسِهِ، وَيَدْعُو اللهَ بِمَا شَاءَ، فَإِنَّ «مَاءَ زَمْزَمَ لِمَا شُرِبَ لَهُ».»
+            </p>
+          </div>
+
+          <div className="scholar-rulings-grid">
+            <div className="scholar-ruling-pane">
+              <h4><CheckCircle2 size={16} /> Essential Sunnah Guidelines</h4>
+              <ul>
+                <li><strong>Cover Shoulder:</strong> End Iḍṭibā‘ immediately after circuit 7 by covering both shoulders before praying.</li>
+                <li><strong>The Two Rak‘ahs:</strong> Recite Sūrah al-Kāfirūn in the 1st rak‘ah and Sūrah al-Ikhlāṣ in the 2nd rak‘ah after al-Fātiḥah.</li>
+                <li><strong>Zamzam Water:</strong> Drink generously until full, pour water over the head, and make sincere du‘ā.</li>
+              </ul>
+            </div>
+            <div className="scholar-pitfall-pane">
+              <h4><AlertTriangle size={16} /> Critical Pitfalls to Avoid</h4>
+              <p>
+                <strong>No Harmful Congestion at Maqām:</strong> If the area directly behind the glass station of Ibrāhīm is crowded with circling pilgrims, do not push. You may pray these two rak‘ahs anywhere inside the Grand Mosque without loss of reward.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ==================== STAGE 5 ==================== */}
+        <section id="stage-5" className="scholar-stage-container">
+          <div className="scholar-stage-header">
+            <div className="stage-num-badge">STAGE 05 / 05</div>
+            <h2 className="stage-ar-title">الْمَرْحَلَةُ الْخَامِسَةُ: السَّعْيُ بَيْنَ الصَّفَا وَالْمَرْوَةِ وَالتَّحَلُّلُ الْكَامِلُ</h2>
+            <p className="stage-en-subtitle">Sa‘ī Between Ṣafā &amp; Marwah and Complete Taḥallul (Ḥalq / Taqṣīr)</p>
+          </div>
+
+          <div className="scholar-arabic-card" dir="rtl">
+            <p className="scholar-arabic-text">
+              «ثُمَّ يَتَوَجَّهُ إِلَى الصَّفَا لِيَبْدَأَ السَّعْيَ، فَإِذَا دَنَا مِنَ الصَّفَا قَرَأَ قَوْلَهُ تَعَالَى:<br />
+              <strong>﴿إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ فَمَنْ حَجَّ الْبَيْتَ أَوِ اعْتَمَرَ فَلَا جُنَاحَ عَلَيْهِ أَنْ يَطَّوَّفَ بِهِمَا وَمَنْ تَطَوَّعَ خَيْرًا فَإِنَّ اللَّهَ شَاكِرٌ عَلِيمٌ﴾</strong><br />
+              ثُمَّ يَقُولُ: <strong>«نَبْدَأُ بِمَا بَدَأَ اللهُ بِهِ»</strong> (وَلَا يُعِيدُ هَذِهِ الآيَةَ إِلَّا فِي بِدَايَةِ السَّعْيِ عِنْدَ الصَّفَا فَقَطْ).<br /><br />
+              فَيَصْعَدُ عَلَى الصَّفَا حَتَّى يَرَى الْكَعْبَةَ، فَيَسْتَقْبِلُ الْقِبْلَةَ، وَيَرْفَعُ يَدَيْهِ كَهَيْئَةِ الدُّعَاءِ، فَيُوَحِّدُ اللهَ وَيُكَبِّرُهُ وَيَقُولُ:»
+            </p>
+          </div>
+
+          <div className="scholar-dhikr-box">
+            <span className="dhikr-category">Supplication upon Mount Ṣafā &amp; Mount Marwah (Recited 3 Times with Personal Du‘ā in Between)</span>
+            <p className="dhikr-arabic-phrase" dir="rtl">«لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ، لَا إِلَهَ إِلَّا اللهُ وَحْدَهُ، أَنْجَزَ وَعْدَهُ، وَنَصَرَ عَبْدَهُ، وَهَزَمَ الأَحْزَابَ وَحْدَهُ»</p>
+            <p className="dhikr-transliteration">“Lā Ilāha Illallāhu Waḥdahū Lā Sharīka Lah, Lahul-Mulku Wa Lahul-Ḥamd, Wa Huwa ‘Alā Kulli Shay’in Qadīr. Lā Ilāha Illallāhu Waḥdah, Anjaza Wa‘dah, Wa Naṣara ‘Abdah, Wa Hazamal-Aḥzāba Waḥdah.”</p>
+            <p className="dhikr-meaning">“None has the right to be worshipped except Allāh alone, without partner. To Him belongs all sovereignty and praise, and He has power over all things. None has the right to be worshipped except Allāh alone. He fulfilled His promise, granted victory to His servant, and defeated the allied armies alone.”</p>
+          </div>
+
+          <div className="scholar-arabic-card" dir="rtl">
+            <p className="scholar-arabic-text">
+              «ثُمَّ يَنْزِلُ مِنْ الصَّفَا مُتَّجِهًا إِلَى الْمَرْوَةِ يَمْشِي مَشْيًا مُعْتَادًا، فَإِذَا بَلَغَ الْعَلَمَيْنِ الأَخْضَرَيْنِ رَكَضَ الرَّجُلُ رَكْضًا شَدِيدًا (سَعَى سَعْيًا حَثِيثًا) إِنْ تَيَسَّرَ لَهُ دُونَ أَذًى، أَمَّا الْمَرْأَةُ فَلَا تَرْكُضُ. فَإِذَا جَاوَزَ الْعَلَمَ الثَّانِيَ مَشَى كَعَادَتِهِ حَتَّى يَصِلَ إِلَى الْمَرْوَةِ.<br /><br />
+              فَإِذَا وَصَلَ إِلَى الْمَرْوَةِ فَقَدْ تَمَّ لَهُ شَوْطٌ وَاحِدٌ؛ فَيَصْعَدُ عَلَيْهَا وَيَسْتَقْبِلُ الْقِبْلَةَ وَيَقُولُ وَيَفْعَلُ مِثْلَ مَا فَعَلَ عَلَى الصَّفَا (مِنَ التَّكْبِيرِ وَالتَّهْلِيلِ وَالدُّعَاءِ دُونَ قِرَاءَةِ الآيَةِ).<br /><br />
+              ثُمَّ يَنْزِلُ مِنَ الْمَرْوَةِ عَائِدًا إِلَى الصَّفَا فَيَكُونُ هَذَا الشَّوْطَ الثَّانِيَ؛ وَهَكَذَا حَتَّى يُكْمِلَ سَبْعَةَ أَشْوَاطٍ يَبْدَأُ بِالصَّفَا وَيَخْتِمُ بِالْمَرْوَةِ.<br /><br />
+              فَإِذَا أَتَمَّ سَبْعَةَ أَشْوَاطٍ، بَقِيَ عَلَيْهِ وَاجِبُ التَّحَلُّلِ:<br />
+              - <strong>لِلرِّجَالِ:</strong> الْحَلْقُ (وَهُوَ حَلْقُ شَعْرِ الرَّأْسِ كُلِّهِ بِالْمُوسَى)، وَهُوَ الأَفْضَلُ لِدُعَاءِ النَّبِيِّ ﷺ لِلْمُحَلِّقِينَ ثَلَاثًا، أَوِ التَّقْصِيرُ (بِأَنْ يَأْخُذَ مِنْ جَمِيعِ شَعْرِ رَأْسِهِ).<br />
+              - <strong>لِلنِّسَاءِ:</strong> التَّقْصِيرُ فَقَطْ، بِأَنْ تَقُصَّ مِنْ أَطْرَافِ ضَفَائِرِهَا أَوْ خُصَلِ شَعْرِهَا قَدْرَ أُنْمُلَةٍ (نَحْوَ سَنْتِيمِتْرَيْنِ)، وَلَا يَجُوزُ لَهَا الْحَلْقُ.<br /><br />
+              فَبِذَلِكَ تَمَّتِ الْعُمْرَةُ بِحَمْدِ اللهِ، وَحَلَّ لِلْمُعْتَمِرِ كُلُّ شَيْءٍ حُرِّمَ عَلَيْهِ بِالإِحْرَامِ.»
+            </p>
+          </div>
+
+          <div className="scholar-rulings-grid">
+            <div className="scholar-ruling-pane">
+              <h4><CheckCircle2 size={16} /> Essential Sunnah Guidelines</h4>
+              <ul>
+                <li><strong>Lap Calculation:</strong> Ṣafā to Marwah is 1 lap. Marwah to Ṣafā is lap 2. The 7th lap finishes at Marwah.</li>
+                <li><strong>Green Light Sprint:</strong> Men sprint between the two green-lighted markers along the corridor; women walk normally throughout.</li>
+                <li><strong>Ḥalq vs. Taqṣīr for Men:</strong> Shaving the entire head with a razor is 3 times more rewarded; shortening hair must encompass the whole head evenly.</li>
+                <li><strong>Taqṣīr for Women:</strong> Women trim only a fingertip's length (~2 cm) from the ends of their hair. Shaving the head is prohibited for women.</li>
+              </ul>
+            </div>
+            <div className="scholar-pitfall-pane">
+              <h4><AlertTriangle size={16} /> Critical Pitfalls to Avoid</h4>
+              <p>
+                <strong>Do NOT Recite the Verse at Every Lap:</strong> The ayah ﴿إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ﴾ is recited only once upon initial approach to Ṣafā, not on every lap or at Marwah. Also, cutting only two strands of hair does not satisfy the requirement for men.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Bottom Concluding & Action Card */}
+        <div className="scholar-concluding-card">
+          <h3>Your ’Umrah is Complete (تَمَّتِ الْعُمْرَةُ بِحَمْدِ اللهِ)</h3>
+          <p>
+            May Allāh accept your pilgrimage, forgive your shortcomings, and grant you an accepted and transformative journey upon the Sunnah.
+          </p>
+          <div className="scholar-concluding-actions">
+            <a
+              href="/AMFAJ_Umrah_Sunnah_Guide_Arabic.pdf"
+              download="AMFAJ_Umrah_Sunnah_Guide_Arabic.pdf"
+              className="button button-primary"
+            >
+              <Download size={18} /> Download Official PDF Guide
+            </a>
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="button button-light"
+            >
+              <Printer size={18} /> Print Guide
+            </button>
+            <Link to="/guidance/umrah" className="button button-secondary">
+              Back to ’Umrah Journey Hub
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <FinalCta />
     </PageFrame>
   );
 }
