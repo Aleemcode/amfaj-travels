@@ -863,13 +863,13 @@ function UmrahGuidancePage() {
         {/* Featured Scholar Guide Resource Banner */}
         <section className="featured-scholar-banner">
           <div className="featured-scholar-badge">
-            <Sparkles size={16} /> Official Scholar Lecture & Printable Reference
+            <Sparkles size={16} /> Authentic Tutelage • Shaykh Sulaymān ar-Ruhaylī
           </div>
           <div className="featured-scholar-content">
             <div className="featured-scholar-info">
               <h3>Authentic Step-by-Step ’Umrah Sunnah Guide</h3>
               <p>
-                Study the complete, vocalized Arabic lecture transcript covering all five stages of ’Umrah upon the understanding of the pious predecessors — complete with highlighted Prophetic Adhkār, Sunnah vs. Pitfall verifications, and an official printable/downloadable PDF.
+                Study the complete, vocalized Arabic lecture transcript by esteemed scholar <strong>Shaykh Dr. Sulaymān ar-Ruhaylī</strong> (حفظه الله), teacher at Masjid an-Nabawī in Madīnah — organized into bite-sized units with matching English translations, Prophetic Adhkār, and a printable PDF reference.
               </p>
             </div>
             <div className="featured-scholar-action">
@@ -1013,26 +1013,26 @@ function UmrahScholarGuidePage() {
     <PageFrame
       eyebrow="Authenticated Reference"
       title="Step-by-Step ’Umrah Sunnah Guide"
-      body="The comprehensive scholar lecture transcript on the rites of ’Umrah upon the understanding of the pious predecessors — complete with vocalized Arabic text, authoritative Prophetic Adhkār, fiqh verifications, and an official printable/downloadable PDF."
+      body="Based on the authoritative lecture of Shaykh Dr. Sulaymān ar-Ruhaylī (حفظه الله), teacher at the Prophet's Mosque in Madīnah — presented in bite-sized vocalized Arabic with matching English translations, Prophetic Adhkār, and a printable PDF reference."
       parent={{ name: "’Umrah Guidance", to: "/guidance/umrah" }}
     >
       <div className="scholar-guide-page">
         {/* Print-Only Header Stamp */}
         <div className="print-only-stamp">
           <div className="print-stamp-logo">AMFAJ TRAVELS &amp; TOURS</div>
-          <div className="print-stamp-title">دَلِيلُ صِفَةِ الْعُمْرَةِ عَلَى هَدْيِ السُّنَّةِ النَّبَوِيَّةِ — Official Scholar Reference</div>
-          <div className="print-stamp-meta">Guidance Department • WhatsApp: +234 806 924 3134 • amfajtravels.com</div>
+          <div className="print-stamp-title">دَلِيلُ صِفَةِ الْعُمْرَةِ عَلَى هَدْيِ السُّنَّةِ النَّبَوِيَّةِ — بِشَرْحِ الشَّيْخِ د. سُلَيْمَانَ الرُّحَيْلِيِّ حَفِظَهُ اللهُ</div>
+          <div className="print-stamp-meta">Guidance Department • Reference: Shaykh Sulaymān ar-Ruhaylī • WhatsApp: +234 806 924 3134 • amfajtravels.com</div>
         </div>
 
         {/* Interactive Top Actions Toolbar */}
         <div className="scholar-toolbar-card">
           <div className="scholar-toolbar-info">
             <span className="scholar-toolbar-tag">
-              <Sparkles size={15} /> Practical Pilgrim Resource
+              <Sparkles size={15} /> Reference: Shaykh Sulaymān ar-Ruhaylī (حفظه الله)
             </span>
             <h3>Preserve or Print This Authentic Guide</h3>
             <p>
-              Download the official pre-formatted PDF document or print directly with custom high-contrast formatting for your pilgrimage journey.
+              Download the official pre-formatted bilingual PDF document or print directly with custom high-contrast formatting for your pilgrimage journey.
             </p>
           </div>
           <div className="scholar-toolbar-actions">
@@ -1095,11 +1095,11 @@ function UmrahScholarGuidePage() {
         {/* Scholarly Overview Notice */}
         <div className="scholar-overview-card">
           <div className="scholar-overview-badge">
-            <ShieldCheck size={18} /> Standard of Tutelage &amp; Verification
+            <ShieldCheck size={18} /> Authentic Tutelage: Shaykh Dr. Sulaymān ar-Ruhaylī (حفظه الله)
           </div>
           <div className="scholar-overview-body">
             <p>
-              In accordance with AMFAJ’s commitment to religious tutelage and authentic guidance upon the Qur’ān and the Sunnah according to the understanding of the pious predecessors, this guide documents the complete oral lecture explaining how the Prophet Muhammad ﷺ performed ’Umrah.
+              In accordance with AMFAJ’s commitment to religious tutelage and authentic guidance upon the Qur’ān and the Sunnah upon the understanding of the pious predecessors, this educational resource documents the authoritative lecture by <strong>Shaykh Dr. Sulaymān ibn Salīm Allāh ar-Ruhaylī</strong> (حفظه الله) — Professor of Higher Studies at the Islamic University of Madīnah and Teacher at the Prophet's Mosque (Masjid an-Nabawī) — explaining the step-by-step performance of ’Umrah according to the Prophet's ﷺ Sunnah.
             </p>
             <blockquote className="scholar-prophetic-quote">
               <span className="quote-ar">«خُذُوا عَنِّي مَنَاسِكَكُمْ»</span>
@@ -1118,9 +1118,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 1.1 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">1.1 Personal Hygiene &amp; Cleanliness (التَّنَظُّفُ وَقَصُّ الشَّعْرِ وَالأَظَافِرِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">1.1</span>
               <span className="tarbiyah-unit-badge">Sunnah Preparation</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Personal Hygiene &amp; Cleanliness</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">التَّنَظُّفُ وَقَصُّ الشَّعْرِ وَالأَظَافِرِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «فَاعْلَمُوا — وَفَّقَنِي اللهُ وَإِيَّاكُمْ — أَنَّهُ يُسْتَحَبُّ لِمُرِيدِ الْحَجِّ أَوِ الْعُمْرَةِ أَنْ يَتَهَيَّأَ لِلإِحْرَامِ بِالتَّنَظُّفِ، بِإِزَالَةِ الشُّعُورِ الزَّائِدَةِ؛ شَعْرِ الإِبْطَيْنِ، وَشَعْرِ الْعَانَةِ، وَحَفِّ الشَّارِبِ، وَقَلْمِ الأَظَافِرِ.»
@@ -1135,9 +1139,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 1.2 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">1.2 Timing &amp; Location of Preparation (تَوْقِيتُ ذَلِكَ وَمَكَانُهُ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">1.2</span>
               <span className="tarbiyah-unit-badge">Rulings of Time</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Timing &amp; Location of Preparation</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">تَوْقِيتُ ذَلِكَ وَمَكَانُهُ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «وَيُسْتَحَبُّ أَنْ يَكُونَ ذَلِكَ قُبَيْلَ الإِحْرَامِ، إِلَّا إِذَا كَانَ يُرِيدُ أَنْ يُضَحِّيَ بِأَنْ يَذْبَحَ أُضْحِيَّةً فِي بَلَدِهِ فِي أَيَّامِ الْعِيدِ، فَإِنَّهُ يَجْعَلُ ذَلِكَ قَبْلَ اسْتِهْلَالِ ذِي الحِجَّةِ. وَيَجُوزُ لِلْمُسْلِمِ أَنْ يَفْعَلَ ذَلِكَ فِي بَيْتِهِ أَوْ فِي الْفُنْدُقِ أَوْ فِي الْمِيقَاتِ.»
@@ -1152,9 +1160,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 1.3 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">1.3 Ritual Bathing (Ghusl) for All Pilgrims (الاغْتِسَالُ لِلإِحْرَامِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">1.3</span>
               <span className="tarbiyah-unit-badge">Prescribed Sunnah</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Ritual Bathing (Ghusl) for All Pilgrims</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">الاغْتِسَالُ لِلإِحْرَامِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «وَيُسْتَحَبُّ وَيُسَنُّ لَهُ أَنْ يَغْتَسِلَ لِلإِحْرَامِ، وَهَذَا الاغْتِسَالُ مُسْتَحَبٌّ فِي حَقِّ الرِّجَالِ وَالنِّسَاءِ حَتَّى الْحَائِضِ وَالنُّفَسَاءِ.»
@@ -1169,9 +1181,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 1.4 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">1.4 Men's Attire &amp; Perfume (لِبَاسُ الرَّجُلِ وَطِيبُهُ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">1.4</span>
               <span className="tarbiyah-unit-badge">Rules of Dress</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Men's Attire &amp; Perfume</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">لِبَاسُ الرَّجُلِ وَطِيبُهُ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «وَيَتَجَرَّدُ الرَّجُلُ مِنَ الثِّيَابِ الْمَخِيطَةِ، وَيَلْبَسُ إِزَارًا وَرِدَاءً أَبْيَضَيْنِ نَظِيفَيْنِ، وَيُسْتَحَبُّ أَنْ يَتَطَيَّبَ فِي بَدَنِهِ كَرَأْسِهِ وَلِحْيَتِهِ قَبْلَ الإِحْرَامِ بِمَا تَيَسَّرَ مِنْ طِيبٍ، وَلَا يُطَيِّبُ ثِيَابَ الإِحْرَامِ.»
@@ -1186,9 +1202,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 1.5 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">1.5 Women's Modest Attire (لِبَاسُ الْمَرْأَةِ الْمُحْرِمَةِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">1.5</span>
               <span className="tarbiyah-unit-badge">Modesty Standard</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Women's Modest Attire</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">لِبَاسُ الْمَرْأَةِ الْمُحْرِمَةِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «أَمَّا الْمَرْأَةُ فَتَلْبَسُ مَا شَاءَتْ مِنَ الثِّيَابِ الْمُبَاحَةِ الَّتِي لَيْسَ فِيهَا تَبَرُّجٌ وَلَا شُهْرَةٌ، وَلَا تَلْبَسُ النِّقَابَ وَلَا الْقُفَّازَيْنِ، وَلَكِنْ تَسْدُلُ خِمَارَهَا عَلَى وَجْهِهَا عِنْدَ مُرُورِ الرِّجَالِ الأَجَانِبِ بِهَا.»
@@ -1203,9 +1223,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 1.6 & Dhikr */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">1.6 Intention at the Mīqāt (عَقْدُ النِّيَّةِ وَالإِهْلَالُ عِنْدَ الْمِيقَاتِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">1.6</span>
               <span className="tarbiyah-unit-badge">Entering the Rite</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Intention at the Mīqāt</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">عَقْدُ النِّيَّةِ وَالإِهْلَالُ عِنْدَ الْمِيقَاتِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «فَإِذَا وَصَلَ الْمُسْلِمُ إِلَى الْمِيقَاتِ — أَوْ حَاذَاهُ جَوًّا أَوْ بَحْرًا — أَحْرَمَ، وَيُهِلُّ بِالْعُمْرَةِ قَائِلًا:»
@@ -1243,9 +1267,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 2.1 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">2.1 The Talbiyah Proclamation (شِعَارُ التَّلْبِيَةِ النَّبَوِيَّةِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">2.1</span>
               <span className="tarbiyah-unit-badge">Pilgrim's Chant</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">The Talbiyah Proclamation</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">شِعَارُ التَّلْبِيَةِ النَّبَوِيَّةِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «ثُمَّ يَشْرَعُ فِي التَّلْبِيَةِ الَّتِي كَانَ النَّبِيُّ ﷺ يُلَبِّي بِهَا، وَيَرْفَعُ الرِّجَالُ أَصْوَاتَهُمْ بِهَا، أَمَّا النِّسَاءُ فَيُسْمِعْنَ أَنْفُسَهُنَّ وَمَنْ يَلِيهِنَّ دُونَ رَفْعٍ مُلْفِتٍ لِلصَّوْتِ:»
@@ -1267,9 +1295,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 2.2 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">2.2 Continuous Dhikr until Ṭawāf (مُوَاصَلَةُ الذِّكْرِ حَتَّى بَدْءِ الطَّوَافِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">2.2</span>
               <span className="tarbiyah-unit-badge">Spiritual Focus</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Continuous Dhikr until Ṭawāf</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">مُوَاصَلَةُ الذِّكْرِ حَتَّى بَدْءِ الطَّوَافِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «وَيَسْتَمِرُّ الْمُحْرِمُ فِي التَّلْبِيَةِ وَالإِكْثَارِ مِنْ ذِكْرِ اللهِ وَالاسْتِغْفَارِ وَالدُّعَاءِ فِي طَرِيقِهِ إِلَى مَكَّةَ، حَتَّى يَبْدَأَ بِالطَّوَافِ؛ فَإِذَا شَرَعَ فِي الطَّوَافِ قَطَعَ التَّلْبِيَةَ.»
@@ -1284,9 +1316,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 2.3 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">2.3 Supplication upon Mosque Entry (آدَابُ دُخُولِ الْمَسْجِدِ الْحَرَامِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">2.3</span>
               <span className="tarbiyah-unit-badge">Sacred Etiquette</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Supplication upon Mosque Entry</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">آدَابُ دُخُولِ الْمَسْجِدِ الْحَرَامِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «وَيُسْتَحَبُّ لَهُ إِذَا دَخَلَ الْمَسْجِدَ الْحَرَامَ أَنْ يُقَدِّمَ رِجْلَهُ الْيُمْنَى وَيَقُولَ ذِكْرَ دُخُولِ الْمَسْجِدِ:»
@@ -1324,9 +1360,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 3.1 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">3.1 Sunan of Ṭawāf al-Qudūm for Men (سُنَنُ الرَّجُلِ فِي طَوَافِ الْقُدُومِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">3.1</span>
               <span className="tarbiyah-unit-badge">Iḍṭibā‘ &amp; Raml</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Sunan of Ṭawāf al-Qudūm for Men</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">سُنَنُ الرَّجُلِ فِي طَوَافِ الْقُدُومِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «فَإِذَا وَصَلَ إِلَى الْكَعْبَةِ، قَطَعَ التَّلْبِيَةَ، وَيُسَنُّ لِلرَّجُلِ فِي طَوَافِ الْقُدُومِ شَيْئَانِ:<br />
@@ -1345,9 +1385,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 3.2 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">3.2 Commencing at the Black Stone (بِدَايَةُ الشَّوْطِ مِنَ الْحَجَرِ الأَسْوَدِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">3.2</span>
               <span className="tarbiyah-unit-badge">Alignment &amp; Takbīr</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Commencing at the Black Stone</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">بِدَايَةُ الشَّوْطِ مِنَ الْحَجَرِ الأَسْوَدِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «وَيَبْدَأُ الطَّوَافَ مِنَ الْحَجَرِ الأَسْوَدِ؛ فَيَسْتَلِمُهُ بِيَدِهِ وَيُقَبِّلُهُ إِنْ تَيَسَّرَ دُونَ مُزَاحَمَةٍ وَلَا إِيذَاءٍ، فَإِنْ لَمْ يَتَيَسَّرْ أَشَارَ إِلَيْهِ بِيَدِهِ الْيُمْنَى إِشَارَةً وَاحِدَةً قَائِلًا: <strong>«اللهُ أَكْبَرُ»</strong>، وَلَا يُقَبِّلُ يَدَهُ عِنْدَ الإِشَارَةِ.»
@@ -1362,9 +1406,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 3.3 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">3.3 The 7 Full Circuits Outside the Ḥijr (الطَّوَافُ سَبْعَةَ أَشْوَاطٍ مِنْ وَرَاءِ الْحِجْرِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">3.3</span>
               <span className="tarbiyah-unit-badge">Validity Ruling</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">The 7 Full Circuits Outside the Ḥijr</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">الطَّوَافُ سَبْعَةَ أَشْوَاطٍ مِنْ وَرَاءِ الْحِجْرِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «وَيَجْعَلُ الْكَعْبَةَ عَنْ يَسَارِهِ وَيَطُوفُ سَبْعَةَ أَشْوَاطٍ كَامِلَةً مِنْ وَرَاءِ الحِجْرِ (حِجْرِ إِسْمَاعِيلَ). وَيَدْعُو فِيهَا بِمَا شَاءَ مِنْ خَيْرَيِ الدُّنْيَا وَالآخِرَةِ، وَيَقْرَأُ الْقُرْآنَ، وَيَذْكُرُ اللهَ تَعَالَى؛ وَلَيْسَ لِكُلِّ شَوْطٍ دُعَاءٌ مَخْصُوصٌ.»
@@ -1379,9 +1427,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 3.4 & Dhikr */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">3.4 The Yemeni Corner &amp; Black Stone Adhkār (الرُّكْنُ الْيَمَانِيُّ وَالدُّعَاءُ بَيْنَ الرُّكْنَيْنِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">3.4</span>
               <span className="tarbiyah-unit-badge">Authentic Du‘ā</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">The Yemeni Corner &amp; Black Stone Adhkār</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">الرُّكْنُ الْيَمَانِيُّ وَالدُّعَاءُ بَيْنَ الرُّكْنَيْنِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «وَكُلَّمَا مَرَّ بِالرُّكْنِ الْيَمَانِي اسْتَلَمَهُ بِيَدِهِ إِنْ تَيَسَّرَ دُونَ تَقْبِيلٍ، فَإِنْ لَمْ يَتَيَسَّرْ مَضَى وَلَا يُشِيرُ إِلَيْهِ وَلَا يُكَبِّرُ. وَيُسْتَحَبُّ أَنْ يَقُولَ بَيْنَ الرُّكْنِ الْيَمَانِي وَالْحَجَرِ الأَسْوَدِ:»
@@ -1419,9 +1471,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 4.1 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">4.1 Covering the Shoulder &amp; Proceeding to the Maqām (تَغْطِيَةُ الْكَتِفِ وَالتَّوَجُّهُ إِلَى الْمَقَامِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">4.1</span>
               <span className="tarbiyah-unit-badge">End of Iḍṭibā‘</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Covering the Shoulder &amp; Proceeding to the Maqām</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">تَغْطِيَةُ الْكَتِفِ وَالتَّوَجُّهُ إِلَى الْمَقَامِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «فَإِذَا فَرَغَ مِنَ الشَّوْطِ السَّابِعِ، غَطَّى كَتِفَهُ الأَيْمَنَ بِرِدَائِهِ (فَيَنْتَهِي الاِضْطِبَاعُ)، ثُمَّ يَتَوَجَّهُ إِلَى مَقَامِ إِبْرَاهِيمَ عَلَيْهِ السَّلَامُ وَهُوَ يَقْرَأُ قَوْلَ اللهِ تَعَالَى:<br />
@@ -1437,9 +1493,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 4.2 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">4.2 The Two Rak‘ahs of Ṭawāf (صَلَاةُ رَكْعَتَيِ الطَّوَافِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">4.2</span>
               <span className="tarbiyah-unit-badge">Prescribed Recitation</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">The Two Rak‘ahs of Ṭawāf</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">صَلَاةُ رَكْعَتَيِ الطَّوَافِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «فَيُصَلِّي رَكْعَتَيْنِ خَفِيفَتَيْنِ خَلْفَ الْمَقَامِ إِنْ تَيَسَّرَ، وَإِلَّا فَفِي أَيِّ مَكَانٍ مِنَ الْمَسْجِدِ الْحَرَامِ.<br />
@@ -1458,9 +1518,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 4.3 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">4.3 Plentiful Drinking from Zamzam (الشُّرْبُ مِنَ زَمْزَمَ وَالتَّضَلُّعُ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">4.3</span>
               <span className="tarbiyah-unit-badge">Spiritual Hydration</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Plentiful Drinking from Zamzam</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">الشُّرْبُ مِنَ زَمْزَمَ وَالتَّضَلُّعُ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «ثُمَّ يَتَوَجَّهُ إِلَى زَمْزَمَ فَيَشْرَبُ مِنْ مَائِهَا حَتَّى يَتَضَلَّعَ (يَمْتَلِئَ شِبَعًا وَرِيًّا)، وَيَصُبُّ عَلَى رَأْسِهِ، وَيَدْعُو اللهَ بِمَا شَاءَ، فَإِنَّ «مَاءَ زَمْزَمَ لِمَا شُرِبَ لَهُ».»
@@ -1491,9 +1555,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 5.1 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">5.1 Approaching Mount Ṣafā (التَّوَجُّهُ إِلَى الصَّفَا وَقِرَاءَةُ الآيَةِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">5.1</span>
               <span className="tarbiyah-unit-badge">Initial Rite Only</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Approaching Mount Ṣafā</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">التَّوَجُّهُ إِلَى الصَّفَا وَقِرَاءَةُ الآيَةِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «ثُمَّ يَتَوَجَّهُ إِلَى الصَّفَا لِيَبْدَأَ السَّعْيَ، فَإِذَا دَنَا مِنَ الصَّفَا قَرَأَ قَوْلَهُ تَعَالَى:<br />
@@ -1510,9 +1578,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 5.2 & Dhikr */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">5.2 Tawḥīd &amp; Supplication atop Ṣafā &amp; Marwah (الدُّعَاءُ وَالتَّوْحِيدُ عَلَى الصَّفَا)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">5.2</span>
               <span className="tarbiyah-unit-badge">Prophetic Practice</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Tawḥīd &amp; Supplication atop Ṣafā &amp; Marwah</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">الدُّعَاءُ وَالتَّوْحِيدُ عَلَى الصَّفَا</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «فَيَصْعَدُ عَلَى الصَّفَا حَتَّى يَرَى الْكَعْبَةَ، فَيَسْتَقْبِلُ الْقِبْلَةَ، وَيَرْفَعُ يَدَيْهِ كَهَيْئَةِ الدُّعَاءِ، فَيُوَحِّدُ اللهَ وَيُكَبِّرُهُ وَيَقُولُ:»
@@ -1534,9 +1606,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 5.3 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">5.3 Sprinting Between Green Lights &amp; Walking (السَّعْيُ بَيْنَ الْعَلَمَيْنِ الأَخْضَرَيْنِ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">5.3</span>
               <span className="tarbiyah-unit-badge">Men's Sunnah</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Sprinting Between Green Lights &amp; Walking</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">السَّعْيُ بَيْنَ الْعَلَمَيْنِ الأَخْضَرَيْنِ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «ثُمَّ يَنْزِلُ مِنْ الصَّفَا مُتَّجِهًا إِلَى الْمَرْوَةِ يَمْشِي مَشْيًا مُعْتَادًا، فَإِذَا بَلَغَ الْعَلَمَيْنِ الأَخْضَرَيْنِ رَكَضَ الرَّجُلُ رَكْضًا شَدِيدًا (سَعَى سَعْيًا حَثِيثًا) إِنْ تَيَسَّرَ لَهُ دُونَ أَذًى، أَمَّا الْمَرْأَةُ فَلَا تَرْكُضُ. فَإِذَا جَاوَزَ الْعَلَمَ الثَّانِيَ مَشَى كَعَادَتِهِ حَتَّى يَصِلَ إِلَى الْمَرْوَةِ.»
@@ -1551,9 +1627,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 5.4 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">5.4 Seven Laps: Ending at Marwah (إِتْمَامُ السَّبْعَةِ أَشْوَاطٍ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">5.4</span>
               <span className="tarbiyah-unit-badge">Calculation of Laps</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Seven Laps: Ending at Marwah</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">إِتْمَامُ السَّبْعَةِ أَشْوَاطٍ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «فَإِذَا وَصَلَ إِلَى الْمَرْوَةِ فَقَدْ تَمَّ لَهُ شَوْطٌ وَاحِدٌ؛ فَيَصْعَدُ عَلَيْهَا وَيَسْتَقْبِلُ الْقِبْلَةَ وَيَقُولُ وَيَفْعَلُ مِثْلَ مَا فَعَلَ عَلَى الصَّفَا (مِنَ التَّكْبِيرِ وَالتَّهْلِيلِ وَالدُّعَاءِ دُونَ قِرَاءَةِ الآيَةِ). ثُمَّ يَنْزِلُ مِنَ الْمَرْوَةِ عَائِدًا إِلَى الصَّفَا فَيَكُونُ هَذَا الشَّوْطَ الثَّانِيَ؛ وَهَكَذَا حَتَّى يُكْمِلَ سَبْعَةَ أَشْوَاطٍ يَبْدَأُ بِالصَّفَا وَيَخْتِمُ بِالْمَرْوَةِ.»
@@ -1568,9 +1648,13 @@ function UmrahScholarGuidePage() {
 
           {/* Unit 5.5 */}
           <div className="tarbiyah-unit">
-            <div className="tarbiyah-unit-header">
-              <h3 className="tarbiyah-unit-title">5.5 Shaving (Ḥalq) vs. Trimming (Taqṣīr) (الْحَلْقُ أَوِ التَّقْصِيرُ وَالتَّحَلُّلُ الْكَامِلُ)</h3>
+            <div className="tarbiyah-unit-top">
+              <span className="tarbiyah-unit-index">5.5</span>
               <span className="tarbiyah-unit-badge">Final Taḥallul</span>
+            </div>
+            <div className="tarbiyah-titles">
+              <h4 className="tarbiyah-en-title">Shaving (Ḥalq) vs. Trimming (Taqṣīr)</h4>
+              <div className="tarbiyah-ar-title" dir="rtl">الْحَلْقُ أَوِ التَّقْصِيرُ وَالتَّحَلُّلُ الْكَامِلُ</div>
             </div>
             <p className="tarbiyah-arabic-text" dir="rtl">
               «فَإِذَا أَتَمَّ سَبْعَةَ أَشْوَاطٍ، بَقِيَ عَلَيْهِ وَاجِبُ التَّحَلُّلِ:<br />
