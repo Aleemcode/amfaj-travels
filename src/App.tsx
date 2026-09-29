@@ -6,12 +6,15 @@ import {
   CalendarDays,
   CheckCircle2,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
   Clock,
   Compass,
   Download,
   FileText,
   HelpCircle,
   HeartHandshake,
+  Layers,
   MapPin,
   Menu,
   MessageCircle,
@@ -27,7 +30,7 @@ import {
   X,
 } from "lucide-react";
 import { motion, useScroll, useSpring, useTransform, AnimatePresence } from "framer-motion";
-import { Link, NavLink, Route, Routes } from "react-router-dom";
+import { Link, NavLink, Route, Routes, useLocation } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 
 const whatsappMessage =
@@ -996,16 +999,79 @@ function UmrahGuidancePage() {
   );
 }
 
-function UmrahScholarGuidePage() {
-  const [activeStage, setActiveStage] = useState("stage-1");
+const SCHOLAR_STAGES = [
+  {
+    id: "stage-1",
+    num: "01",
+    arShort: "الإحرام والميقات",
+    enShort: "Iḥrām & Mīqāt",
+    arFull: "الْمَرْحَلَةُ الأُولَى: التَّهَيُّؤُ لِلإِحْرَامِ وَعَقْدُ النِّيَّةِ عِنْدَ الْمِيقَاتِ",
+    enFull: "Stage 1: Pre-Iḥrām Preparation & Intention at the Mīqāt",
+  },
+  {
+    id: "stage-2",
+    num: "02",
+    arShort: "التلبية والمسير",
+    enShort: "Talbiyah & Route",
+    arFull: "الْمَرْحَلَةُ الثَّانِيَةُ: التَّلْبِيَةُ وَآدَابُ الْمَسِيرِ إِلَى مَكَّةَ الْمُكَرَّمَةِ",
+    enFull: "Stage 2: The Talbiyah Journey & Entry into the Sacred Sanctuary",
+  },
+  {
+    id: "stage-3",
+    num: "03",
+    arShort: "طواف القدوم",
+    enShort: "Ṭawāf al-Qudūm",
+    arFull: "الْمَرْحَلَةُ الثَّالِثَةُ: الطَّوَافُ بِالْبَيْتِ الْعَتِيقِ وَسُنَنُهُ",
+    enFull: "Stage 3: Ṭawāf al-Qudūm (Circumambulation), Raml, Iḍṭibā‘, & Adhkār",
+  },
+  {
+    id: "stage-4",
+    num: "04",
+    arShort: "خلف المقام وزمزم",
+    enShort: "Maqām & Zamzam",
+    arFull: "الْمَرْحَلَةُ الرَّابِعَةُ: صَلَاةُ رَكْعَتَيِ الطَّوَافِ وَالشُّرْبُ مِنْ زَمْزَمَ",
+    enFull: "Stage 4: Two Rak‘ahs Behind Maqām Ibrāhīm & Hydration with Zamzam",
+  },
+  {
+    id: "stage-5",
+    num: "05",
+    arShort: "السعي والتحلل",
+    enShort: "Sa‘ī & Taḥallul",
+    arFull: "الْمَرْحَلَةُ الْخَامِسَةُ: السَّعْيُ بَيْنَ الصَّفَا وَالْمَرْوَةِ وَالتَّحَلُّلُ الْكَامِلُ",
+    enFull: "Stage 5: Sa‘ī Between Ṣafā & Marwah and Complete Taḥallul",
+  },
+];
 
-  const scrollToSection = (id: string) => {
-    setActiveStage(id);
-    const element = document.getElementById(id);
-    if (element) {
-      const yOffset = -100;
-      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+function UmrahScholarGuidePage() {
+  const [activeStageId, setActiveStageId] = useState("stage-1");
+  const [isAllStagesView, setIsAllStagesView] = useState(false);
+
+  const currentStageIndex = Math.max(
+    0,
+    SCHOLAR_STAGES.findIndex((s) => s.id === activeStageId)
+  );
+  const currentStage = SCHOLAR_STAGES[currentStageIndex] || SCHOLAR_STAGES[0];
+
+  const selectStage = (id: string) => {
+    setActiveStageId(id);
+    setIsAllStagesView(false);
+    const target = document.getElementById("scholar-stage-anchor");
+    if (target) {
+      const yOffset = -90;
+      const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
       window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
+  const nextStage = () => {
+    if (currentStageIndex < SCHOLAR_STAGES.length - 1) {
+      selectStage(SCHOLAR_STAGES[currentStageIndex + 1].id);
+    }
+  };
+
+  const prevStage = () => {
+    if (currentStageIndex > 0) {
+      selectStage(SCHOLAR_STAGES[currentStageIndex - 1].id);
     }
   };
 
@@ -1053,45 +1119,6 @@ function UmrahScholarGuidePage() {
           </div>
         </div>
 
-        {/* Jump Navigation Pills */}
-        <div className="scholar-nav-pills">
-          <button
-            type="button"
-            className={`scholar-pill ${activeStage === "stage-1" ? "is-active" : ""}`}
-            onClick={() => scrollToSection("stage-1")}
-          >
-            ١. الإحرام والميقات
-          </button>
-          <button
-            type="button"
-            className={`scholar-pill ${activeStage === "stage-2" ? "is-active" : ""}`}
-            onClick={() => scrollToSection("stage-2")}
-          >
-            ٢. التلبية والمسير
-          </button>
-          <button
-            type="button"
-            className={`scholar-pill ${activeStage === "stage-3" ? "is-active" : ""}`}
-            onClick={() => scrollToSection("stage-3")}
-          >
-            ٣. طواف القدوم
-          </button>
-          <button
-            type="button"
-            className={`scholar-pill ${activeStage === "stage-4" ? "is-active" : ""}`}
-            onClick={() => scrollToSection("stage-4")}
-          >
-            ٤. خلف المقام وزمزم
-          </button>
-          <button
-            type="button"
-            className={`scholar-pill ${activeStage === "stage-5" ? "is-active" : ""}`}
-            onClick={() => scrollToSection("stage-5")}
-          >
-            ٥. السعي والتحلل
-          </button>
-        </div>
-
         {/* Scholarly Overview Notice */}
         <div className="scholar-overview-card">
           <div className="scholar-overview-badge">
@@ -1108,7 +1135,38 @@ function UmrahScholarGuidePage() {
           </div>
         </div>
 
+        {/* Anchor for smooth stage scrolling */}
+        <div id="scholar-stage-anchor" />
+
+        {/* Dynamic Stage View Mode & Progress Banner */}
+        <div className="scholar-view-mode-bar">
+          <div className="scholar-view-mode-left">
+            <span className="scholar-view-mode-badge">
+              {isAllStagesView ? "Continuous Guide" : `Page ${currentStageIndex + 1} of 5`}
+            </span>
+            <span className="scholar-view-mode-text">
+              {isAllStagesView ? (
+                "Complete Step-by-Step Guide (All 5 Stages)"
+              ) : (
+                <>
+                  {currentStage.enFull}
+                  <span className="ar-inline" dir="rtl">({currentStage.arShort})</span>
+                </>
+              )}
+            </span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setIsAllStagesView((v) => !v)}
+            className="scholar-view-mode-toggle"
+          >
+            {isAllStagesView ? <Layers size={15} /> : <BookOpen size={15} />}
+            <span>{isAllStagesView ? "Switch to Pages (1 by 1)" : "View All Stages"}</span>
+          </button>
+        </div>
+
         {/* ==================== STAGE 1 ==================== */}
+        {(isAllStagesView || activeStageId === "stage-1") && (
         <section id="stage-1" className="scholar-stage-container">
           <div className="scholar-stage-header">
             <div className="stage-num-badge">STAGE 01 / 05</div>
@@ -1255,9 +1313,29 @@ function UmrahScholarGuidePage() {
               <strong>No Iḍṭibā‘ at the Airport or Mīqāt:</strong> Many pilgrims mistakenly bare their right shoulder at the Mīqāt or wear it throughout airport transit and flights. This is incorrect. Both shoulders must remain completely covered until reaching the Ka‘bah to begin the actual Ṭawāf.
             </p>
           </div>
+
+          {/* In-content stage navigation */}
+          {!isAllStagesView && (
+            <div className="stage-page-footer-nav">
+              <div />
+              <button
+                type="button"
+                onClick={() => selectStage("stage-2")}
+                className="stage-page-nav-btn next"
+              >
+                <div className="nav-btn-text">
+                  <span className="nav-btn-hint">Next Stage 02</span>
+                  <span className="nav-btn-title">The Talbiyah Journey (التلبية والمسير)</span>
+                </div>
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          )}
         </section>
+        )}
 
         {/* ==================== STAGE 2 ==================== */}
+        {(isAllStagesView || activeStageId === "stage-2") && (
         <section id="stage-2" className="scholar-stage-container">
           <div className="scholar-stage-header">
             <div className="stage-num-badge">STAGE 02 / 05</div>
@@ -1348,9 +1426,39 @@ function UmrahScholarGuidePage() {
               <strong>Avoid Choir Chanting &amp; Fabricated Sighting Du‘ās:</strong> Chanting the Talbiyah in unison behind a megaphone leader is contrary to the Sunnah. Furthermore, there is no verified specific du‘ā required solely for first looking at the Ka‘bah; supplicate freely and sincerely from your own heart.
             </p>
           </div>
+
+          {/* In-content stage navigation */}
+          {!isAllStagesView && (
+            <div className="stage-page-footer-nav">
+              <button
+                type="button"
+                onClick={() => selectStage("stage-1")}
+                className="stage-page-nav-btn prev"
+              >
+                <ChevronLeft size={20} />
+                <div className="nav-btn-text">
+                  <span className="nav-btn-hint">Previous Stage 01</span>
+                  <span className="nav-btn-title">Pre-Iḥrām &amp; Mīqāt</span>
+                </div>
+              </button>
+              <button
+                type="button"
+                onClick={() => selectStage("stage-3")}
+                className="stage-page-nav-btn next"
+              >
+                <div className="nav-btn-text">
+                  <span className="nav-btn-hint">Next Stage 03</span>
+                  <span className="nav-btn-title">Ṭawāf al-Qudūm (طواف القدوم)</span>
+                </div>
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          )}
         </section>
+        )}
 
         {/* ==================== STAGE 3 ==================== */}
+        {(isAllStagesView || activeStageId === "stage-3") && (
         <section id="stage-3" className="scholar-stage-container">
           <div className="scholar-stage-header">
             <div className="stage-num-badge">STAGE 03 / 05</div>
@@ -1459,9 +1567,39 @@ function UmrahScholarGuidePage() {
               <strong>Never Cut Through Ḥijr Ismā‘īl:</strong> Walking through the opening of the Ḥijr invalidates that circuit because the Ḥijr is part of the interior of the Ka‘bah. Do not kiss or wave at the Yemeni Corner; only touch it if reachable without jostling. Do not rub the cloth (Kiswah) for blessings.
             </p>
           </div>
+
+          {/* In-content stage navigation */}
+          {!isAllStagesView && (
+            <div className="stage-page-footer-nav">
+              <button
+                type="button"
+                onClick={() => selectStage("stage-2")}
+                className="stage-page-nav-btn prev"
+              >
+                <ChevronLeft size={20} />
+                <div className="nav-btn-text">
+                  <span className="nav-btn-hint">Previous Stage 02</span>
+                  <span className="nav-btn-title">Talbiyah Journey</span>
+                </div>
+              </button>
+              <button
+                type="button"
+                onClick={() => selectStage("stage-4")}
+                className="stage-page-nav-btn next"
+              >
+                <div className="nav-btn-text">
+                  <span className="nav-btn-hint">Next Stage 04</span>
+                  <span className="nav-btn-title">Behind the Maqām &amp; Zamzam (خلف المقام وزمزم)</span>
+                </div>
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          )}
         </section>
+        )}
 
         {/* ==================== STAGE 4 ==================== */}
+        {(isAllStagesView || activeStageId === "stage-4") && (
         <section id="stage-4" className="scholar-stage-container">
           <div className="scholar-stage-header">
             <div className="stage-num-badge">STAGE 04 / 05</div>
@@ -1543,9 +1681,39 @@ function UmrahScholarGuidePage() {
               <strong>Avoid Harmful Congestion at the Maqām:</strong> If the area directly behind the glass station of Ibrāhīm is crowded with circling pilgrims, do not push or cause harm. You may pray these two rak‘ahs anywhere inside the Grand Mosque without any loss of reward.
             </p>
           </div>
+
+          {/* In-content stage navigation */}
+          {!isAllStagesView && (
+            <div className="stage-page-footer-nav">
+              <button
+                type="button"
+                onClick={() => selectStage("stage-3")}
+                className="stage-page-nav-btn prev"
+              >
+                <ChevronLeft size={20} />
+                <div className="nav-btn-text">
+                  <span className="nav-btn-hint">Previous Stage 03</span>
+                  <span className="nav-btn-title">Ṭawāf al-Qudūm</span>
+                </div>
+              </button>
+              <button
+                type="button"
+                onClick={() => selectStage("stage-5")}
+                className="stage-page-nav-btn next"
+              >
+                <div className="nav-btn-text">
+                  <span className="nav-btn-hint">Next Stage 05</span>
+                  <span className="nav-btn-title">Sa‘ī &amp; Taḥallul (السعي والتحلل)</span>
+                </div>
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          )}
         </section>
+        )}
 
         {/* ==================== STAGE 5 ==================== */}
+        {(isAllStagesView || activeStageId === "stage-5") && (
         <section id="stage-5" className="scholar-stage-container">
           <div className="scholar-stage-header">
             <div className="stage-num-badge">STAGE 05 / 05</div>
@@ -1679,32 +1847,170 @@ function UmrahScholarGuidePage() {
               <strong>Do Not Repeat the Ayah at Every Lap:</strong> The ayah ﴿إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ﴾ is recited only once upon initial approach to Ṣafā, not on every lap or at Marwah. Also, clipping only two strands of hair does not satisfy the requirement of Taqṣīr for men; trimming must encompass the entire head.
             </p>
           </div>
+
+          {/* In-content stage navigation */}
+          {!isAllStagesView && (
+            <div className="stage-page-footer-nav">
+              <button
+                type="button"
+                onClick={() => selectStage("stage-4")}
+                className="stage-page-nav-btn prev"
+              >
+                <ChevronLeft size={20} />
+                <div className="nav-btn-text">
+                  <span className="nav-btn-hint">Previous Stage 04</span>
+                  <span className="nav-btn-title">Behind the Maqām &amp; Zamzam</span>
+                </div>
+              </button>
+              <div className="stage-page-completed-badge">
+                <CheckCircle2 size={18} /> Final Stage of ’Umrah Rites
+              </div>
+            </div>
+          )}
         </section>
+        )}
 
         {/* Bottom Concluding & Action Card */}
-        <div className="scholar-concluding-card">
-          <h3>Your ’Umrah is Complete (تَمَّتِ الْعُمْرَةُ بِحَمْدِ اللهِ)</h3>
-          <p>
-            May Allāh accept your pilgrimage, forgive your shortcomings, and grant you an accepted and transformative journey upon the Sunnah.
-          </p>
-          <div className="scholar-concluding-actions">
-            <a
-              href="/AMFAJ_Umrah_Sunnah_Guide_Arabic.pdf"
-              download="AMFAJ_Umrah_Sunnah_Guide_Arabic.pdf"
-              className="button button-primary"
-            >
-              <Download size={18} /> Download Official PDF Guide
-            </a>
+        {(isAllStagesView || activeStageId === "stage-5") && (
+          <div className="scholar-concluding-card">
+            <h3>Your ’Umrah is Complete (تَمَّتِ الْعُمْرَةُ بِحَمْدِ اللهِ)</h3>
+            <p>
+              May Allāh accept your pilgrimage, forgive your shortcomings, and grant you an accepted and transformative journey upon the Sunnah.
+            </p>
+            <div className="scholar-concluding-actions">
+              <a
+                href="/AMFAJ_Umrah_Sunnah_Guide_Arabic.pdf"
+                download="AMFAJ_Umrah_Sunnah_Guide_Arabic.pdf"
+                className="button button-primary"
+              >
+                <Download size={18} /> Download Official PDF Guide
+              </a>
+              <button
+                type="button"
+                onClick={() => window.print()}
+                className="button button-light"
+              >
+                <Printer size={18} /> Print Guide
+              </button>
+              <Link to="/guidance/umrah" className="button button-secondary">
+                Back to ’Umrah Journey Hub
+              </Link>
+            </div>
+          </div>
+        )}
+
+        {/* Desktop Fixed Bottom Navigation Dock */}
+        <div className="scholar-desktop-dock" role="navigation" aria-label="Umrah Stages Desktop Dock">
+          <button
+            type="button"
+            onClick={prevStage}
+            disabled={isAllStagesView || currentStageIndex === 0}
+            className="dock-nav-arrow"
+            title="Previous Stage"
+            aria-label="Previous Stage"
+          >
+            <ChevronLeft size={18} />
+          </button>
+
+          <div className="dock-stages-list">
+            {SCHOLAR_STAGES.map((stg, idx) => {
+              const isActive = !isAllStagesView && activeStageId === stg.id;
+              return (
+                <button
+                  key={stg.id}
+                  type="button"
+                  onClick={() => selectStage(stg.id)}
+                  className={`dock-stage-btn ${isActive ? "is-active" : ""}`}
+                >
+                  <span className="dock-stage-badge">{idx + 1}</span>
+                  <span className="dock-stage-ar" dir="rtl">{stg.arShort}</span>
+                  <span className="dock-stage-en">{stg.enShort}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <button
+            type="button"
+            onClick={nextStage}
+            disabled={isAllStagesView || currentStageIndex === SCHOLAR_STAGES.length - 1}
+            className="dock-nav-arrow"
+            title="Next Stage"
+            aria-label="Next Stage"
+          >
+            <ChevronRight size={18} />
+          </button>
+
+          <button
+            type="button"
+            onClick={() => setIsAllStagesView((v) => !v)}
+            className="dock-toggle-btn"
+            title={isAllStagesView ? "Switch to Pages (1 by 1)" : "View All on One Page"}
+          >
+            {isAllStagesView ? <Layers size={14} /> : <BookOpen size={14} />}
+            <span>{isAllStagesView ? "Pages" : "View All"}</span>
+          </button>
+        </div>
+
+        {/* Mobile Fixed Bottom App Bar */}
+        <div className="scholar-mobile-appbar" role="navigation" aria-label="Umrah Stages Mobile App Bar">
+          <div className="mobile-appbar-progress-track">
+            <div
+              className="mobile-appbar-progress-fill"
+              style={{
+                width: isAllStagesView
+                  ? "100%"
+                  : `${((currentStageIndex + 1) / SCHOLAR_STAGES.length) * 100}%`,
+              }}
+            />
+          </div>
+
+          <div className="mobile-appbar-tabs">
+            {SCHOLAR_STAGES.map((stg, idx) => {
+              const isActive = !isAllStagesView && activeStageId === stg.id;
+              const isDone = !isAllStagesView && idx < currentStageIndex;
+              return (
+                <button
+                  key={stg.id}
+                  type="button"
+                  onClick={() => selectStage(stg.id)}
+                  className={`mobile-tab-item ${isActive ? "is-active" : ""} ${isDone ? "is-done" : ""}`}
+                >
+                  <span className="mobile-tab-badge">{isDone ? "✓" : idx + 1}</span>
+                  <span className="mobile-tab-ar" dir="rtl">{stg.arShort}</span>
+                  <span className="mobile-tab-en">{stg.enShort}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="mobile-appbar-controls">
             <button
               type="button"
-              onClick={() => window.print()}
-              className="button button-light"
+              onClick={prevStage}
+              disabled={isAllStagesView || currentStageIndex === 0}
+              className="mobile-appbar-btn prev"
             >
-              <Printer size={18} /> Print Guide
+              <ChevronLeft size={15} /> Prev
             </button>
-            <Link to="/guidance/umrah" className="button button-secondary">
-              Back to ’Umrah Journey Hub
-            </Link>
+
+            <div className="mobile-appbar-status">
+              <span className="mobile-appbar-step">
+                {isAllStagesView ? "Continuous Mode" : `Stage ${currentStageIndex + 1} of 5`}
+              </span>
+              <span className="mobile-appbar-title" dir="rtl">
+                {isAllStagesView ? "عرض جميع المراحل" : currentStage.arShort}
+              </span>
+            </div>
+
+            <button
+              type="button"
+              onClick={nextStage}
+              disabled={isAllStagesView || currentStageIndex === SCHOLAR_STAGES.length - 1}
+              className="mobile-appbar-btn next"
+            >
+              Next <ChevronRight size={15} />
+            </button>
           </div>
         </div>
       </div>
@@ -2052,6 +2358,11 @@ function FooterColumn({ title, links }: { title: string; links: string[][] }) {
 }
 
 function MobileStickyCta() {
+  const location = useLocation();
+  if (location.pathname === "/guidance/umrah/scholar-text") {
+    return null;
+  }
+
   return (
     <div className="mobile-sticky">
       <a href={whatsappHref}>
