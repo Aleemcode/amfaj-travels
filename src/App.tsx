@@ -1113,19 +1113,109 @@ function UmrahScholarGuidePage() {
           <div className="scholar-stage-header">
             <div className="stage-num-badge">STAGE 01 / 05</div>
             <h2 className="stage-ar-title">الْمَرْحَلَةُ الأُولَى: التَّهَيُّؤُ لِلإِحْرَامِ وَعَقْدُ النِّيَّةِ عِنْدَ الْمِيقَاتِ</h2>
-            <p className="stage-en-subtitle">Preparation, Personal Hygiene, Garments, &amp; The Intention at the Mīqāt</p>
+            <p className="stage-en-subtitle">Stage 1: Pre-Iḥrām Preparation, Hygiene, Garments, &amp; The Intention at the Mīqāt</p>
           </div>
 
-          <div className="scholar-arabic-card" dir="rtl">
-            <p className="scholar-arabic-text">
-              «فَاعْلَمُوا — وَفَّقَنِي اللهُ وَإِيَّاكُمْ — أَنَّهُ يُسْتَحَبُّ لِمُرِيدِ الْحَجِّ أَوِ الْعُمْرَةِ أَنْ يَتَهَيَّأَ لِلإِحْرَامِ بِالتَّنَظُّفِ، بِإِزَالَةِ الشُّعُورِ الزَّائِدَةِ؛ شَعْرِ الإِبْطَيْنِ، وَشَعْرِ الْعَانَةِ، وَحَفِّ الشَّارِبِ، وَقَلْمِ الأَظَافِرِ.<br />
-              وَيُسْتَحَبُّ أَنْ يَكُونَ ذَلِكَ قُبَيْلَ الإِحْرَامِ، إِلَّا إِذَا كَانَ يُرِيدُ أَنْ يُضَحِّيَ بِأَنْ يَذْبَحَ أُضْحِيَّةً فِي بَلَدِهِ فِي أَيَّامِ الْعِيدِ، فَإِنَّهُ يَجْعَلُ ذَلِكَ قَبْلَ اسْتِهْلَالِ ذِي الحِجَّةِ.<br />
-              وَيَجُوزُ لِلْمُسْلِمِ أَنْ يَفْعَلَ ذَلِكَ فِي بَيْتِهِ أَوْ فِي الْفُنْدُقِ أَوْ فِي الْمِيقَاتِ.<br /><br />
-              وَيُسْتَحَبُّ وَيُسَنُّ لَهُ أَنْ يَغْتَسِلَ لِلإِحْرَامِ، وَهَذَا الاغْتِسَالُ مُسْتَحَبٌّ فِي حَقِّ الرِّجَالِ وَالنِّسَاءِ حَتَّى الْحَائِضِ وَالنُّفَسَاءِ.<br /><br />
-              وَيَتَجَرَّدُ الرَّجُلُ مِنَ الثِّيَابِ الْمَخِيطَةِ، وَيَلْبَسُ إِزَارًا وَرِدَاءً أَبْيَضَيْنِ نَظِيفَيْنِ، وَيُسْتَحَبُّ أَنْ يَتَطَيَّبَ فِي بَدَنِهِ كَرَأْسِهِ وَلِحْيَتِهِ قَبْلَ الإِحْرَامِ بِمَا تَيَسَّرَ مِنْ طِيبٍ، وَلَا يُطَيِّبُ ثِيَابَ الإِحْرَامِ.<br /><br />
-              أَمَّا الْمَرْأَةُ فَتَلْبَسُ مَا شَاءَتْ مِنَ الثِّيَابِ الْمُبَاحَةِ الَّتِي لَيْسَ فِيهَا تَبَرُّجٌ وَلَا شُهْرَةٌ، وَلَا تَلْبَسُ النِّقَابَ وَلَا الْقُفَّازَيْنِ، وَلَكِنْ تَسْدُلُ خِمَارَهَا عَلَى وَجْهِهَا عِنْدَ مُرُورِ الرِّجَالِ الأَجَانِبِ بِهَا.<br /><br />
-              فَإِذَا وَصَلَ الْمُسْلِمُ إِلَى الْمِيقَاتِ — أَوْ حَاذَاهُ جَوًّا أَوْ بَحْرًا — أَحْرَمَ، وَيُهِلُّ بِالْعُمْرَةِ قَائِلًا:»
+          {/* Unit 1.1 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">1.1 Personal Hygiene &amp; Cleanliness (التَّنَظُّفُ وَقَصُّ الشَّعْرِ وَالأَظَافِرِ)</h3>
+              <span className="tarbiyah-unit-badge">Sunnah Preparation</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «فَاعْلَمُوا — وَفَّقَنِي اللهُ وَإِيَّاكُمْ — أَنَّهُ يُسْتَحَبُّ لِمُرِيدِ الْحَجِّ أَوِ الْعُمْرَةِ أَنْ يَتَهَيَّأَ لِلإِحْرَامِ بِالتَّنَظُّفِ، بِإِزَالَةِ الشُّعُورِ الزَّائِدَةِ؛ شَعْرِ الإِبْطَيْنِ، وَشَعْرِ الْعَانَةِ، وَحَفِّ الشَّارِبِ، وَقَلْمِ الأَظَافِرِ.»
             </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “Know — may Allāh grant success to me and to you — that it is recommended for anyone intending Ḥajj or ’Umrah to prepare for Iḥrām through personal cleanliness: by removing excess body hair (underarms and pubic hair), trimming the mustache, and clipping the nails.”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 1.2 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">1.2 Timing &amp; Location of Preparation (تَوْقِيتُ ذَلِكَ وَمَكَانُهُ)</h3>
+              <span className="tarbiyah-unit-badge">Rulings of Time</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «وَيُسْتَحَبُّ أَنْ يَكُونَ ذَلِكَ قُبَيْلَ الإِحْرَامِ، إِلَّا إِذَا كَانَ يُرِيدُ أَنْ يُضَحِّيَ بِأَنْ يَذْبَحَ أُضْحِيَّةً فِي بَلَدِهِ فِي أَيَّامِ الْعِيدِ، فَإِنَّهُ يَجْعَلُ ذَلِكَ قَبْلَ اسْتِهْلَالِ ذِي الحِجَّةِ. وَيَجُوزُ لِلْمُسْلِمِ أَنْ يَفْعَلَ ذَلِكَ فِي بَيْتِهِ أَوْ فِي الْفُنْدُقِ أَوْ فِي الْمِيقَاتِ.»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “It is recommended that this be done shortly before entering Iḥrām — unless one intends to offer a sacrifice (Uḍḥiyyah) in their homeland during the days of ‘Īd, in which case they should do so before the new moon of Dhū al-Ḥijjah appears. A Muslim is permitted to do this at home, in the hotel, or at the Mīqāt.”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 1.3 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">1.3 Ritual Bathing (Ghusl) for All Pilgrims (الاغْتِسَالُ لِلإِحْرَامِ)</h3>
+              <span className="tarbiyah-unit-badge">Prescribed Sunnah</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «وَيُسْتَحَبُّ وَيُسَنُّ لَهُ أَنْ يَغْتَسِلَ لِلإِحْرَامِ، وَهَذَا الاغْتِسَالُ مُسْتَحَبٌّ فِي حَقِّ الرِّجَالِ وَالنِّسَاءِ حَتَّى الْحَائِضِ وَالنُّفَسَاءِ.»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “It is recommended and a prescribed Sunnah to perform a ritual bath (Ghusl) for Iḥrām. This bath is recommended for both men and women, including women who are menstruating or experiencing postpartum bleeding.”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 1.4 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">1.4 Men's Attire &amp; Perfume (لِبَاسُ الرَّجُلِ وَطِيبُهُ)</h3>
+              <span className="tarbiyah-unit-badge">Rules of Dress</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «وَيَتَجَرَّدُ الرَّجُلُ مِنَ الثِّيَابِ الْمَخِيطَةِ، وَيَلْبَسُ إِزَارًا وَرِدَاءً أَبْيَضَيْنِ نَظِيفَيْنِ، وَيُسْتَحَبُّ أَنْ يَتَطَيَّبَ فِي بَدَنِهِ كَرَأْسِهِ وَلِحْيَتِهِ قَبْلَ الإِحْرَامِ بِمَا تَيَسَّرَ مِنْ طِيبٍ، وَلَا يُطَيِّبُ ثِيَابَ الإِحْرَامِ.»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “The man divests himself of stitched, tailored garments and puts on a clean white waist-wrapper (Izār) and upper sheet (Ridā’). It is recommended that he apply available perfume to his body, such as his head and beard, before entering Iḥrām; however, he must not apply perfume to his Iḥrām garments.”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 1.5 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">1.5 Women's Modest Attire (لِبَاسُ الْمَرْأَةِ الْمُحْرِمَةِ)</h3>
+              <span className="tarbiyah-unit-badge">Modesty Standard</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «أَمَّا الْمَرْأَةُ فَتَلْبَسُ مَا شَاءَتْ مِنَ الثِّيَابِ الْمُبَاحَةِ الَّتِي لَيْسَ فِيهَا تَبَرُّجٌ وَلَا شُهْرَةٌ، وَلَا تَلْبَسُ النِّقَابَ وَلَا الْقُفَّازَيْنِ، وَلَكِنْ تَسْدُلُ خِمَارَهَا عَلَى وَجْهِهَا عِنْدَ مُرُورِ الرِّجَالِ الأَجَانِبِ بِهَا.»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “As for the woman, she wears whatever permissible clothing she chooses that is free from adornment and ostentation. She does not wear the Niqāb (face-veil) nor gloves, but she drapes her headscarf over her face when passing in front of non-mahram men.”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 1.6 & Dhikr */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">1.6 Intention at the Mīqāt (عَقْدُ النِّيَّةِ وَالإِهْلَالُ عِنْدَ الْمِيقَاتِ)</h3>
+              <span className="tarbiyah-unit-badge">Entering the Rite</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «فَإِذَا وَصَلَ الْمُسْلِمُ إِلَى الْمِيقَاتِ — أَوْ حَاذَاهُ جَوًّا أَوْ بَحْرًا — أَحْرَمَ، وَيُهِلُّ بِالْعُمْرَةِ قَائِلًا:»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “When the Muslim reaches the Mīqāt — or passes parallel to it by air or sea — he enters the sacred state of Iḥrām and raises his voice proclaiming the intention for ’Umrah, saying:”
+              </p>
+            </div>
           </div>
 
           <div className="scholar-dhikr-box">
@@ -1135,22 +1225,11 @@ function UmrahScholarGuidePage() {
             <p className="dhikr-meaning">“Here I am, O Allāh, answering Your call for ‘Umrah.”</p>
           </div>
 
-          <div className="scholar-rulings-grid">
-            <div className="scholar-ruling-pane">
-              <h4><CheckCircle2 size={16} /> Essential Sunnah Guidelines</h4>
-              <ul>
-                <li><strong>Cleanliness:</strong> Clipping nails, trimming mustache, and removing unwanted body hair before entering Iḥrām.</li>
-                <li><strong>Bathing (Ghusl):</strong> Highly recommended for men and women, including menstruating or postpartum sisters.</li>
-                <li><strong>Perfume for Men:</strong> Permissible on hair and skin (beard/head) before intention; do not perfume the garments.</li>
-                <li><strong>Garments:</strong> Men wear two unstitched white towels (Izār and Ridā’). Women wear loose modest attire without Niqāb or gloves.</li>
-              </ul>
-            </div>
-            <div className="scholar-pitfall-pane">
-              <h4><AlertTriangle size={16} /> Critical Pitfalls to Avoid</h4>
-              <p>
-                <strong>No Iḍṭibā‘ at the Airport or Mīqāt:</strong> Many pilgrims uncover their right shoulder at the Mīqāt or wear it throughout transit. This is incorrect. Both shoulders must remain covered until reaching the Ka‘bah for Ṭawāf.
-              </p>
-            </div>
+          <div className="scholar-pitfall-box">
+            <h4><AlertTriangle size={18} /> Critical Caution (تنبيه شرعي)</h4>
+            <p>
+              <strong>No Iḍṭibā‘ at the Airport or Mīqāt:</strong> Many pilgrims mistakenly bare their right shoulder at the Mīqāt or wear it throughout airport transit and flights. This is incorrect. Both shoulders must remain completely covered until reaching the Ka‘bah to begin the actual Ṭawāf.
+            </p>
           </div>
         </section>
 
@@ -1159,13 +1238,24 @@ function UmrahScholarGuidePage() {
           <div className="scholar-stage-header">
             <div className="stage-num-badge">STAGE 02 / 05</div>
             <h2 className="stage-ar-title">الْمَرْحَلَةُ الثَّانِيَةُ: التَّلْبِيَةُ وَآدَابُ الْمَسِيرِ إِلَى مَكَّةَ الْمُكَرَّمَةِ</h2>
-            <p className="stage-en-subtitle">The Resounding Talbiyah, Transit Adhkār, &amp; Entry into the Sacred Sanctuary</p>
+            <p className="stage-en-subtitle">Stage 2: The Talbiyah Journey &amp; Entry into the Sacred Sanctuary</p>
           </div>
 
-          <div className="scholar-arabic-card" dir="rtl">
-            <p className="scholar-arabic-text">
+          {/* Unit 2.1 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">2.1 The Talbiyah Proclamation (شِعَارُ التَّلْبِيَةِ النَّبَوِيَّةِ)</h3>
+              <span className="tarbiyah-unit-badge">Pilgrim's Chant</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
               «ثُمَّ يَشْرَعُ فِي التَّلْبِيَةِ الَّتِي كَانَ النَّبِيُّ ﷺ يُلَبِّي بِهَا، وَيَرْفَعُ الرِّجَالُ أَصْوَاتَهُمْ بِهَا، أَمَّا النِّسَاءُ فَيُسْمِعْنَ أَنْفُسَهُنَّ وَمَنْ يَلِيهِنَّ دُونَ رَفْعٍ مُلْفِتٍ لِلصَّوْتِ:»
             </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “Then he begins the Talbiyah with which the Prophet ﷺ used to proclaim devotion. Men raise their voices with it, while women recite loud enough only for themselves and those beside them without attracting attention:”
+              </p>
+            </div>
           </div>
 
           <div className="scholar-dhikr-box">
@@ -1175,11 +1265,38 @@ function UmrahScholarGuidePage() {
             <p className="dhikr-meaning">“Here I am, O Allāh, here I am. Here I am, You have no partner, here I am. Verily all praise, grace, and dominion belong to You, You have no partner.”</p>
           </div>
 
-          <div className="scholar-arabic-card" dir="rtl">
-            <p className="scholar-arabic-text">
-              «وَيَسْتَمِرُّ الْمُحْرِمُ فِي التَّلْبِيَةِ وَالإِكْثَارِ مِنْ ذِكْرِ اللهِ وَالاسْتِغْفَارِ وَالدُّعَاءِ فِي طَرِيقِهِ إِلَى مَكَّةَ، حَتَّى يَبْدَأَ بِالطَّوَافِ؛ فَإِذَا شَرَعَ فِي الطَّوَافِ قَطَعَ التَّلْبِيَةَ.<br /><br />
-              وَيُسْتَحَبُّ لَهُ إِذَا دَخَلَ الْمَسْجِدَ الْحَرَامَ أَنْ يُقَدِّمَ رِجْلَهُ الْيُمْنَى وَيَقُولَ ذِكْرَ دُخُولِ الْمَسْجِدِ:»
+          {/* Unit 2.2 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">2.2 Continuous Dhikr until Ṭawāf (مُوَاصَلَةُ الذِّكْرِ حَتَّى بَدْءِ الطَّوَافِ)</h3>
+              <span className="tarbiyah-unit-badge">Spiritual Focus</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «وَيَسْتَمِرُّ الْمُحْرِمُ فِي التَّلْبِيَةِ وَالإِكْثَارِ مِنْ ذِكْرِ اللهِ وَالاسْتِغْفَارِ وَالدُّعَاءِ فِي طَرِيقِهِ إِلَى مَكَّةَ، حَتَّى يَبْدَأَ بِالطَّوَافِ؛ فَإِذَا شَرَعَ فِي الطَّوَافِ قَطَعَ التَّلْبِيَةَ.»
             </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “The pilgrim continues reciting the Talbiyah, abundantly remembering Allāh, seeking forgiveness, and supplicating along the road to Makkah until he begins Ṭawāf. As soon as he commences Ṭawāf, he ceases reciting the Talbiyah.”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 2.3 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">2.3 Supplication upon Mosque Entry (آدَابُ دُخُولِ الْمَسْجِدِ الْحَرَامِ)</h3>
+              <span className="tarbiyah-unit-badge">Sacred Etiquette</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «وَيُسْتَحَبُّ لَهُ إِذَا دَخَلَ الْمَسْجِدَ الْحَرَامَ أَنْ يُقَدِّمَ رِجْلَهُ الْيُمْنَى وَيَقُولَ ذِكْرَ دُخُولِ الْمَسْجِدِ:»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “When entering the Sacred Mosque, it is recommended that he step in with his right foot first and recite the supplication for entering mosques:”
+              </p>
+            </div>
           </div>
 
           <div className="scholar-dhikr-box">
@@ -1189,21 +1306,11 @@ function UmrahScholarGuidePage() {
             <p className="dhikr-meaning">“In the Name of Allāh, and prayers and peace be upon the Messenger of Allāh. O Allāh, open for me the gates of Your Mercy.”</p>
           </div>
 
-          <div className="scholar-rulings-grid">
-            <div className="scholar-ruling-pane">
-              <h4><CheckCircle2 size={16} /> Essential Sunnah Guidelines</h4>
-              <ul>
-                <li><strong>Voice Volume:</strong> Men loudly proclaim the Talbiyah with strength and reverence; women recite quietly without drawing unwanted attention.</li>
-                <li><strong>Duration:</strong> Continues uninterrupted during travel until reaching the Ka‘bah to begin Ṭawāf.</li>
-                <li><strong>Sanctuary Entry:</strong> Enter with the right foot reciting the authentic prophetic entrance supplication.</li>
-              </ul>
-            </div>
-            <div className="scholar-pitfall-pane">
-              <h4><AlertTriangle size={16} /> Critical Pitfalls to Avoid</h4>
-              <p>
-                <strong>No Choir Megaphones or Invented Sighting Du‘ās:</strong> Avoid synchronized collective chanting led by group megaphone leaders. Furthermore, there is no verified specific du‘ā required solely for first looking at the Ka‘bah. Supplicate freely.
-              </p>
-            </div>
+          <div className="scholar-pitfall-box">
+            <h4><AlertTriangle size={18} /> Critical Caution (تنبيه شرعي)</h4>
+            <p>
+              <strong>Avoid Choir Chanting &amp; Fabricated Sighting Du‘ās:</strong> Chanting the Talbiyah in unison behind a megaphone leader is contrary to the Sunnah. Furthermore, there is no verified specific du‘ā required solely for first looking at the Ka‘bah; supplicate freely and sincerely from your own heart.
+            </p>
           </div>
         </section>
 
@@ -1212,19 +1319,79 @@ function UmrahScholarGuidePage() {
           <div className="scholar-stage-header">
             <div className="stage-num-badge">STAGE 03 / 05</div>
             <h2 className="stage-ar-title">الْمَرْحَلَةُ الثَّالِثَةُ: الطَّوَافُ بِالْبَيْتِ الْعَتِيقِ وَسُنَنُهُ</h2>
-            <p className="stage-en-subtitle">Ṭawāf al-Qudūm (Circumambulation), Raml, Iḍṭibā‘, &amp; The Authentic Adhkār</p>
+            <p className="stage-en-subtitle">Stage 3: Ṭawāf al-Qudūm (Circumambulation), Raml, Iḍṭibā‘, &amp; The Authentic Adhkār</p>
           </div>
 
-          <div className="scholar-arabic-card" dir="rtl">
-            <p className="scholar-arabic-text">
+          {/* Unit 3.1 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">3.1 Sunan of Ṭawāf al-Qudūm for Men (سُنَنُ الرَّجُلِ فِي طَوَافِ الْقُدُومِ)</h3>
+              <span className="tarbiyah-unit-badge">Iḍṭibā‘ &amp; Raml</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
               «فَإِذَا وَصَلَ إِلَى الْكَعْبَةِ، قَطَعَ التَّلْبِيَةَ، وَيُسَنُّ لِلرَّجُلِ فِي طَوَافِ الْقُدُومِ شَيْئَانِ:<br />
               ١. <strong>الاِضْطِبَاعُ:</strong> وَهُوَ أَنْ يَجْعَلَ وَسَطَ رِدَائِهِ تَحْتَ إِبْطِهِ الأَيْمَنِ وَطَرَفَيْهِ عَلَى عَاتِقِهِ الأَيْسَرِ؛ فَيَبْدُو كَتِفُهُ الأَيْمَنُ مَكْشُوفًا، وَهَذَا فِي جَمِيعِ أَشْوَاطِ الطَّوَافِ السَّبْعَةِ فَقَطْ.<br />
-              ٢. <strong>الرَّمَلُ:</strong> وَهُوَ إِسْرَاعُ الْمَشْيِ مَعَ مُقَارَبَةِ الْخُطَى فِي الأَشْوَاطِ الثَّلَاثَةِ الأُولَى، ثُمَّ يَمْشِي كَعَادَتِهِ فِي الأَرْبَعَةِ الْبَاقِيَةِ.<br /><br />
-              وَيَبْدَأُ الطَّوَافَ مِنَ الْحَجَرِ الأَسْوَدِ؛ فَيَسْتَلِمُهُ بِيَدِهِ وَيُقَبِّلُهُ إِنْ تَيَسَّرَ دُونَ مُزَاحَمَةٍ وَلَا إِيذَاءٍ، فَإِنْ لَمْ يَتَيَسَّرْ أَشَارَ إِلَيْهِ بِيَدِهِ الْيُمْنَى إِشَارَةً وَاحِدَةً قَائِلًا: <strong>«اللهُ أَكْبَرُ»</strong>، وَلَا يُقَبِّلُ يَدَهُ عِنْدَ الإِشَارَةِ.<br /><br />
-              وَيَجْعَلُ الْكَعْبَةَ عَنْ يَسَارِهِ وَيَطُوفُ سَبْعَةَ أَشْوَاطٍ كَامِلَةً مِنْ وَرَاءِ الحِجْرِ (حِجْرِ إِسْمَاعِيلَ). وَيَدْعُو فِيهَا بِمَا شَاءَ مِنْ خَيْرَيِ الدُّنْيَا وَالآخِرَةِ، وَيَقْرَأُ الْقُرْآنَ، وَيَذْكُرُ اللهَ تَعَالَى؛ وَلَيْسَ لِكُلِّ شَوْطٍ دُعَاءٌ مَخْصُوصٌ.<br /><br />
-              وَكُلَّمَا مَرَّ بِالرُّكْنِ الْيَمَانِي اسْتَلَمَهُ بِيَدِهِ إِنْ تَيَسَّرَ دُونَ تَقْبِيلٍ، فَإِنْ لَمْ يَتَيَسَّرْ مَضَى وَلَا يُشِيرُ إِلَيْهِ وَلَا يُكَبِّرُ.<br /><br />
-              وَيُسْتَحَبُّ أَنْ يَقُولَ بَيْنَ الرُّكْنِ الْيَمَانِي وَالْحَجَرِ الأَسْوَدِ:»
+              ٢. <strong>الرَّمَلُ:</strong> وَهُوَ إِسْرَاعُ الْمَشْيِ مَعَ مُقَارَبَةِ الْخُطَى فِي الأَشْوَاطِ الثَّلَاثَةِ الأُولَى، ثُمَّ يَمْشِي كَعَادَتِهِ فِي الأَرْبَعَةِ الْبَاقِيَةِ.»
             </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “Upon reaching the Ka‘bah, he ceases reciting the Talbiyah. Two specific acts are Sunnah for men during this arrival circumambulation (Ṭawāf al-Qudūm):<br />
+                1. <strong>Iḍṭibā‘:</strong> Placing the middle of the upper sheet under the right armpit and both ends over the left shoulder, leaving the right shoulder bare throughout all seven circuits of Ṭawāf only.<br />
+                2. <strong>Raml:</strong> Walking briskly with short, rapid steps during the first three circuits, followed by normal walking in the remaining four circuits.”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 3.2 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">3.2 Commencing at the Black Stone (بِدَايَةُ الشَّوْطِ مِنَ الْحَجَرِ الأَسْوَدِ)</h3>
+              <span className="tarbiyah-unit-badge">Alignment &amp; Takbīr</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «وَيَبْدَأُ الطَّوَافَ مِنَ الْحَجَرِ الأَسْوَدِ؛ فَيَسْتَلِمُهُ بِيَدِهِ وَيُقَبِّلُهُ إِنْ تَيَسَّرَ دُونَ مُزَاحَمَةٍ وَلَا إِيذَاءٍ، فَإِنْ لَمْ يَتَيَسَّرْ أَشَارَ إِلَيْهِ بِيَدِهِ الْيُمْنَى إِشَارَةً وَاحِدَةً قَائِلًا: <strong>«اللهُ أَكْبَرُ»</strong>، وَلَا يُقَبِّلُ يَدَهُ عِنْدَ الإِشَارَةِ.»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “He begins Ṭawāf at the Black Stone. He touches it with his right hand and kisses it if easily feasible without pushing or harming others. If that is not readily possible, he points toward it once with his right hand saying ‘Allāhu Akbar’ (Allāh is the Greatest), and he does not kiss his hand when pointing.”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 3.3 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">3.3 The 7 Full Circuits Outside the Ḥijr (الطَّوَافُ سَبْعَةَ أَشْوَاطٍ مِنْ وَرَاءِ الْحِجْرِ)</h3>
+              <span className="tarbiyah-unit-badge">Validity Ruling</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «وَيَجْعَلُ الْكَعْبَةَ عَنْ يَسَارِهِ وَيَطُوفُ سَبْعَةَ أَشْوَاطٍ كَامِلَةً مِنْ وَرَاءِ الحِجْرِ (حِجْرِ إِسْمَاعِيلَ). وَيَدْعُو فِيهَا بِمَا شَاءَ مِنْ خَيْرَيِ الدُّنْيَا وَالآخِرَةِ، وَيَقْرَأُ الْقُرْآنَ، وَيَذْكُرُ اللهَ تَعَالَى؛ وَلَيْسَ لِكُلِّ شَوْطٍ دُعَاءٌ مَخْصُوصٌ.»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “He keeps the Ka‘bah to his left and completes seven full circuits outside Ḥijr Ismā‘īl. During these circuits, he may supplicate for whatever he wishes of the good of this life and the Hereafter, recite the Qur’ān, and remember Allāh. There is no specific, fabricated du‘ā assigned to each circuit.”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 3.4 & Dhikr */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">3.4 The Yemeni Corner &amp; Black Stone Adhkār (الرُّكْنُ الْيَمَانِيُّ وَالدُّعَاءُ بَيْنَ الرُّكْنَيْنِ)</h3>
+              <span className="tarbiyah-unit-badge">Authentic Du‘ā</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «وَكُلَّمَا مَرَّ بِالرُّكْنِ الْيَمَانِي اسْتَلَمَهُ بِيَدِهِ إِنْ تَيَسَّرَ دُونَ تَقْبِيلٍ، فَإِنْ لَمْ يَتَيَسَّرْ مَضَى وَلَا يُشِيرُ إِلَيْهِ وَلَا يُكَبِّرُ. وَيُسْتَحَبُّ أَنْ يَقُولَ بَيْنَ الرُّكْنِ الْيَمَانِي وَالْحَجَرِ الأَسْوَدِ:»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “Every time he passes the Yemeni Corner, he touches it with his hand if easily possible, without kissing it. If not easily reachable, he passes on without pointing to it or saying Takbīr. Between the Yemeni Corner and the Black Stone, it is recommended to recite:”
+              </p>
+            </div>
           </div>
 
           <div className="scholar-dhikr-box">
@@ -1234,22 +1401,11 @@ function UmrahScholarGuidePage() {
             <p className="dhikr-meaning">“Our Lord! Give us in this world that which is good and in the Hereafter that which is good, and save us from the torment of the Fire.”</p>
           </div>
 
-          <div className="scholar-rulings-grid">
-            <div className="scholar-ruling-pane">
-              <h4><CheckCircle2 size={16} /> Essential Sunnah Guidelines</h4>
-              <ul>
-                <li><strong>7 Full Circuits:</strong> Keep the Ka‘bah on your left, beginning and concluding each circuit at the Black Stone alignment.</li>
-                <li><strong>Iḍṭibā‘ (Men):</strong> Uncover right shoulder for all 7 circuits of Ṭawāf al-Qudūm only.</li>
-                <li><strong>Raml (Men):</strong> Walk briskly with small rapid steps in circuits 1, 2, and 3 only. Normal walking in circuits 4 to 7.</li>
-                <li><strong>Ḥijr Ismā‘īl:</strong> You must circumambulate completely outside the semi-circular wall.</li>
-              </ul>
-            </div>
-            <div className="scholar-pitfall-pane">
-              <h4><AlertTriangle size={16} /> Critical Pitfalls to Avoid</h4>
-              <p>
-                <strong>Never Walk Inside the Ḥijr:</strong> Walking through the opening of the Ḥijr invalidates that circuit because the Ḥijr is part of the interior of the Ka‘bah. Do not kiss or wave at the Yemeni Corner; only touch it if reachable without jostling. Do not rub the cloth (Kiswah) for blessings.
-              </p>
-            </div>
+          <div className="scholar-pitfall-box">
+            <h4><AlertTriangle size={18} /> Critical Caution (تنبيه شرعي)</h4>
+            <p>
+              <strong>Never Cut Through Ḥijr Ismā‘īl:</strong> Walking through the opening of the Ḥijr invalidates that circuit because the Ḥijr is part of the interior of the Ka‘bah. Do not kiss or wave at the Yemeni Corner; only touch it if reachable without jostling. Do not rub the cloth (Kiswah) for blessings.
+            </p>
           </div>
         </section>
 
@@ -1258,35 +1414,70 @@ function UmrahScholarGuidePage() {
           <div className="scholar-stage-header">
             <div className="stage-num-badge">STAGE 04 / 05</div>
             <h2 className="stage-ar-title">الْمَرْحَلَةُ الرَّابِعَةُ: صَلَاةُ رَكْعَتَيِ الطَّوَافِ وَالشُّرْبُ مِنْ زَمْزَمَ</h2>
-            <p className="stage-en-subtitle">Two Rak‘ahs Behind Maqām Ibrāhīm &amp; Hydration with Zamzam Water</p>
+            <p className="stage-en-subtitle">Stage 4: Two Rak‘ahs Behind Maqām Ibrāhīm &amp; Hydration with Zamzam Water</p>
           </div>
 
-          <div className="scholar-arabic-card" dir="rtl">
-            <p className="scholar-arabic-text">
-              «فَإِذَا فَرَغَ مِنَ الشَّوْطِ السَّابِعِ، غَطَّى كَتِفَهُ الأَيْمَنَ بِرِدَائِهِ (فَيَنْتَهِي الاِضْطِبَاعُ)، ثُمَّ يَتَوَجَّهُ إِلَى مَقَامِ إِبْرَاهِيمَ عَلَيْهِ السَّلَامُ وَهُوَ يَقْرَأُ قَوْلَ اللهِ تَعَالَى:<br />
-              <strong>﴿وَاتَّخِذُوا مِنْ مَقَامِ إِبْرَاهِيمَ مُصَلًّى﴾</strong><br /><br />
-              فَيُصَلِّي رَكْعَتَيْنِ خَفِيفَتَيْنِ خَلْفَ الْمَقَامِ إِنْ تَيَسَّرَ، وَإِلَّا فَفِي أَيِّ مَكَانٍ مِنَ الْمَسْجِدِ الْحَرَامِ.<br />
-              - يَقْرَأُ فِي الرَّكْعَةِ الأُولَى بَعْدَ الْفَاتِحَةِ: <strong>﴿قُلْ يَا أَيُّهَا الْكَافِرُونَ﴾</strong>.<br />
-              - وَفِي الرَّكْعَةِ الثَّانِيَةِ بَعْدَ الْفَاتِحَةِ: <strong>﴿قُلْ هُوَ اللَّهُ أَحَدٌ﴾</strong>.<br /><br />
-              ثُمَّ يَتَوَجَّهُ إِلَى زَمْزَمَ فَيَشْرَبُ مِنْ مَائِهَا حَتَّى يَتَضَلَّعَ (يَمْتَلِئَ شِبَعًا وَرِيًّا)، وَيَصُبُّ عَلَى رَأْسِهِ، وَيَدْعُو اللهَ بِمَا شَاءَ، فَإِنَّ «مَاءَ زَمْزَمَ لِمَا شُرِبَ لَهُ».»
-            </p>
-          </div>
-
-          <div className="scholar-rulings-grid">
-            <div className="scholar-ruling-pane">
-              <h4><CheckCircle2 size={16} /> Essential Sunnah Guidelines</h4>
-              <ul>
-                <li><strong>Cover Shoulder:</strong> End Iḍṭibā‘ immediately after circuit 7 by covering both shoulders before praying.</li>
-                <li><strong>The Two Rak‘ahs:</strong> Recite Sūrah al-Kāfirūn in the 1st rak‘ah and Sūrah al-Ikhlāṣ in the 2nd rak‘ah after al-Fātiḥah.</li>
-                <li><strong>Zamzam Water:</strong> Drink generously until full, pour water over the head, and make sincere du‘ā.</li>
-              </ul>
+          {/* Unit 4.1 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">4.1 Covering the Shoulder &amp; Proceeding to the Maqām (تَغْطِيَةُ الْكَتِفِ وَالتَّوَجُّهُ إِلَى الْمَقَامِ)</h3>
+              <span className="tarbiyah-unit-badge">End of Iḍṭibā‘</span>
             </div>
-            <div className="scholar-pitfall-pane">
-              <h4><AlertTriangle size={16} /> Critical Pitfalls to Avoid</h4>
-              <p>
-                <strong>No Harmful Congestion at Maqām:</strong> If the area directly behind the glass station of Ibrāhīm is crowded with circling pilgrims, do not push. You may pray these two rak‘ahs anywhere inside the Grand Mosque without loss of reward.
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «فَإِذَا فَرَغَ مِنَ الشَّوْطِ السَّابِعِ، غَطَّى كَتِفَهُ الأَيْمَنَ بِرِدَائِهِ (فَيَنْتَهِي الاِضْطِبَاعُ)، ثُمَّ يَتَوَجَّهُ إِلَى مَقَامِ إِبْرَاهِيمَ عَلَيْهِ السَّلَامُ وَهُوَ يَقْرَأُ قَوْلَ اللهِ تَعَالَى:<br />
+              <strong>﴿وَاتَّخِذُوا مِنْ مَقَامِ إِبْرَاهِيمَ مُصَلًّى﴾</strong>»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “When he finishes the seventh circuit, he covers his right shoulder with his sheet (ending Iḍṭibā‘). He then proceeds towards Maqām Ibrāhīm (the Station of Abraham), reciting the verse of Allāh: ‘Wattakhidhū Mim-Maqāmi Ibrāhīma Muṣallā’ (And take the Station of Abraham as a place of prayer).”
               </p>
             </div>
+          </div>
+
+          {/* Unit 4.2 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">4.2 The Two Rak‘ahs of Ṭawāf (صَلَاةُ رَكْعَتَيِ الطَّوَافِ)</h3>
+              <span className="tarbiyah-unit-badge">Prescribed Recitation</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «فَيُصَلِّي رَكْعَتَيْنِ خَفِيفَتَيْنِ خَلْفَ الْمَقَامِ إِنْ تَيَسَّرَ، وَإِلَّا فَفِي أَيِّ مَكَانٍ مِنَ الْمَسْجِدِ الْحَرَامِ.<br />
+              - يَقْرَأُ فِي الرَّكْعَةِ الأُولَى بَعْدَ الْفَاتِحَةِ: <strong>﴿قُلْ يَا أَيُّهَا الْكَافِرُونَ﴾</strong>.<br />
+              - وَفِي الرَّكْعَةِ الثَّانِيَةِ بَعْدَ الْفَاتِحَةِ: <strong>﴿قُلْ هُوَ اللَّهُ أَحَدٌ﴾</strong>.»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “He prays two brief rak‘ahs behind the Maqām if easily feasible, or anywhere else within the Sacred Mosque.<br />
+                - In the first rak‘ah after al-Fātiḥah, he recites: Sūrah al-Kāfirūn (﴿قُلْ يَا أَيُّهَا الْكَافِرُونَ﴾).<br />
+                - In the second rak‘ah after al-Fātiḥah, he recites: Sūrah al-Ikhlāṣ (﴿قُلْ هُوَ اللَّهُ أَحَدٌ﴾).”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 4.3 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">4.3 Plentiful Drinking from Zamzam (الشُّرْبُ مِنَ زَمْزَمَ وَالتَّضَلُّعُ)</h3>
+              <span className="tarbiyah-unit-badge">Spiritual Hydration</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «ثُمَّ يَتَوَجَّهُ إِلَى زَمْزَمَ فَيَشْرَبُ مِنْ مَائِهَا حَتَّى يَتَضَلَّعَ (يَمْتَلِئَ شِبَعًا وَرِيًّا)، وَيَصُبُّ عَلَى رَأْسِهِ، وَيَدْعُو اللهَ بِمَا شَاءَ، فَإِنَّ «مَاءَ زَمْزَمَ لِمَا شُرِبَ لَهُ».»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “Then he proceeds to Zamzam water and drinks until he is fully quenched (his ribs filled with water), pours water over his head, and supplicates to Allāh for whatever he wishes, for indeed: ‘Zamzam water is for whatever purpose it is drunk for.’”
+              </p>
+            </div>
+          </div>
+
+          <div className="scholar-pitfall-box">
+            <h4><AlertTriangle size={18} /> Critical Caution (تنبيه شرعي)</h4>
+            <p>
+              <strong>Avoid Harmful Congestion at the Maqām:</strong> If the area directly behind the glass station of Ibrāhīm is crowded with circling pilgrims, do not push or cause harm. You may pray these two rak‘ahs anywhere inside the Grand Mosque without any loss of reward.
+            </p>
           </div>
         </section>
 
@@ -1295,16 +1486,43 @@ function UmrahScholarGuidePage() {
           <div className="scholar-stage-header">
             <div className="stage-num-badge">STAGE 05 / 05</div>
             <h2 className="stage-ar-title">الْمَرْحَلَةُ الْخَامِسَةُ: السَّعْيُ بَيْنَ الصَّفَا وَالْمَرْوَةِ وَالتَّحَلُّلُ الْكَامِلُ</h2>
-            <p className="stage-en-subtitle">Sa‘ī Between Ṣafā &amp; Marwah and Complete Taḥallul (Ḥalq / Taqṣīr)</p>
+            <p className="stage-en-subtitle">Stage 5: Sa‘ī Between Ṣafā &amp; Marwah and Complete Taḥallul (Ḥalq / Taqṣīr)</p>
           </div>
 
-          <div className="scholar-arabic-card" dir="rtl">
-            <p className="scholar-arabic-text">
+          {/* Unit 5.1 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">5.1 Approaching Mount Ṣafā (التَّوَجُّهُ إِلَى الصَّفَا وَقِرَاءَةُ الآيَةِ)</h3>
+              <span className="tarbiyah-unit-badge">Initial Rite Only</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
               «ثُمَّ يَتَوَجَّهُ إِلَى الصَّفَا لِيَبْدَأَ السَّعْيَ، فَإِذَا دَنَا مِنَ الصَّفَا قَرَأَ قَوْلَهُ تَعَالَى:<br />
               <strong>﴿إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ فَمَنْ حَجَّ الْبَيْتَ أَوِ اعْتَمَرَ فَلَا جُنَاحَ عَلَيْهِ أَنْ يَطَّوَّفَ بِهِمَا وَمَنْ تَطَوَّعَ خَيْرًا فَإِنَّ اللَّهَ شَاكِرٌ عَلِيمٌ﴾</strong><br />
-              ثُمَّ يَقُولُ: <strong>«نَبْدَأُ بِمَا بَدَأَ اللهُ بِهِ»</strong> (وَلَا يُعِيدُ هَذِهِ الآيَةَ إِلَّا فِي بِدَايَةِ السَّعْيِ عِنْدَ الصَّفَا فَقَطْ).<br /><br />
-              فَيَصْعَدُ عَلَى الصَّفَا حَتَّى يَرَى الْكَعْبَةَ، فَيَسْتَقْبِلُ الْقِبْلَةَ، وَيَرْفَعُ يَدَيْهِ كَهَيْئَةِ الدُّعَاءِ، فَيُوَحِّدُ اللهَ وَيُكَبِّرُهُ وَيَقُولُ:»
+              ثُمَّ يَقُولُ: <strong>«نَبْدَأُ بِمَا بَدَأَ اللهُ بِهِ»</strong> (وَلَا يُعِيدُ هَذِهِ الآيَةَ إِلَّا فِي بِدَايَةِ السَّعْيِ عِنْدَ الصَّفَا فَقَطْ).»
             </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “Then he heads towards Mount Ṣafā to begin Sa‘ī. When approaching Ṣafā, he recites the verse of Allāh: ‘Innaṣ-Ṣafā Wal-Marwata Min Sha‘ā’irillāh...’ (Indeed, Ṣafā and Marwah are among the symbols of Allāh...). Then he says: ‘Nabda’u Bimā Bada’allāhu Bih’ (We begin with that with which Allāh began). Note: He does not repeat this verse except once at the very start of Sa‘ī when approaching Ṣafā.”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 5.2 & Dhikr */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">5.2 Tawḥīd &amp; Supplication atop Ṣafā &amp; Marwah (الدُّعَاءُ وَالتَّوْحِيدُ عَلَى الصَّفَا)</h3>
+              <span className="tarbiyah-unit-badge">Prophetic Practice</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «فَيَصْعَدُ عَلَى الصَّفَا حَتَّى يَرَى الْكَعْبَةَ، فَيَسْتَقْبِلُ الْقِبْلَةَ، وَيَرْفَعُ يَدَيْهِ كَهَيْئَةِ الدُّعَاءِ، فَيُوَحِّدُ اللهَ وَيُكَبِّرُهُ وَيَقُولُ:»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “He climbs onto Ṣafā until he can see the Ka‘bah, faces the Qiblah, and raises his hands in supplication (not like the Takbīr of prayer). He declares the Oneness of Allāh, glorifies Him, and recites:”
+              </p>
+            </div>
           </div>
 
           <div className="scholar-dhikr-box">
@@ -1314,34 +1532,68 @@ function UmrahScholarGuidePage() {
             <p className="dhikr-meaning">“None has the right to be worshipped except Allāh alone, without partner. To Him belongs all sovereignty and praise, and He has power over all things. None has the right to be worshipped except Allāh alone. He fulfilled His promise, granted victory to His servant, and defeated the allied armies alone.”</p>
           </div>
 
-          <div className="scholar-arabic-card" dir="rtl">
-            <p className="scholar-arabic-text">
-              «ثُمَّ يَنْزِلُ مِنْ الصَّفَا مُتَّجِهًا إِلَى الْمَرْوَةِ يَمْشِي مَشْيًا مُعْتَادًا، فَإِذَا بَلَغَ الْعَلَمَيْنِ الأَخْضَرَيْنِ رَكَضَ الرَّجُلُ رَكْضًا شَدِيدًا (سَعَى سَعْيًا حَثِيثًا) إِنْ تَيَسَّرَ لَهُ دُونَ أَذًى، أَمَّا الْمَرْأَةُ فَلَا تَرْكُضُ. فَإِذَا جَاوَزَ الْعَلَمَ الثَّانِيَ مَشَى كَعَادَتِهِ حَتَّى يَصِلَ إِلَى الْمَرْوَةِ.<br /><br />
-              فَإِذَا وَصَلَ إِلَى الْمَرْوَةِ فَقَدْ تَمَّ لَهُ شَوْطٌ وَاحِدٌ؛ فَيَصْعَدُ عَلَيْهَا وَيَسْتَقْبِلُ الْقِبْلَةَ وَيَقُولُ وَيَفْعَلُ مِثْلَ مَا فَعَلَ عَلَى الصَّفَا (مِنَ التَّكْبِيرِ وَالتَّهْلِيلِ وَالدُّعَاءِ دُونَ قِرَاءَةِ الآيَةِ).<br /><br />
-              ثُمَّ يَنْزِلُ مِنَ الْمَرْوَةِ عَائِدًا إِلَى الصَّفَا فَيَكُونُ هَذَا الشَّوْطَ الثَّانِيَ؛ وَهَكَذَا حَتَّى يُكْمِلَ سَبْعَةَ أَشْوَاطٍ يَبْدَأُ بِالصَّفَا وَيَخْتِمُ بِالْمَرْوَةِ.<br /><br />
-              فَإِذَا أَتَمَّ سَبْعَةَ أَشْوَاطٍ، بَقِيَ عَلَيْهِ وَاجِبُ التَّحَلُّلِ:<br />
+          {/* Unit 5.3 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">5.3 Sprinting Between Green Lights &amp; Walking (السَّعْيُ بَيْنَ الْعَلَمَيْنِ الأَخْضَرَيْنِ)</h3>
+              <span className="tarbiyah-unit-badge">Men's Sunnah</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «ثُمَّ يَنْزِلُ مِنْ الصَّفَا مُتَّجِهًا إِلَى الْمَرْوَةِ يَمْشِي مَشْيًا مُعْتَادًا، فَإِذَا بَلَغَ الْعَلَمَيْنِ الأَخْضَرَيْنِ رَكَضَ الرَّجُلُ رَكْضًا شَدِيدًا (سَعَى سَعْيًا حَثِيثًا) إِنْ تَيَسَّرَ لَهُ دُونَ أَذًى، أَمَّا الْمَرْأَةُ فَلَا تَرْكُضُ. فَإِذَا جَاوَزَ الْعَلَمَ الثَّانِيَ مَشَى كَعَادَتِهِ حَتَّى يَصِلَ إِلَى الْمَرْوَةِ.»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “Then he descends from Ṣafā heading towards Marwah at a normal walking pace. When he reaches the two green-lighted markers, the man sprints briskly if feasible without causing harm, while the woman walks normally. Once past the second green marker, he walks normally until reaching Marwah.”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 5.4 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">5.4 Seven Laps: Ending at Marwah (إِتْمَامُ السَّبْعَةِ أَشْوَاطٍ)</h3>
+              <span className="tarbiyah-unit-badge">Calculation of Laps</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «فَإِذَا وَصَلَ إِلَى الْمَرْوَةِ فَقَدْ تَمَّ لَهُ شَوْطٌ وَاحِدٌ؛ فَيَصْعَدُ عَلَيْهَا وَيَسْتَقْبِلُ الْقِبْلَةَ وَيَقُولُ وَيَفْعَلُ مِثْلَ مَا فَعَلَ عَلَى الصَّفَا (مِنَ التَّكْبِيرِ وَالتَّهْلِيلِ وَالدُّعَاءِ دُونَ قِرَاءَةِ الآيَةِ). ثُمَّ يَنْزِلُ مِنَ الْمَرْوَةِ عَائِدًا إِلَى الصَّفَا فَيَكُونُ هَذَا الشَّوْطَ الثَّانِيَ؛ وَهَكَذَا حَتَّى يُكْمِلَ سَبْعَةَ أَشْوَاطٍ يَبْدَأُ بِالصَّفَا وَيَخْتِمُ بِالْمَرْوَةِ.»
+            </p>
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “When he reaches Marwah, one complete lap is accomplished. He climbs onto it, faces the Qiblah, and says and does as he did atop Ṣafā (glorifying Allāh, declaring Tawḥīd, and supplicating, without repeating the Quranic verse). He then descends towards Ṣafā, completing the second lap; and continues likewise until completing seven laps, beginning at Ṣafā and finishing at Marwah.”
+              </p>
+            </div>
+          </div>
+
+          {/* Unit 5.5 */}
+          <div className="tarbiyah-unit">
+            <div className="tarbiyah-unit-header">
+              <h3 className="tarbiyah-unit-title">5.5 Shaving (Ḥalq) vs. Trimming (Taqṣīr) (الْحَلْقُ أَوِ التَّقْصِيرُ وَالتَّحَلُّلُ الْكَامِلُ)</h3>
+              <span className="tarbiyah-unit-badge">Final Taḥallul</span>
+            </div>
+            <p className="tarbiyah-arabic-text" dir="rtl">
+              «فَإِذَا أَتَمَّ سَبْعَةَ أَشْوَاطٍ، بَقِيَ عَلَيْهِ وَاجِبُ التَّحَلُّلِ:<br />
               - <strong>لِلرِّجَالِ:</strong> الْحَلْقُ (وَهُوَ حَلْقُ شَعْرِ الرَّأْسِ كُلِّهِ بِالْمُوسَى)، وَهُوَ الأَفْضَلُ لِدُعَاءِ النَّبِيِّ ﷺ لِلْمُحَلِّقِينَ ثَلَاثًا، أَوِ التَّقْصِيرُ (بِأَنْ يَأْخُذَ مِنْ جَمِيعِ شَعْرِ رَأْسِهِ).<br />
               - <strong>لِلنِّسَاءِ:</strong> التَّقْصِيرُ فَقَطْ، بِأَنْ تَقُصَّ مِنْ أَطْرَافِ ضَفَائِرِهَا أَوْ خُصَلِ شَعْرِهَا قَدْرَ أُنْمُلَةٍ (نَحْوَ سَنْتِيمِتْرَيْنِ)، وَلَا يَجُوزُ لَهَا الْحَلْقُ.<br /><br />
               فَبِذَلِكَ تَمَّتِ الْعُمْرَةُ بِحَمْدِ اللهِ، وَحَلَّ لِلْمُعْتَمِرِ كُلُّ شَيْءٍ حُرِّمَ عَلَيْهِ بِالإِحْرَامِ.»
             </p>
-          </div>
-
-          <div className="scholar-rulings-grid">
-            <div className="scholar-ruling-pane">
-              <h4><CheckCircle2 size={16} /> Essential Sunnah Guidelines</h4>
-              <ul>
-                <li><strong>Lap Calculation:</strong> Ṣafā to Marwah is 1 lap. Marwah to Ṣafā is lap 2. The 7th lap finishes at Marwah.</li>
-                <li><strong>Green Light Sprint:</strong> Men sprint between the two green-lighted markers along the corridor; women walk normally throughout.</li>
-                <li><strong>Ḥalq vs. Taqṣīr for Men:</strong> Shaving the entire head with a razor is 3 times more rewarded; shortening hair must encompass the whole head evenly.</li>
-                <li><strong>Taqṣīr for Women:</strong> Women trim only a fingertip's length (~2 cm) from the ends of their hair. Shaving the head is prohibited for women.</li>
-              </ul>
-            </div>
-            <div className="scholar-pitfall-pane">
-              <h4><AlertTriangle size={16} /> Critical Pitfalls to Avoid</h4>
-              <p>
-                <strong>Do NOT Recite the Verse at Every Lap:</strong> The ayah ﴿إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ﴾ is recited only once upon initial approach to Ṣafā, not on every lap or at Marwah. Also, cutting only two strands of hair does not satisfy the requirement for men.
+            <div className="tarbiyah-english-box">
+              <span className="tarbiyah-english-label">Meaning &amp; Guidance</span>
+              <p className="tarbiyah-english-text">
+                “Once he finishes seven laps, the obligation of Taḥallul (exiting Iḥrām) remains:<br />
+                - <strong>For men:</strong> <em>Ḥalq</em> (shaving the head entirely with a razor), which is vastly superior due to the Prophet's ﷺ supplication for those who shave three times, or <em>Taqsīr</em> (shortening the hair comprehensively across the entire head).<br />
+                - <strong>For women:</strong> <em>Taqsīr</em> only, by cutting approximately a fingertip’s length (~2 cm) from the ends of her hair braids or locks. Shaving the head is strictly prohibited for women.<br />
+                With this, the ’Umrah is completed by the grace of Allāh, and everything previously prohibited by Iḥrām becomes lawful again.”
               </p>
             </div>
+          </div>
+
+          <div className="scholar-pitfall-box">
+            <h4><AlertTriangle size={18} /> Critical Caution (تنبيه شرعي)</h4>
+            <p>
+              <strong>Do Not Repeat the Ayah at Every Lap:</strong> The ayah ﴿إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ﴾ is recited only once upon initial approach to Ṣafā, not on every lap or at Marwah. Also, clipping only two strands of hair does not satisfy the requirement of Taqṣīr for men; trimming must encompass the entire head.
+            </p>
           </div>
         </section>
 
