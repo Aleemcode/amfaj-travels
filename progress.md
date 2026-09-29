@@ -134,6 +134,12 @@ No tests required yet because implementation has not started.
   - White: `#FFFFFF`
 - Updated `design.md` and `website_ux_research_direction.md` to replace generic green/gold assumptions with the logo-derived AMFAJ color system.
 - Added approved typography to `design.md`: Sora for headings and Host Grotesk for body copy.
+## 2026-09-29 10:00 WAT - Umrah Travel Window Updated (Oct 3 - Oct 15)
+
+- Updated near-term Umrah campaign departure to October 3, 2026 and return/arrival to October 15, 2026 across all website copy, FAQs, package cards, WhatsApp lead messages, and project blueprints.
+- Updated source of truth in `gemini.md`, `package_direction.md`, `website_plan.md`, `launch_strategy.md`, `website_ux_research_direction.md`, and `findings.md`.
+- Verified production build successfully via `npm run build`.
+
 ## 2026-09-28 17:40 WAT - Welcoming Audio Widget Removed
 
 - Removed the floating `WelcomeVoicePlayer` audio widget and its session-storage logic from `src/App.tsx`.

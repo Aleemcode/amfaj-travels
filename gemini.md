@@ -54,8 +54,8 @@ No tools or automation scripts may be built until the input and output payload s
     "travel_services": ["Umrah", "Hajj"],
     "near_term_campaign": {
       "service": "Umrah",
-      "target_departure_window": "2026-09-29 or 2026-09-30",
-      "arrival_window": "2026-10-10 or 2026-10-11",
+      "target_departure_window": "2026-10-03",
+      "arrival_window": "2026-10-15",
       "departure_locations": ["Lagos", "Abuja"],
       "scholar_tutelage": "Scholar-led guidance is a general AMFAJ package value. The coming Umrah is planned with Dr. Sharafuddeen Gbadebo Raaji joining as a scholar and providing tutelage.",
       "date_status": "User-provided for website and flyer direction"
@@ -184,7 +184,7 @@ No tools or automation scripts may be built until the input and output payload s
 - The brand should not publish misleading travel guarantees.
 - AMFAJ's public voice must remain Sunni, dignified, modest, and compliant with the stated religious orientation.
 - The core audience is people who love the Sunnah and want Hajj or Umrah support aligned with the Sunnah.
-- Current public campaign focus is Umrah, with user-provided departure window of September 29 or 30, 2026 and arrival window of October 10 or 11, 2026.
+- Current public campaign focus is Umrah, with user-provided departure of October 3, 2026 and return of October 15, 2026.
 - AMFAJ may promise honesty with promises, bespoke personalized hospitality, total financial integrity, and zero hidden fees.
 - The worship guidance claim may mention that the journey is intended to be under the tutelage of honored Shaykh Ad-Doctur Sharafud-deen Gbadebo Raaji, hafizahuLlahu, but exact wording must be approved before publication.
 - Scholar-led tutelage is a universal AMFAJ value across packages, not a separate package tier or a benefit tied to only one package.
@@ -213,3 +213,7 @@ No tools or automation scripts may be built until the input and output payload s
 - Added user-provided Umrah package direction for website and flyers: Nigeria package, Diaspora package, inclusions, departure/arrival windows, and departure locations.
 - Added scholar-led direction: Dr. Sharafuddeen Gbadebo Raaji is planned to join the coming Umrah as a scholar and provide tutelage.
 - Clarified that scholar-led tutelage is a universal AMFAJ package value, not a separate package tier.
+
+### 2026-09-29
+
+- Updated departure date to October 3, 2026 and return/arrival date to October 15, 2026 as directed by AMFAJ.

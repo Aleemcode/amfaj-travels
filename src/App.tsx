@@ -28,7 +28,7 @@ import { Link, NavLink, Route, Routes } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 
 const whatsappMessage =
-  "Assalamu alaykum, I want to start registration for AMFAJ September ’Umrah.";
+  "Assalamu alaykum, I want to start registration for AMFAJ October ’Umrah.";
 const whatsappHref = `https://wa.me/2348069243134?text=${encodeURIComponent(whatsappMessage)}`;
 const makkahLiveEmbedUrl =
   "https://www.youtube.com/embed/live_stream?channel=UCos52azQNBgW63_9uDJoPDA&autoplay=1&mute=1&controls=1&rel=0&playsinline=1&enablejsapi=1";
@@ -71,9 +71,9 @@ const packages = [
 
 const faqs = [
   {
-    question: "When is the September ’Umrah journey?",
+    question: "When is the October ’Umrah journey?",
     answer:
-      "Departure is planned for September 29/30, 2026, with arrival back on October 10/11, 2026, In Shā’ Allāh.",
+      "Departure is planned for October 3, 2026, with return on October 15, 2026, In Shā’ Allāh.",
   },
   {
     question: "Where will pilgrims depart from?",
@@ -265,7 +265,7 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
         >
           <span />
-          September 2026 ’Umrah registration path
+          October 2026 ’Umrah registration path
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 18 }}
@@ -457,7 +457,7 @@ function UmrahFeature() {
     >
       <SectionIntro
         eyebrow="Active package"
-        title="Our September ’Umrah registration is now open."
+        title="Our October ’Umrah registration is now open."
         body="Two clear package paths make it easier for Nigeria-based pilgrims, Diaspora pilgrims, and sponsors to understand the offer before opening a WhatsApp conversation."
       />
       <div className="package-grid">
@@ -505,8 +505,8 @@ function PackageCard({
 
 function PackageBreakdown({ showLink = true }: { showLink?: boolean } = {}) {
   const facts = [
-    ["Departure", "September 29/30, 2026"],
-    ["Arrival", "October 10/11, 2026"],
+    ["Departure", "October 3, 2026"],
+    ["Return", "October 15, 2026"],
     ["Departure cities", "Lagos and Abuja"],
     ["Guidance", "Scholar-led, In Shā‘ Allāh"],
   ];
@@ -676,14 +676,14 @@ function PackagesPage() {
     <PageFrame
       eyebrow="Packages"
       title="Choose the sacred journey you are preparing for."
-      body="Select the sacred journey you are preparing for. Our active September ’Umrah package is ready for registration, while our Ḥajj package details will be shared here the moment every operational detail is verified and confirmed, In Shā’ Allāh."
+      body="Select the sacred journey you are preparing for. Our active October ’Umrah package is ready for registration, while our Ḥajj package details will be shared here the moment every operational detail is verified and confirmed, In Shā’ Allāh."
     >
       <div className="category-grid">
         <Link className="category-card is-active" to="/packages/umrah">
           <PackageCheck size={28} />
           <span>Active</span>
           <h2>’Umrah Packages</h2>
-          <p>View the September package, inclusions, travel window, and registration CTA.</p>
+          <p>View the October package, inclusions, travel window, and registration CTA.</p>
         </Link>
         <Link className="category-card" to="/packages/hajj">
           <Clock size={28} />
@@ -700,7 +700,7 @@ function UmrahPage() {
   return (
     <PageFrame
       eyebrow="’Umrah package"
-      title="Everything you need for your September ’Umrah."
+      title="Everything you need for your October ’Umrah."
       body="We believe in absolute clarity: honest pricing, complete inclusions, and a direct WhatsApp path to start your registration today."
       parent={{ name: "Packages", to: "/packages" }}
     >
@@ -716,7 +716,7 @@ function HajjPackagePage() {
     <ComingSoon
       eyebrow="Ḥajj packages"
       title="Ḥajj package details will open closer to the season."
-      body="For now, we are keeping the website focused on the active September ‘Umrah campaign. Ḥajj information will be added when the package details are confirmed."
+      body="For now, we are keeping the website focused on the active October ‘Umrah campaign. Ḥajj information will be added when the package details are confirmed."
       cta="Browse Active ’Umrah Package"
       to="/packages/umrah"
       parent={{ name: "Packages", to: "/packages" }}
@@ -1087,7 +1087,7 @@ function ContactPage() {
     <PageFrame
       eyebrow="Contact"
       title="We are here to support your sacred journey."
-      body="Connect with us on WhatsApp for absolute clarity on your September ’Umrah registration, package details, or sponsorship discussions. Let us take the next step together."
+      body="Connect with us on WhatsApp for absolute clarity on your October ’Umrah registration, package details, or sponsorship discussions. Let us take the next step together."
     >
       <div className="contact-panel">
         <div>

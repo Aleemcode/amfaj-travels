@@ -10,7 +10,7 @@ AMFAJ Travels and Tours helps Muslims in Nigeria prepare for Hajj and Umrah with
 
 ## Current Campaign Focus
 
-The first major campaign is for Umrah, with departure planned for September 29 or 30, 2026 from Lagos and Abuja, and arrival planned for October 10 or 11, 2026.
+The first major campaign is for Umrah, with departure planned for October 3, 2026 from Lagos and Abuja, and arrival planned for October 15, 2026.
 
 Package details are now user-provided for website and flyer direction. Future copy should use only the package details recorded in `gemini.md` and `package_direction.md` unless AMFAJ changes them.
 

@@ -43,7 +43,7 @@ AMFAJ Travels and Tours helps Muslims in Nigeria prepare for Hajj and Umrah with
 
 Purpose:
 
-Introduce AMFAJ Travels and Tours, communicate trust, preview the active September Umrah package, and drive registration.
+Introduce AMFAJ Travels and Tours, communicate trust, preview the active October Umrah package, and drive registration.
 
 Sections:
 
@@ -75,7 +75,7 @@ Sections:
 
 Purpose:
 
-Explain the Umrah support path and present the active September Umrah package direction clearly.
+Explain the Umrah support path and present the active October Umrah package direction clearly.
 
 Sections:
 
@@ -130,11 +130,11 @@ Inclusions:
 
 Departure:
 
-September 29 or 30, 2026.
+October 3, 2026.
 
 Arrival:
 
-October 10 or 11, 2026.
+October 15, 2026.
 
 Departure locations:
 
@@ -253,7 +253,7 @@ Browse Packages
 
 ### Active Umrah Package
 
-Present the September Umrah package directly after the hero.
+Present the October Umrah package directly after the hero.
 
 Use a clear split:
 
@@ -279,8 +279,8 @@ Include:
 - Package amounts.
 - Inclusions.
 - Departure from Lagos and Abuja.
-- Departure window: September 29 or 30, 2026.
-- Arrival window: October 10 or 11, 2026.
+- Departure window: October 3, 2026.
+- Arrival window: October 15, 2026.
 - Universal scholar-led guidance standard.
 - Zero hidden fees promise.
 

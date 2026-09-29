@@ -2,17 +2,17 @@
 
 Status: User-provided for website and flyer direction.
 
-Last updated: 2026-05-30.
+Last updated: 2026-09-29.
 
 ## Travel Window
 
 Departure:
 
-- September 29 or 30, 2026.
+- October 3, 2026.
 
-Arrival:
+Arrival / Return:
 
-- October 10 or 11, 2026.
+- October 15, 2026.
 
 Departure locations:
 

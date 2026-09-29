@@ -12,7 +12,7 @@
 - Requested payloads: Launch strategy doc, 30-day content calendar, viral campaign plan, lead funnel map, social media SOP, automation blueprint.
 - Religious/brand orientation: Sunni platform guided by the Qur'an and Sunnah upon the understanding of the pious predecessors.
 - Audience: People who love the Sunnah and want Hajj and Umrah in compliance with the Sunnah.
-- Current travel focus: Hajj and Umrah, starting with Umrah planned for departure on September 29 or 30, 2026 and arrival on October 10 or 11, 2026.
+- Current travel focus: Hajj and Umrah, starting with Umrah planned for departure on October 3, 2026 and arrival on October 15, 2026.
 - Approved brand promise: honesty with promises, bespoke personalized hospitality for every pilgrim, total financial integrity, and zero hidden fees.
 - Do-not-say rules: No street language, foul words, vulgarity, indecent statements, unverified statements, or misleading claims.
 - User-provided Nigeria Umrah package: 3.5m NGN, including return ticket, Umrah visa, 2 meals, accommodation in Madeenah and Makkah, Umrah guide, Ziyarah, and 5 litre Zam Zam water.

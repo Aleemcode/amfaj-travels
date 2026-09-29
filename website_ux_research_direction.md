@@ -207,8 +207,8 @@ Recommended section order:
 
 Fast facts component:
 
-- Departure: September 29/30, 2026.
-- Arrival: October 10/11, 2026.
+- Departure: October 3, 2026.
+- Arrival / Return: October 15, 2026.
 - Departure: Lagos and Abuja.
 - Nigeria: 3.5m NGN.
 - Diaspora: 1750 USD.
